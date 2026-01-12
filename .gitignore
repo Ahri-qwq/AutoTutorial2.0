@@ -7,10 +7,24 @@ env/
 config.yaml
 
 # 生成的数据和输出
-data/processed/
-output/
+/data/chroma_db/
+/data/knowledge_source/
+/data/knowledge_add/
+/data/runs/
 *.pyc
 __pycache__/
+
+# 先忽略目录内所有内容
+/data/chroma_db/*
+/data/knowledge_source/*
+/data/knowledge_add/*
+/data/runs/*
+
+# 再放行占位文件，让目录能被提交
+!/data/chroma_db/.gitkeep
+!/data/knowledge_source/.gitkeep
+!/data/knowledge_add/.gitkeep
+!/data/runs/.gitkeep
 
 # IDE 配置
 .vscode/
