@@ -1,0 +1,5 @@
+chromadb
+dashscope
+python-docx
+python-dotenv
+PyYAML

@@ -1,0 +1,355 @@
+[
+    {
+        "problem_id": "problem_0",
+        "material_tags": [
+            "semiconductor",
+            "diamond_structure"
+        ],
+        "concepts": [
+            "band_structure",
+            "density_functional_theory",
+            "LCAO_basis",
+            "indirect_band_gap"
+        ],
+        "teaching_role": "Introduction to Band Structure Calculations",
+        "unique_configuration": {
+            "lattice_constant": 5.43,
+            "crystal_type": "diamond",
+            "high_symm_points": {
+                "G": [
+                    0,
+                    0,
+                    0
+                ],
+                "X": [
+                    0.5,
+                    0,
+                    0.5
+                ],
+                "W": [
+                    0.5,
+                    0.25,
+                    0.75
+                ],
+                "K": [
+                    0.375,
+                    0.375,
+                    0.75
+                ]
+            },
+            "energy_min": -10,
+            "energy_max": 10,
+            "insert_point_nums": 30,
+            "calculation": "cell-relax",
+            "ecutwfc": 100,
+            "scf_thr": 1e-07,
+            "scf_nmax": 100,
+            "smearing_sigma": 0.015,
+            "mixing_beta": 0.8,
+            "ks_solver": "genelpa",
+            "precision": "double",
+            "cal_force": 1,
+            "cal_stress": 1,
+            "relax_method": "cg",
+            "relax_nmax": 60,
+            "force_thr_ev": 0.01,
+            "stress_thr": 0.5,
+            "fixed_axes": "None",
+            "relax_cell": 1,
+            "stress_thr_kbar": 0.5,
+            "max_steps": 60
+        },
+        "missing_features": [
+            "density_of_states",
+            "optical_properties"
+        ]
+    },
+    {
+        "problem_id": "problem_1",
+        "material_tags": [
+            "graphene",
+            "2D_material",
+            "honeycomb_lattice"
+        ],
+        "concepts": [
+            "dirac_cone",
+            "zero_band_gap",
+            "semi-metal",
+            "linear_dispersion_relation"
+        ],
+        "teaching_role": "Understanding Dirac Cones in 2D Materials",
+        "unique_configuration": {
+            "lattice_constant": 2.46,
+            "crystal_type": "hcp",
+            "high_symm_points": {
+                "G": [
+                    0,
+                    0,
+                    0
+                ],
+                "M": [
+                    0.5,
+                    0,
+                    0
+                ],
+                "K": [
+                    0.3333,
+                    0.3333,
+                    0
+                ]
+            },
+            "energy_min": -5,
+            "energy_max": 5,
+            "insert_point_nums": 30,
+            "calculation": "cell-relax",
+            "ecutwfc": 100,
+            "scf_thr": 1e-07,
+            "scf_nmax": 100,
+            "smearing_sigma": 0.015,
+            "mixing_beta": 0.8,
+            "ks_solver": "genelpa",
+            "precision": "double",
+            "cal_force": 1,
+            "cal_stress": 1,
+            "relax_method": "cg",
+            "relax_nmax": 60,
+            "stress_thr": 0.5,
+            "fixed_axes": "None"
+        },
+        "missing_features": [
+            "density_of_states",
+            "optical_properties"
+        ]
+    },
+    {
+        "problem_id": "problem_2",
+        "material_tags": [
+            "semiconductor",
+            "zincblende_structure"
+        ],
+        "concepts": [
+            "band_structure",
+            "density_functional_theory",
+            "direct_band_gap",
+            "LCAO_basis"
+        ],
+        "teaching_role": "Direct Band Gap Semiconductors",
+        "unique_configuration": {
+            "lattice_constant": 5.65,
+            "crystal_type": "zincblende",
+            "high_symm_points": {
+                "G": [
+                    0,
+                    0,
+                    0
+                ],
+                "X": [
+                    0.5,
+                    0,
+                    0.5
+                ],
+                "W": [
+                    0.5,
+                    0.25,
+                    0.75
+                ],
+                "K": [
+                    0.375,
+                    0.375,
+                    0.75
+                ]
+            },
+            "energy_min": -10,
+            "energy_max": 10,
+            "insert_point_nums": 30,
+            "calculation": "cell-relax",
+            "ecutwfc": 100,
+            "scf_thr": 1e-07,
+            "scf_nmax": 100,
+            "smearing_sigma": 0.015,
+            "mixing_beta": 0.8,
+            "ks_solver": "genelpa",
+            "precision": "double",
+            "cal_force": 1,
+            "cal_stress": 1,
+            "relax_method": "cg",
+            "relax_nmax": 60,
+            "force_thr_ev": 0.01,
+            "stress_thr": 0.5,
+            "fixed_axes": "None",
+            "relax_cell": 1,
+            "stress_thr_kbar": 0.5,
+            "max_steps": 60
+        },
+        "missing_features": [
+            "density_of_states",
+            "spin_orbit_coupling",
+            "optical_properties"
+        ]
+    },
+    {
+        "problem_id": "problem_3",
+        "material_tags": [
+            "wide_band_gap_semiconductor",
+            "rutile_structure"
+        ],
+        "concepts": [
+            "DFT+U",
+            "band_structure",
+            "density_functional_theory",
+            "indirect_band_gap"
+        ],
+        "teaching_role": "Improving Band Gaps with DFT+U",
+        "unique_configuration": {
+            "dft_plus_u": 1,
+            "orbital_corr": [
+                2,
+                -1
+            ],
+            "hubbard_u": [
+                4.0,
+                0.0
+            ],
+            "onsite_radius": 3,
+            "uramping": 4.0,
+            "mixing_restart": 0.001,
+            "high_symm_points": {
+                "G": [
+                    0,
+                    0,
+                    0
+                ],
+                "Y": [
+                    0,
+                    0.5,
+                    0
+                ],
+                "M": [
+                    0.5,
+                    0.5,
+                    0
+                ],
+                "A": [
+                    0,
+                    0,
+                    0.5
+                ]
+            },
+            "energy_min": -10,
+            "energy_max": 10,
+            "insert_point_nums": 30
+        },
+        "missing_features": [
+            "density_of_states",
+            "defect_analysis",
+            "surface_properties",
+            "optical_properties"
+        ]
+    },
+    {
+        "problem_id": "problem_4",
+        "material_tags": [
+            "ferromagnetic_material",
+            "bcc_structure"
+        ],
+        "concepts": [
+            "spin_polarized_calculation",
+            "ferromagnetism",
+            "density_functional_theory",
+            "band_structure"
+        ],
+        "teaching_role": "Ferromagnetic Properties and Spin-Polarized Calculations",
+        "unique_configuration": {
+            "lattice_constant": 2.87,
+            "crystal_type": "bcc",
+            "nspin": 2,
+            "onsite_radius": 3,
+            "out_mul": 1,
+            "high_symm_points": {
+                "G": [
+                    0,
+                    0,
+                    0
+                ],
+                "H": [
+                    0,
+                    0,
+                    1
+                ],
+                "N": [
+                    0.5,
+                    0.5,
+                    0
+                ]
+            },
+            "energy_min": -10,
+            "energy_max": 10,
+            "insert_point_nums": 30,
+            "symmetry": 0,
+            "mixing_beta": 0.4
+        },
+        "missing_features": [
+            "density_of_states",
+            "fermi_surface",
+            "magnetic_anisotropy",
+            "temperature_effects"
+        ]
+    },
+    {
+        "problem_id": "problem_9",
+        "material_tags": [
+            "wide_band_gap_insulator",
+            "hexagonal_structure"
+        ],
+        "concepts": [
+            "band_structure",
+            "density_functional_theory",
+            "wide_band_gap_insulators"
+        ],
+        "teaching_role": "Wide Band Gap Insulators and Their Applications",
+        "unique_configuration": {
+            "lattice_constant": 2.5,
+            "crystal_type": "hcp",
+            "high_symm_points": {
+                "G": [
+                    0,
+                    0,
+                    0
+                ],
+                "M": [
+                    0.5,
+                    0,
+                    0
+                ],
+                "K": [
+                    0.3333,
+                    0.3333,
+                    0
+                ]
+            },
+            "energy_min": -15,
+            "energy_max": 15,
+            "insert_point_nums": 30,
+            "calculation": "cell-relax",
+            "ecutwfc": 100,
+            "scf_thr": 1e-07,
+            "scf_nmax": 100,
+            "smearing_sigma": 0.015,
+            "mixing_beta": 0.8,
+            "ks_solver": "genelpa",
+            "precision": "double",
+            "cal_force": 1,
+            "cal_stress": 1,
+            "relax_method": "cg",
+            "relax_nmax": 60,
+            "stress_thr": 0.5,
+            "fixed_axes": "None"
+        },
+        "missing_features": [
+            "density_of_states",
+            "monolayer_calculation",
+            "hybrid_functionals",
+            "GW_calculations"
+        ]
+    }
+]
