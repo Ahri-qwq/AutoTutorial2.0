@@ -1,15 +1,13 @@
-# AutoTutorial - 教程文章自动化生成脚本
+# AutoTutorial 2.0 — ABACUS 教程自动生成器
 
-基于大语言模型（LLM）的的自动化 ABACUS问题集内容分析与教程自动生成工具。
-通过多步骤流水线处理，从原始问答对中提取知识点、构建知识图谱、生成大纲并撰写结构化的教学内容。
+AutoTutorial 2.0 是一个“向量数据库（ChromaDB）+ RAG 检索 + LLM 写作”的自动化流水线，用于根据给定主题生成结构严谨的 ABACUS 实战教程。
 
-## ✨ 功能特点
+## 功能概览
 
-- **知识图谱构建**：自动从agent生成的问题集中提取关键概念及其知识点关系
-- **智能大纲生成**：基于知识图谱生成层次化的教学大纲
-- **内容自动撰写**：针对每个章节生成详细的讲解内容
-- **终稿自动组装**：将所有章节整合成完整的教学文档
-- **可定制化提示词**：通过独立的 prompt 文件灵活调整生成策略
+- Step 1：知识预研（从本地知识库检索，产出结构化元数据 `step1_enrichment.md`）。
+- Step 2：定制大纲（读取 Step 1，同时补充检索“流程/工作流”信息，生成 `step2_outline.md`）。
+- Step 3：分章撰写（针对每章进行更精准的检索，生成 `01_chapter_*.md`、`02_chapter_*.md`…）。
+- Step 4：全文组装（基于各章节摘要生成前言与附录，并拼装最终教程）。
 
 ## 📁 项目结构
 ```
@@ -20,9 +18,10 @@ AutoTutorial/
 ├── README.md # 项目说明文档
 │
 ├── data/ # 数据目录
-│ ├── raw/ # 原始教材文本（TXT 格式）
-│ └── processed/ # 处理后的中间数据
-│ └── analysis_summary.json
+│ ├── chroma_db/ # 向量化数据库
+│ ├── knowledge_source/ # 数据库源/数据库当前内容归档
+│ ├── knowledge_add/ # 数据库待入库源
+│ └── runs/ # 运行生成文件
 │
 ├── prompts/ # LLM 提示词模板
 │ ├── step1_knowledge_graph.txt
@@ -30,171 +29,74 @@ AutoTutorial/
 │ ├── step3_drafting.txt
 │ └── step4_assembly.txt
 │
-├── output/ # 生成结果输出目录
-│ ├── knowledge_graph.json
-│ ├── outline.json
-│ ├── drafts/
-│ └── final_tutorial.md
-│
 └── src/ # 源代码模块
-├── init.py
-├── data_loader.py # 数据加载与预处理
-├── llm_client.py # LLM API 调用封装
-├── pipeline.py # 核心流水线逻辑
-└── utils.py # 工具函数
+  ├── build_knowledge_base.py
+  ├── append_knowledge_base.py
+  ├── llm_client.py
+  ├── pipeline.py
+  └── retriever.py.
 ```
 
-## 🚀 快速开始
+## 环境准备
 
-### 1. 环境准备
+### 1) Python 与依赖
+建议使用 Python 3.9+ 并创建虚拟环境。
 
-**系统要求**：
-- Python 3.8 及以上版本
-- 稳定的网络连接（用于调用 LLM API）
-
-**克隆仓库**：
-```
-git clone https://github.com/Ahri-qwq/AutoTutorial.git
-cd AutoTutorial
+安装依赖（示例）：
+```bash
+pip install chromadb dashscope pyyaml python-docx
 ```
 
-### 2. 安装依赖
+其中：
+- `chromadb`：向量库持久化与检索。
+- `dashscope`：调用 Qwen Embedding API 生成向量（用于入库与检索）。
+- `python-docx`：可选，用于读取 `.docx` 知识源文件。
 
-创建虚拟环境并安装依赖包：
+### 2) 配置 API Key
+本项目的 Embedding 与（可能的）LLM 调用依赖 API Key。
 
-创建虚拟环境
-```
-python -m venv venv
-```
+支持两种方式之一：
+- 在 `config.yaml` 中配置（推荐）。
+- 或设置环境变量 `DASHSCOPE_API_KEY`。
 
-激活虚拟环境
-```
-Windows PowerShell:
-.\venv\Scripts\Activate.ps1
-```
-
-Windows CMD:
-```
-.\venv\Scripts\activate.bat
+`config.yaml` 示例（字段名以你本地实现为准）：
+```yaml
+llm:
+  api_key: "YOUR_DASHSCOPE_API_KEY"
 ```
 
-macOS/Linux:
-```
-source venv/bin/activate
+## 构建知识库（ChromaDB）
+
+1. 将资料放入 `data/knowledge_source/`（支持 `md/txt/docx`）。
+2. 执行构建脚本：
+
+```bash
+python build_knowledge_base.py
 ```
 
-安装依赖
-```
-pip install -r requirements.txt
-```
+脚本会：
+- 扫描 `data/knowledge_source/` 下所有文件。
+- 按固定 chunk 规则切分文本并写入 ChromaDB。
+- 将数据库保存到 `data/chroma_db/`。
 
-### 3. 配置 API 密钥
+> 注意：Embedding API 存在批量大小限制，脚本中已做了 batch 分片与简单限流处理。
 
-复制配置模板并填入您的 API Key：
+## 生成教程（主流程）
 
-
-Windows PowerShell
-```
-Copy-Item config.yaml.example config.yaml
-```
-
-macOS/Linux
-```
-cp config.yaml.example config.yaml
-```
-
-编辑 `config.yaml`，填入您的 OpenAI API Key：
-```
-api_key: "sk-your-api-key-here"
-model: "gpt-4"
-temperature: 0.7
-max_tokens: 2000
-```
-
-### 4. 准备数据
-
-将agent生成的问题集文件放入 `data/raw/` 目录：
-```
-data/raw/
-    ├── outputs_problem_0...
-    |    ├── problem_0_xxxx.json
-    |    └── problem_0_output.txt
-    ├── outputs_problem_1...
-    └── outputs_problem_2...
-```
-
-### 5. 运行程序
-
-执行完整的生成流程：
-```
+运行：
+```bash
 python main.py
 ```
 
-**命令行参数**：
+根据提示输入教程主题，例如：
+- `基于ABACUS的弹性常数计算方法与实践`
+- `基于 ATST-Tools 的过渡态搜索与验证（NEB/AutoNEB）`
 
-跳过数据加载步骤（使用已缓存的数据）
-```
-python main.py --skip_loader
-```
+`main.py` 会按顺序执行 Step 1–4，所有中间文件会保存在本次运行的 `data/runs/<timestamp>/processed/` 下（最终文件位置取决于 `pipeline.py` 的输出路径设置）。
 
-指定自定义数据目录
-```
-python main.py --raw_dir "C:\MyData"
-```
+## Prompt 说明（四阶段）
 
-### 6. 查看结果
-
-生成的文档位于 `output/` 目录：
-
-- `knowledge_graph.json`：提取的知识图谱
-- `outline.json`：生成的教学大纲
-- `drafts/`：各章节的草稿
-- `final_tutorial.md`：最终的完整教材文档
-
-## 🔧 自定义配置
-
-### 修改提示词
-
-编辑 `prompts/` 目录下的文件以调整生成策略：
-
-- `step1_knowledge_graph.txt`：控制知识点提取的规则
-- `step2_outline.txt`：调整大纲生成的结构和深度
-- `step3_drafting.txt`：定制章节内容的撰写风格
-- `step4_assembly.txt`：修改最终文档的组织方式
-
-### 更换 LLM 模型
-
-在 `config.yaml` 中修改 `model` 字段.
-
-
-## 📊 流程说明
-
-AutoTutorial 采用五步流水线处理：
-
-**Input**：ABACUS Agent生成的问题集。
-1. **Step 0 - 数据处理**：使用python脚本从原始文档中提取结构化 QA JSON
-2. **Step 1 - 知识图谱构建**：对 QA JSON 元数据进行知识点提取
-3. **Step 2 - 大纲生成**：基于知识图谱生成逻辑严密的 Markdown 教程大纲
-4. **Step 3 - 内容撰写**：循环调用 LLM，结合 RAG 知识库与 QA JSON 元数据，逐章生成实战教程正文
-5. **Step 4 - 终稿组装**：自动生成全书标题、简介与目录，拼接所有章节
-
-## ⚙️ 技术栈
-
-- **语言**：Python 3.8+
-- **LLM API**：qwen-max
-- **数据格式**：JSON, YAML, Markdown
-- **依赖管理**：pip + requirements.txt
-
-## 📝 依赖包
-
-主要依赖：
-
-openai>=2.14.0 # OpenAI API 客户端
-PyYAML>=6.0.0 # YAML 配置文件解析
-requests>=2.28.0 # HTTP 请求库（如需要）
-
-
-完整列表请参见 `requirements.txt`。
-
-
-**Happy Teaching! 🎓**
+- `prompts/step1_enrich.txt`：让模型输出结构化元数据（概念、关键参数、接口、特殊写作指令、坑点）。
+- `prompts/step2_outline.txt`：基于 Step 1 的素材生成“量体裁衣”的大纲（带 HTML 注释标记用于切分）。
+- `prompts/step3_drafting.txt`：基于章节标题 + 检索到的上下文，输出章节正文（含示例与解释）。
+- `prompts/step4_assembly.txt`：基于章节摘要生成书名、前言、附录（通常以 JSON 输出，便于程序解析）。
