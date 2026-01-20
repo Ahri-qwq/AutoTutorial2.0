@@ -221,7 +221,7 @@ class AutoTutorialPipeline:
         
         time.sleep(2)
 
-    def run_step4(self):
+    def run_step4(self): 
         """Step 4: 智能组装全文 (增强版：带RAG的前言与附录)"""
         print("\n=== Step 4: 全文组装 (RAG Enhanced) ===")
         
@@ -257,7 +257,7 @@ class AutoTutorialPipeline:
         )
         print("[Agent] 正在撰写深度前言与附录...")
         # 强制要求 JSON 模式（部分模型支持，不支持则忽略）
-        result = self.llm.chat(final_prompt)
+        result = self.llm.chat(final_prompt, model_id="gemini-3-flash-preview")
 
         # 4. 解析 JSON (增强健壮性)
         try:
