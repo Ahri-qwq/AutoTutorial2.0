@@ -1,0 +1,6 @@
+{
+  "title": "abacustest 命令行操作与文件生成流程图",
+  "caption": "该流程图展示了从执行命令行参数到生成输出文件夹，并最终核对 INPUT 关键参数的完整逻辑。帮助读者理解各参数的作用及后续操作步骤。",
+  "prompt": "A professional technical flowchart with a clean white background. The flow consists of three main stages connected by directional arrows. Stage 1: A box titled '命令行输入 (abacustest lib-model)' containing labels for parameters '-f (输入结构)', '--jtype (任务类型: cell-relax)', '--lcao (基组选择)', and '--folder-syntax (目录命名)'. Stage 2: An arrow points to a folder icon labeled '生成文件夹 (Si_opt)'. Stage 3: An arrow points to a document icon labeled 'INPUT 文件核对'. A side-panel or callout box highlights '黄金参数组合': 'cell-relax' and 'LCAO'. The design uses flat vector style, blue and grey color palette, and Simplified Chinese text labels.",
+  "negative_prompt": "3.D, photo, realistic, human, people, character, complex background, artistic illustration, long paragraphs of text, messy lines, blurry, low resolution"
+}

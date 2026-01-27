@@ -1,0 +1,6 @@
+{
+  "title": "构建“零应力”基准态流程图",
+  "caption": "本图展示了在计算弹性常数前，从晶胞选择到结构优化的关键决策路径与质量检查步骤。",
+  "prompt": "一个扁平化设计的技术流程图，背景为纯白色。流程包含以下模块和路径：1. 顶部起始框：[初始结构获取]；2. 核心决策分支：[晶胞类型选择]，分出两个并列框：左侧为[原胞 (Primitive Cell)]，标注“体积小/计算快/需张量转换”，右侧为[惯用胞 (Conventional Cell)]，标注“推荐/坐标轴对齐/直接对应Cij”；3. 关键步骤框：[结构优化与弛豫]，下方连接一个检查点：[应力张量自检 (Stress ≈ 0)]；4. 侧边警告框：[Materials Project 数据自检]，指向[检查晶格矢量对齐]；5. 底部输出框：[零应力基准态]。图中包含清晰的实线箭头指向，模块使用淡蓝色和灰色填充，文字为简体中文，排版整齐，无阴影。",
+  "negative_prompt": "3D, photo, realistic, human, person, character, complex background, long paragraphs, messy, artistic, shadows, gradients, blurry, distorted text, English labels"
+}

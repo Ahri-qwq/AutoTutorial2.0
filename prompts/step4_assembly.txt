@@ -11,7 +11,7 @@
 
 # Task 2: Write Preface (前言)
 请撰写一段前言：
-- **Welcome**: 欢迎读者，简述 ABACUS 软件在本文相关领域的优劣。
+- **Welcome**: 简述 ABACUS 软件在本文相关领域的优劣。
 - **Roadmap**: 基于章节摘要，介绍本文的“学习路线图”。
 - **Knowledge Graph**: 利用[Reference Knowledge]，简要提及本教程在整个 ABACUS/DFT 知识体系中的位置。
 - **Prerequisites**: 明确前置知识。

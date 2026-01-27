@@ -1,0 +1,6 @@
+{
+  "title": "全文开头撰写逻辑结构图",
+  "caption": "该流程图展示了从吸引注意力到引出核心价值的文章开头标准构建路径。",
+  "prompt": "A flat vector flowchart illustrating the structure of an article introduction. The diagram features a linear sequence of four rectangular modules connected by directional arrows. Module 1: '钩子 (Hook)' - labeled '吸引注意力'. Module 2: '背景铺垫 (Context)' - labeled '交代现状'. Module 3: '核心痛点 (Pain Point)' - labeled '揭示矛盾'. Module 4: '价值主张 (Value)' - labeled '给出预期'. Use a clean professional color palette (light blue and white). Minimalist design, clear lines, Simplified Chinese text labels, white background.",
+  "negative_prompt": "3D, photo, realistic, human, person, complex background, long paragraphs, messy, blurry, English text, shadows, gradient colors, decorative elements."
+}

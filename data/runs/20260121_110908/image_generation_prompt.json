@@ -1,0 +1,28 @@
+{
+  "run_dir": "C:\\MyCode\\AutoTutorial2.0\\data\\runs\\20260121_110908",
+  "tutorial_md": "Final_Tutorial_ABACUS_弹性常数计算_D.md",
+  "extract_model": "gemini-3-flash-preview",
+  "image_model": "gemini-3-pro-image-preview",
+  "items": [
+    {
+      "title": "全文开头撰写逻辑结构图",
+      "prompt": "A flat vector flowchart illustrating the structure of an article introduction. The diagram features a linear sequence of four rectangular modules connected by directional arrows. Module 1: '钩子 (Hook)' - labeled '吸引注意力'. Module 2: '背景铺垫 (Context)' - labeled '交代现状'. Module 3: '核心痛点 (Pain Point)' - labeled '揭示矛盾'. Module 4: '价值主张 (Value)' - labeled '给出预期'. Use a clean professional color palette (light blue and white). Minimalist design, clear lines, Simplified Chinese text labels, white background."
+    },
+    {
+      "title": "ABACUS 弹性力学计算全流程结构图",
+      "prompt": "一个扁平化的流程图，背景为纯白色。图表由四个主要矩形模块组成，按从上到下的顺序排列，并用箭头连接。模块1标签为“物理基石”，包含子项“广义胡克定律”和“Voigt记号”；模块2标签为“基准构建”，包含子项“结构优化”和“零应力基准态”；模块3标签为“自动化实战”，包含子项“abacustest工作流”和“应力-应变法”；模块4标签为“深度分析”，包含子项“弹性矩阵”和“宏观力学参数”。在流程图左侧有一个侧边框，标签为“前置要求”，包含“Linux/Python基础”和“DFT/SCF流程”。在流程图底部有一个输出框，标签为“应用方向”，包含“高通量筛选”和“多尺度模拟”。所有文字使用简体中文，线条清晰，配色专业（深蓝色和灰色为主），矢量图风格。"
+    },
+    {
+      "title": "弹性力学基础与 Voigt 记号转换逻辑图",
+      "prompt": "A professional 2D technical flowchart on a white background. The diagram consists of three main sections. Section 1 (Input): A box labeled '应变 Strain (ε_kl)' representing lattice deformation. Section 2 (Core Logic): A central arrow labeled '广义胡克定律 (Generalized Hooke's Law)' connecting Input to Output. Above this arrow, a large box labeled '弹性刚度张量 C_ijkl' showing '81个分量'. Section 3 (Transformation): A downward arrow from the tensor box to a box labeled 'Voigt 记号映射', containing text '11→1, 22→2, 33→3, 23→4, 13→5, 12→6'. This leads to a final box labeled '6x6 弹性矩阵 C_αβ' with '最大21个独立分量'. Section 4 (Output): A box labeled '应力 Stress (σ_ij)' representing internal resistance. Use clean lines, blue and gray color palette, and Simplified Chinese labels (zh-cn)."
+    },
+    {
+      "title": "构建“零应力”基准态流程图",
+      "prompt": "一个扁平化设计的技术流程图，背景为纯白色。流程包含以下模块和路径：1. 顶部起始框：[初始结构获取]；2. 核心决策分支：[晶胞类型选择]，分出两个并列框：左侧为[原胞 (Primitive Cell)]，标注“体积小/计算快/需张量转换”，右侧为[惯用胞 (Conventional Cell)]，标注“推荐/坐标轴对齐/直接对应Cij”；3. 关键步骤框：[结构优化与弛豫]，下方连接一个检查点：[应力张量自检 (Stress ≈ 0)]；4. 侧边警告框：[Materials Project 数据自检]，指向[检查晶格矢量对齐]；5. 底部输出框：[零应力基准态]。图中包含清晰的实线箭头指向，模块使用淡蓝色和灰色填充，文字为简体中文，排版整齐，无阴影。"
+    },
+    {
+      "title": "abacustest 命令行操作与文件生成流程图",
+      "prompt": "A professional technical flowchart with a clean white background. The flow consists of three main stages connected by directional arrows. Stage 1: A box titled '命令行输入 (abacustest lib-model)' containing labels for parameters '-f (输入结构)', '--jtype (任务类型: cell-relax)', '--lcao (基组选择)', and '--folder-syntax (目录命名)'. Stage 2: An arrow points to a folder icon labeled '生成文件夹 (Si_opt)'. Stage 3: An arrow points to a document icon labeled 'INPUT 文件核对'. A side-panel or callout box highlights '黄金参数组合': 'cell-relax' and 'LCAO'. The design uses flat vector style, blue and grey color palette, and Simplified Chinese text labels."
+    }
+  ]
+}

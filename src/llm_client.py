@@ -26,7 +26,7 @@ class LLMClient:
                 self.api_key = llm_conf.get('google_api_key') or llm_conf.get('api_key') or config.get('api_key')
                 
                 # Base URL: 优先 google_base_url > base_url
-                # 你的配置文件里写的是 google_base_url，所以这里必须读它
+                # 配置文件里写的是 google_base_url
                 self.base_url = llm_conf.get('google_base_url') or llm_conf.get('base_url', self.base_url)
                 
                 # Model
@@ -53,7 +53,7 @@ class LLMClient:
             base_url=self.base_url
         )
 
-    def chat(self, prompt, history=None, max_retries=3, model_id=None):
+    def chat(self, prompt, history=None, max_retries=3, model_id=None, temperature=0.7):
         target_model = model_id if model_id else self.model_name
         
         # 构造消息
@@ -71,7 +71,7 @@ class LLMClient:
                 response = self.client.chat.completions.create(
                     model=target_model,
                     messages=messages,
-                    temperature=0.7
+                    temperature=temperature
                 )
 
                 content = response.choices[0].message.content

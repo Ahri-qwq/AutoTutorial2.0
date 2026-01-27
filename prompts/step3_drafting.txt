@@ -15,9 +15,8 @@
 {{CONTEXT}}
 
 # Instruction (Action Required)
-请**再次深度检索你的知识库**，针对本章的具体主题，撰写一篇详实、严谨的技术正文。
+请**再次深度检索知识库**，针对本章的具体主题，撰写一篇详实、严谨的技术正文。
 必须确保文中提到的参数名、默认值和物理意义与 ABACUS 官方文档完全一致。
-同时，在适当的地方可以依据通用知识，适当扩展关联知识点，但必须保持严谨。
 
 # Anti-Hallucination Rules (Knowledge Gap Handling)
 **这是最高优先级规则，当 Reference Knowledge 信息不足时触发：**
@@ -43,7 +42,7 @@
 1.  **Structure**: 逻辑清晰，层级分明。
 2.  **Code Blocks**: 必须包含**完整的代码示例块**，并注明文件名（如 `INPUT`, `STRU`, `CONTROL`）。
 3.  **Explanation**: 解释核心参数的物理含义，而不仅仅是列出数值。
-4.  **Tone**: 专业、实战导向。
+4.  **Tone**: 专业、实战导向，但文章不要出现“作为资深开发者”、“教授”等自称，应与读者更亲和。
 
 # Output Format
-请直接输出 Markdown 格式的正文内容。
+请不要废话，直接输出 Markdown 格式的正文内容。

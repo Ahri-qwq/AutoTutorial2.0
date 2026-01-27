@@ -1,6 +1,7 @@
 import os
 import re
 import time
+import shutil   # 新增引用
 from src.llm_client import LLMClient
 from src.retriever import LocalRetriever  # 新增引用
 
@@ -10,11 +11,17 @@ class AutoTutorialPipeline:
         self.prompts_dir = os.path.join(root_dir, "prompts")
         self.llm = LLMClient()
         self.retriever = LocalRetriever()
+
+        # 在这里集中管理所有步骤的温度，方便后期微调
+        self.temp_step1 = 0.4  # Step 1: 知识预研 (需平衡)
+        self.temp_step2 = 0.6  # Step 2: 大纲设计 (高创造性)
+        self.temp_step3 = 0.4  # Step 3: 章节撰写 (低创造性，严谨)
+        self.temp_step4 = 0.7  # Step 4: 全文组装 (中创造性，润色)
         
         # === 生成基于时间戳的运行目录 ===
         timestamp = time.strftime("%Y%m%d_%H%M%S")
         self.run_dir = os.path.join(root_dir, "data", "runs", f"{timestamp}")
-        #下面这行用于调试，修改最后一个参数为文件名去main注释掉已完成步骤即可
+        #下面这行用于调试，修改最后一个参数为文件名同时去main注释掉已完成步骤即可
         #self.run_dir = os.path.join(root_dir, "data", "runs", "20260109_150115")
         # 在该运行目录下创建 processed 子目录（用于存放过程文件）
         self.processed_dir = os.path.join(self.run_dir, "processed")
@@ -23,6 +30,51 @@ class AutoTutorialPipeline:
         print(f"[Init] 中间文件将保存在: {self.processed_dir}")
         self.current_topic = ""
         self.current_special_instructions = ""
+        # === 新增属性 ===
+        self.case_study_content = ""      # 存储案例的文本内容
+        self.case_study_filename = ""     # 存储案例文件名
+
+    # === 新增方法: 设置案例 ===
+    def set_case_study(self, input_path):
+        """加载用户输入的案例文件，复制到运行目录，并读取内容"""
+        if not os.path.exists(input_path):
+            return
+
+        # 1. 复制文件到 runs/{timestamp}/ 目录
+        filename = os.path.basename(input_path)
+        dest_path = os.path.join(self.run_dir, filename)
+        try:
+            shutil.copy2(input_path, dest_path)
+            print(f"[Info] 案例文件已归档至: {dest_path}")
+            self.case_study_filename = filename
+        except Exception as e:
+            print(f"[Error] 复制案例文件失败: {e}")
+
+        # 2. 读取内容 (支持 md 和 docx)
+        try:
+            content = ""
+            ext = os.path.splitext(filename)[1].lower()
+            
+            if ext == ".docx":
+                try:
+                    import docx
+                    doc = docx.Document(input_path)
+                    content = "\n".join([para.text for para in doc.paragraphs])
+                except ImportError:
+                    print("[Error] 读取 docx 需要安装 python-docx 库 (pip install python-docx)")
+                    return
+            else:
+                # 默认当作文本/markdown处理
+                with open(input_path, 'r', encoding='utf-8', errors='ignore') as f:
+                    content = f.read()
+            
+            # 存储内容，供后续 Prompt 使用
+            if content.strip():
+                self.case_study_content = f"## 用户提供的核心案例 ({filename})\n以下是必须要作为教程核心依据的案例内容：\n\n{content}\n"
+                print(f"[Info] 已加载案例内容 ({len(content)} 字符)")
+            
+        except Exception as e:
+            print(f"[Error] 读取案例内容失败: {e}")
 
     def _load_prompt(self, filename):
         path = os.path.join(self.prompts_dir, filename)
@@ -45,7 +97,7 @@ class AutoTutorialPipeline:
             content = content.replace("{{CONTEXT}}", context)
         elif context:
             # 如果模板里没写 {{CONTEXT}}，我们手动加在最后
-            content += f"\n\n# 参考资料库 (Knowledge Base)\n请基于以下检索到的资料进行回答，如果资料不足，请结合你的专业知识补充：\n{context}"
+            content += f"\n\n# 参考资料库 (Knowledge Base)\n请基于以下检索到的资料进行回答，如果资料不足或有空缺，请输出提醒“知识点缺失”：\n{context}"
             
         return content
 
@@ -57,6 +109,10 @@ class AutoTutorialPipeline:
         # 1. 检索
         retrieved_context = self.retriever.search(f"关于 {topic} 的物理原理、参数设置和计算流程", top_k=8)
         
+        # [新增] 如果有案例，拼接到 Context 中
+        if self.case_study_content:
+            retrieved_context = f"{self.case_study_content}\n\n## 检索到的知识库\n{retrieved_context}"
+
         # 2. 加载 Prompt
         prompt_tmpl = self._load_prompt("step1_enrich.txt")
         if not prompt_tmpl: return
@@ -66,7 +122,7 @@ class AutoTutorialPipeline:
 
         # 4. 调用 LLM
         print(f"[Agent] 正在分析...")
-        response = self.llm.chat(final_prompt)
+        response = self.llm.chat(final_prompt, temperature = self.temp_step1)
         if not response: return
 
         # 5. 保存
@@ -96,13 +152,17 @@ class AutoTutorialPipeline:
 
         # 3. 混合 Context (Metadata + Workflow)
         full_context = f"{step1_content}\n\n【补充流程信息 (Workflow Context)】\n{workflow_context}"
+
+        # [新增] 再次强调案例 (防止 Step 1 的摘要丢失细节)
+        if self.case_study_content:
+            full_context = f"{self.case_study_content}\n\n{full_context}"
         
         # 4. 生成大纲
         prompt_tmpl = self._load_prompt("step2_outline.txt")
         final_prompt = self._fill_prompt(prompt_tmpl, TOPIC=self.current_topic, BACKGROUND_INFO=full_context)
         
         print("[Agent] 正在设计大纲...")
-        response = self.llm.chat(final_prompt)
+        response = self.llm.chat(final_prompt,temperature = self.temp_step2)
         if not response: return
 
         output_path = os.path.join(self.processed_dir, "step2_outline.md")
@@ -178,6 +238,10 @@ class AutoTutorialPipeline:
         # 合并检索结果，去重交给 LLM 处理
         full_context = f"{context_1}\n\n{context_2}"
         
+        # [新增] 在写具体章节时，必须参考案例
+        if self.case_study_content:
+            full_context = f"{self.case_study_content}\n\n{full_context}"
+            
         # 2. 填充 Prompt (注入 Special Instructions)
         prompt_tmpl = self._load_prompt("step3_drafting.txt")
         
@@ -193,7 +257,7 @@ class AutoTutorialPipeline:
         )
         
         # 3. 生成正文
-        content = self.llm.chat(final_prompt)
+        content = self.llm.chat(final_prompt,temperature = self.temp_step3)
         if not content: return
         # === [修复] 清理 LLM 可能重复生成的标题 ===
         content = re.sub(r'^#\s+.*?\n+', '', content.strip()).strip()
@@ -257,7 +321,7 @@ class AutoTutorialPipeline:
         )
         print("[Agent] 正在撰写深度前言与附录...")
         # 强制要求 JSON 模式（部分模型支持，不支持则忽略）
-        result = self.llm.chat(final_prompt, model_id="gemini-3-flash-preview")
+        result = self.llm.chat(final_prompt, model_id="gemini-3-flash-preview", temperature = self.temp_step4)
 
         # 4. 解析 JSON (增强健壮性)
         try:
@@ -308,7 +372,8 @@ class AutoTutorialPipeline:
         final_markdown += "\n\n---\n\n"
         final_markdown += f"{appendix}\n"
         # 文件名带上主题，更加清晰
-        safe_topic = re.sub(r'[\\/*?:"<>|]', "", self.current_topic).replace(" ", "_")[:30]
+        topic_clean = re.sub(r'\s+', ' ', self.current_topic).strip()
+        safe_topic = re.sub(r'[\\/*?:"<>|]', "", topic_clean).replace(" ", "_")[:30]
         output_path = os.path.join(self.run_dir, f"Final_Tutorial_{safe_topic}.md")
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write(final_markdown)

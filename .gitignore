@@ -11,8 +11,14 @@ config.yaml
 *.pyc
 __pycache__/
 
+#未完成的内容
+/src/image_autogen/*
+/gen_images.py
+/image_generation_prompt.json
+
 # 先忽略目录内所有内容
 /data/chroma_db/*
+/data/input/*
 /data/knowledge_source/*
 /data/knowledge_add/*
 
@@ -20,6 +26,7 @@ __pycache__/
 !/data/chroma_db/.gitkeep
 !/data/knowledge_source/.gitkeep
 !/data/knowledge_add/.gitkeep
+!/data/input/.gitkeep
 
 # IDE 配置
 .vscode/

@@ -1,0 +1,6 @@
+{
+  "title": "弹性力学基础与 Voigt 记号转换逻辑图",
+  "caption": "本图展示了从晶格应变到应力响应的物理关联，以及弹性刚度张量通过 Voigt 记号从 81 个分量简化为 6x6 矩阵的数学降维过程。",
+  "prompt": "A professional 2D technical flowchart on a white background. The diagram consists of three main sections. Section 1 (Input): A box labeled '应变 Strain (ε_kl)' representing lattice deformation. Section 2 (Core Logic): A central arrow labeled '广义胡克定律 (Generalized Hooke's Law)' connecting Input to Output. Above this arrow, a large box labeled '弹性刚度张量 C_ijkl' showing '81个分量'. Section 3 (Transformation): A downward arrow from the tensor box to a box labeled 'Voigt 记号映射', containing text '11→1, 22→2, 33→3, 23→4, 13→5, 12→6'. This leads to a final box labeled '6x6 弹性矩阵 C_αβ' with '最大21个独立分量'. Section 4 (Output): A box labeled '应力 Stress (σ_ij)' representing internal resistance. Use clean lines, blue and gray color palette, and Simplified Chinese labels (zh-cn).",
+  "negative_prompt": "3D, realistic, photo, human, characters, complex background, artistic poster, messy, blurry, long sentences, English labels only, shadows, gradient colors."
+}

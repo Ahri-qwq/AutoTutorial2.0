@@ -1,0 +1,6 @@
+{
+  "title": "ABACUS 弹性力学计算全流程结构图",
+  "caption": "本图展示了从底层物理原理到宏观力学参数分析的完整学习路径与计算工作流，涵盖理论、优化、自动化及数据分析四个核心阶段。",
+  "prompt": "一个扁平化的流程图，背景为纯白色。图表由四个主要矩形模块组成，按从上到下的顺序排列，并用箭头连接。模块1标签为“物理基石”，包含子项“广义胡克定律”和“Voigt记号”；模块2标签为“基准构建”，包含子项“结构优化”和“零应力基准态”；模块3标签为“自动化实战”，包含子项“abacustest工作流”和“应力-应变法”；模块4标签为“深度分析”，包含子项“弹性矩阵”和“宏观力学参数”。在流程图左侧有一个侧边框，标签为“前置要求”，包含“Linux/Python基础”和“DFT/SCF流程”。在流程图底部有一个输出框，标签为“应用方向”，包含“高通量筛选”和“多尺度模拟”。所有文字使用简体中文，线条清晰，配色专业（深蓝色和灰色为主），矢量图风格。",
+  "negative_prompt": "3D, photo, realistic, human, people, complex background, messy text, artistic, blurry, colorful gradients, shadows, decorative elements, long paragraphs of text"
+}
