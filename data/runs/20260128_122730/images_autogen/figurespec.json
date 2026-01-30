@@ -1,0 +1,84 @@
+{
+  "run_id": "20260128_151355",
+  "style": {
+    "theme": "vector_flat",
+    "label_lang": "zh-CN"
+  },
+  "chapters": [
+    {
+      "chapter_id": "ch01",
+      "chapter_title": "第一章：弹性力学基础与计算原理",
+      "figures": [
+        {
+          "figure_id": "ch01-fig01",
+          "title": "Voigt记号降维映射示意图",
+          "caption": "从二阶张量到 Voigt 向量的降维过程。左侧为 3x3 的应力/应变张量，利用对称性（如 xy=yx），将 9 个分量映射为右侧的 6 个独立分量（1-6）。图中颜色相同的区块代表在 Voigt 记号中被归并或对应的项。",
+          "insert_after_heading": "### 1.2.1 降维映射规则",
+          "diagram_type": "概念结构图",
+          "source_quotes": [
+            "利用应力和应变的对称性（$\\sigma_{ij}=\\sigma_{ji}$，$\\epsilon_{ij}=\\epsilon_{ji}$），我们可以将双下标 $(ij)$ 映射为单下标 $\\alpha$（范围 1-6）",
+            "此时，$C_{\\alpha\\beta}$ 变成了一个 $6 \\times 6$ 的对称矩阵，独立分量从 81 个减少到了 21 个。"
+          ],
+          "entities_whitelist": [
+            "Tensor",
+            "Voigt",
+            "Matrix",
+            "Indices"
+          ],
+          "labels_required": [
+            "3x3 张量 (ij)",
+            "对称性",
+            "6x1 Voigt 向量"
+          ],
+          "labels_forbidden": [
+            "复杂的数学公式",
+            "中文汉字",
+            "手写体"
+          ],
+          "assertions": [
+            "左侧展示3x3网格，右侧展示1列6行的长条",
+            "箭头从左指向右，表示映射过程",
+            "利用颜色编码暗示对称性（例如左侧的非对角元成对使用相同颜色）"
+          ],
+          "prompt": "A flat vector illustration illustrating the concept of tensor reduction. Left side: A 3x3 grid of squares. The diagonal squares (top-left to bottom-right) are one color (e.g., dark blue). The off-diagonal squares mirror each other in color (e.g., top-right matches bottom-left) to imply symmetry. Right side: A vertical stack of 6 rectangles numbered 1 to 6. A clean arrow points from the 3x3 grid to the vertical stack. Minimalist scientific style, white background, flat design.",
+          "negative_prompt": "handwritten, 3d, realistic, complex equations, chinese characters, messy lines"
+        },
+        {
+          "figure_id": "ch01-fig02",
+          "title": "弹性常数计算的核心两步工作流",
+          "caption": "ABACUS 计算弹性常数的标准工作流对比。Step 1 (左) 为零应力结构优化，晶胞边界（虚线）允许变化以消除残余应力；Step 2 (右) 为施加应变后的计算，晶胞边界（实线）必须固定，仅允许内部原子弛豫。",
+          "insert_after_heading": "#### **第二步：施加应变后的应力计算 (Deformation & Response)**",
+          "diagram_type": "流程对比示意图",
+          "source_quotes": [
+            "**第一步：零应力结构获取**... 目标: 优化晶胞矢量（Cell）和原子位置（Ions）",
+            "**第二步：施加应变后的应力计算**... 关键逻辑: 我们固定变形后的晶胞形状（Fixed Cell），只允许原子在晶胞内部移动"
+          ],
+          "entities_whitelist": [
+            "Cell-Relax",
+            "Relax",
+            "Fixed Cell",
+            "Variable Cell"
+          ],
+          "labels_required": [
+            "Step 1: Cell-Relax",
+            "Step 2: Relax (Fixed Cell)",
+            "晶胞边界变化",
+            "晶胞边界固定"
+          ],
+          "labels_forbidden": [
+            "具体的原子种类符号",
+            "复杂背景",
+            "中文解释"
+          ],
+          "assertions": [
+            "图分为左右两部分，分别标记为 STEP 1 和 STEP 2",
+            "STEP 1 展示晶胞边界是虚线或有向外扩张的箭头，代表晶胞可变",
+            "STEP 2 展示晶胞是变形后的平行四边形，边界为粗实线（锁定），内部原子有微小移动箭头"
+          ],
+          "prompt": "A split-panel vector diagram comparing two simulation states. Panel A (Left) labeled 'STEP 1': A square crystal lattice where the outer boundary box is drawn with dashed lines and has small outward arrows indicating the box size is changing. Panel B (Right) labeled 'STEP 2': A sheared parallelogram lattice (deformed shape). The outer boundary box is drawn with thick, solid black lines (indicating fixed shape). Inside Panel B, small arrows are attached to the spheres (atoms) indicating internal movement only. Clean, flat scientific style, blue and grey color scheme, white background.",
+          "negative_prompt": "photorealistic, 3d render, text paragraphs, blurry, pixelated, chinese text"
+        }
+      ]
+    }
+  ]
+}

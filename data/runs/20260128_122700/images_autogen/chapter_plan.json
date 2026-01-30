@@ -1,0 +1,21 @@
+{
+  "chapters": [
+    {
+      "chapter_id": "ch01",
+      "chapter_title": "第一章：弹性力学基础与计算原理",
+      "num_figures": 2
+    },
+    {
+      "chapter_id": "ch02",
+      "chapter_title": "INPUT 参数示例",
+      "num_figures": 2
+    },
+    {
+      "chapter_id": "ch03",
+      "chapter_title": "精度控制",
+      "num_figures": 2
+    }
+  ],
+  "run_id": "20260128_124022",
+  "input_md": "Final_Tutorial_test.md"
+}

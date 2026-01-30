@@ -1,0 +1,26 @@
+{
+  "run_id": "20260128_151355",
+  "generated_at": "2026-01-28T15:23:52.998944",
+  "items": [
+    {
+      "figure_id": "ch01-fig01",
+      "chapter_id": "ch01",
+      "timestamp": "2026-01-28T15:15:07.735256",
+      "status": "success",
+      "output_file": "data\\runs\\20260128_122730\\images_autogen\\images_output\\ch01-fig01.png",
+      "final_prompt": "请生成一张科学示意图，统一为极简矢量扁平风（适合论文/教材插图）：\n- 纯白背景\n- 扁平化矢量插图风格，清晰描边，线条均匀，高对比度\n- 配色克制（2-4种颜色即可，如深蓝、橙色、灰色），整体干净专业\n- 视觉重点突出，去除所有不必要的装饰细节\n- **关于文字**：尽量避免在图中生成文字。如果 prompt 中明确要求生成文字，仅使用简单的大写英文（如 A, B, INPUT）或数字。**绝对不要尝试生成汉字或复杂句子**，否则图片会包含乱码。\n\n强制避免：\n- 照片风格、写实渲染、3D质感、阴影、渐变\n- 人物脸、真人、手势\n- 复杂背景、纹理背景\n- 水印、LOGO\n- 密集文字段落、汉字、模糊的文本\n\n\nSpecific Request:\nA flat vector illustration illustrating the concept of tensor reduction. Left side: A 3x3 grid of squares. The diagonal squares (top-left to bottom-right) are one color (e.g., dark blue). The off-diagonal squares mirror each other in color (e.g., top-right matches bottom-left) to imply symmetry. Right side: A vertical stack of 6 rectangles numbered 1 to 6. A clean arrow points from the 3x3 grid to the vertical stack. Minimalist scientific style, white background, flat design.\n\nAvoid: handwritten, 3d, realistic, complex equations, chinese characters, messy lines",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769584506
+    },
+    {
+      "figure_id": "ch01-fig02",
+      "chapter_id": "ch01",
+      "timestamp": "2026-01-28T15:23:52.998944",
+      "status": "success",
+      "output_file": "data\\runs\\20260128_122730\\images_autogen\\images_output\\ch01-fig02.png",
+      "final_prompt": "请生成一张科学示意图，统一为极简矢量扁平风（适合论文/教材插图）：\n- 纯白背景\n- 扁平化矢量插图风格，清晰描边，线条均匀，高对比度\n- 配色克制（2-4种颜色即可，如深蓝、橙色、灰色），整体干净专业\n- 视觉重点突出，去除所有不必要的装饰细节\n- **关于文字**：尽量避免在图中生成文字。如果 prompt 中明确要求生成文字，仅使用简单的大写英文（如 A, B, INPUT）或数字。**绝对不要尝试生成汉字或复杂句子**，否则图片会包含乱码。\n\n强制避免：\n- 照片风格、写实渲染、3D质感、阴影、渐变\n- 人物脸、真人、手势\n- 复杂背景、纹理背景\n- 水印、LOGO\n- 密集文字段落、汉字、模糊的文本\n\n\nSpecific Request:\nA split-panel vector diagram comparing two simulation states. Panel A (Left) labeled 'STEP 1': A square crystal lattice where the outer boundary box is drawn with dashed lines and has small outward arrows indicating the box size is changing. Panel B (Right) labeled 'STEP 2': A sheared parallelogram lattice (deformed shape). The outer boundary box is drawn with thick, solid black lines (indicating fixed shape). Inside Panel B, small arrows are attached to the spheres (atoms) indicating internal movement only. Clean, flat scientific style, blue and grey color scheme, white background.\n\nAvoid: photorealistic, 3d render, text paragraphs, blurry, pixelated, chinese text",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769585031
+    }
+  ]
+}

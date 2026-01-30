@@ -1,0 +1,308 @@
+{
+  "run_id": "20260128_171431",
+  "style": {
+    "theme": "vector_flat",
+    "label_lang": "zh-CN"
+  },
+  "chapters": [
+    {
+      "chapter_id": "ch01",
+      "chapter_title": "第一性原理力学性质计算：ABACUS 弹性常数实战教程",
+      "figures": [
+        {
+          "figure_id": "ch01-fig01",
+          "title": "ABACUS弹性常数计算知识体系定位与工作流示意图",
+          "caption": "该图展示了弹性常数计算在第一性原理计算体系中的核心位置。它向上承接基础的SCF与结构优化，向下支撑声子谱稳定性分析与热力学性质预测，同时展示了ABACUS核心引擎与pymatgen/abacustest等生态工具的协同关系。",
+          "insert_after_heading": "### 知识体系定位 (Knowledge Graph)",
+          "diagram_type": "Hierarchical Block Diagram (层级方框图)",
+          "source_quotes": [
+            "弹性常数计算处于 ABACUS/DFT 知识体系中“物性预测”的高阶板块。",
+            "它向上承接基础的自洽场（SCF）计算与结构优化（Relax），向下则是分析声子谱稳定性、热力学性质以及设计新型结构材料的基石。",
+            "展示了现代计算材料学“工具链协同”的典型范式。"
+          ],
+          "entities_whitelist": [
+            "ABACUS",
+            "SCF",
+            "Relax",
+            "Elastic Constants",
+            "Phonons",
+            "Thermodynamics",
+            "abacustest",
+            "pymatgen"
+          ],
+          "labels_required": [
+            "基础层: SCF / Relax",
+            "核心层: 弹性常数",
+            "应用层: 声子谱 / 热力学",
+            "工具链: ABACUS + abacustest"
+          ],
+          "labels_forbidden": [
+            "Handwritten text",
+            "Photorealistic textures",
+            "Complex 3D shading",
+            "People"
+          ],
+          "assertions": [
+            "基础层 box is at the bottom",
+            "核心层 box is in the middle",
+            "应用层 box is at the top",
+            "Arrows point upwards indicating dependency"
+          ],
+          "prompt": "Subject: A professional hierarchical block diagram illustrating the 'Knowledge Graph' of Elastic Constants calculation within the ABACUS DFT framework.\n\nVisual Elements:\n- **Layout Structure**: A vertical three-tier stack (pyramid-like logic) on a white background.\n- **Bottom Tier (Foundation)**: A wide light-grey rectangle labeled '基础层 (Foundation)'. Inside, display two connected blocks: '自洽场 (SCF)' and '结构优化 (Relax)'.\n- **Middle Tier (The Focus)**: A central, visually emphasized (bold outline or deeper blue fill) rectangle labeled '核心层 (Core)'. Inside text: '弹性常数 (Elastic Constants)'. Include a small, simplified icon of a 6x6 matrix or a spring next to the text to symbolize mechanics.\n- **Top Tier (Applications)**: A wide light-teal rectangle labeled '应用层 (Applications)'. Inside, three parallel blocks: '声子谱 (Phonons)', '热力学 (Thermodynamics)', '材料设计 (Design)'.\n- **Connections**: Clear, thick arrows pointing UPWARD from Foundation to Core, and from Core to Applications, representing the data flow and dependency.\n- **Toolchain Annotation**: On the right side, draw a vertical bracket enclosing the Bottom and Middle tiers. Label this bracket '计算引擎: ABACUS'. Add a specific callout box pointing to the Middle Tier labeled '辅助工具: abacustest & pymatgen'.\n\nStyle:\n- Academic publication quality.\n- Flat design with subtle drop shadows.\n- Color Palette: Professional scientific colors (Navy Blue, Slate Grey, Teal, White).\n- Font: Clean, sans-serif, high legibility.\n- No background clutter.",
+          "negative_prompt": "photograph, 3d render, messy text, hand drawn, colorful background, chaotic lines, low resolution"
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch02",
+      "chapter_title": "第一章：弹性力学基础与计算原理",
+      "figures": [
+        {
+          "figure_id": "ch02-fig01",
+          "title": "第一性原理应力-应变法计算流程与离子弛豫示意图",
+          "caption": "该图展示了利用应力-应变法计算弹性常数的核心物理过程。左侧为初始平衡态晶胞；中间展示了施加应变后，原子从简单的几何缩放位置（钳制位置，Clamped）弛豫到能量最低位置（松弛位置，Relaxed）的过程，这是计算准确性的关键；右侧示意了通过 DFT 计算得到的柯西应力张量，并通过线性拟合应力-应变曲线导出弹性刚度张量 $C_{ij}$。",
+          "insert_after_heading": "### 1.2.4 核心难点二：原子弛豫的重要性 (Relaxed-ion vs. Clamped-ion)",
+          "diagram_type": "流程示意图",
+          "source_quotes": [
+            "施加应变：人为地将晶胞产生微小的变形",
+            "计算应力：固定变形后的晶胞形状，让电子和离子弛豫到能量最低态",
+            "Clamped-ion（钳制离子）：晶胞变了，但原子在晶胞内的相对分数坐标保持不变",
+            "Relaxed-ion（松弛离子）：晶胞变了，允许原子在新的晶胞形状下移动，寻找新的受力平衡位置",
+            "通过应力-应变曲线的斜率求出 C_{ij}"
+          ],
+          "entities_whitelist": [
+            "Initial Structure",
+            "Strain",
+            "Clamped-ion",
+            "Relaxed-ion",
+            "Cauchy Stress",
+            "Linear Fit",
+            "C_ij"
+          ],
+          "labels_required": [
+            "初始结构 (Equilibrium)",
+            "施加应变 (Strain)",
+            "离子弛豫 (Relaxation)",
+            "钳制位置 (Clamped)",
+            "松弛位置 (Relaxed)",
+            "柯西应力 (Stress)",
+            "线性拟合 (Fit)"
+          ],
+          "labels_forbidden": [
+            "Complex background",
+            "Handwritten text",
+            "Photorealistic textures"
+          ],
+          "assertions": [
+            "图表应分为左、中、右三个逻辑阶段",
+            "中间阶段必须清晰展示原子从原来的相对位置移动到新位置的过程",
+            "右侧应包含应力矩阵和线性拟合图的抽象表示"
+          ],
+          "prompt": "Subject: A three-stage scientific schematic diagram illustrating the 'Stress-Strain Method' in DFT and the concept of 'Ion Relaxation'.\n\nVisual Elements:\n1. **Left Panel (Stage 1):** A perfect cubic crystal unit cell (ball-and-stick model, e.g., Silicon conventional cell). Atoms are Blue spheres. \n   - Label above: \"初始结构 (Equilibrium)\".\n\n2. **Transition Arrow 1:** A distinct arrow pointing from Left to Middle Panel.\n   - Label on arrow: \"施加应变 (Strain)\".\n\n3. **Middle Panel (Stage 2):** The unit cell is now elongated horizontally (rectangular prism shape) to represent deformation.\n   - **Crucial Detail:** Focus on a specific atom inside.\n     - Show a semi-transparent 'ghost' atom at the strictly scaled geometric position. Label pointing to it: \"钳制位置 (Clamped)\".\n     - Show a solid Red atom shifted slightly away from the ghost position. Label pointing to it: \"松弛位置 (Relaxed)\".\n     - A small curved arrow indicates the movement from the ghost position to the solid position.\n   - Label above panel: \"离子弛豫 (Relaxation)\".\n\n4. **Transition Arrow 2:** Arrow pointing from Middle to Right Panel.\n   - Label on arrow: \"DFT 计算\".\n\n5. **Right Panel (Stage 3):** Abstract results representation.\n   - Top: A 3x3 matrix symbol representing Stress. Label: \"柯西应力 (Stress)\".\n   - Bottom: A small 2D line plot. X-axis: \"Strain\", Y-axis: \"Stress\". A straight line passes through the origin. The slope is highlighted and labeled \"C_{ij}\".\n   - Label above panel: \"线性拟合 (Fit)\".\n\nStyle:\n- Professional scientific publication style.\n- White background.\n- Color Palette: Blue (Structure), Red (Active Relaxation/Key Elements), Grey (Ghost/Reference), Black (Text/Arrows).\n- Clean, vector-like lines.",
+          "negative_prompt": "blurry, low resolution, 3d render, photorealistic, chaotic, messy labels, rainbow colors, dark background"
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch03",
+      "chapter_title": "第二章：计算准备——构建“零应力”基准",
+      "figures": [
+        {
+          "figure_id": "ch03-fig201",
+          "title": "弹性常数计算中的晶胞选择：原胞 vs 惯用胞",
+          "caption": "对比硅（Si）的两种晶胞形式。左侧为原胞（Primitive Cell），其晶格矢量与笛卡尔坐标轴（x,y,z）互不平行，导致施加应变时产生复杂的张量变换。右侧为惯用胞（Conventional Cell），其晶格矢量与笛卡尔坐标轴完美对齐，使得应变-应力关系物理直观，是弹性常数计算的首选方案。",
+          "insert_after_heading": "### 惯用胞的优势",
+          "diagram_type": "结构对比示意图",
+          "source_quotes": [
+            "在计算弹性常数时，我强烈推荐使用惯用胞，特别是对于立方晶系",
+            "由于晶格矢量与笛卡尔坐标系（x, y, z）不重合，施加在某一晶格矢量上的“简单拉伸”，在笛卡尔坐标系下会变成复杂的混合应变",
+            "坐标对齐：其晶格矢量 \\vec{a}, \\vec{b}, \\vec{c} 分别与笛卡尔坐标轴 x, y, z 平行"
+          ],
+          "entities_whitelist": [
+            "Primitive Cell",
+            "Conventional Cell",
+            "Cartesian Coordinates",
+            "Lattice Vectors",
+            "Silicon"
+          ],
+          "labels_required": [
+            "原胞 (Primitive Cell)",
+            "惯用胞 (Conventional Cell)",
+            "坐标不对齐",
+            "坐标对齐",
+            "推荐 (Recommended)"
+          ],
+          "labels_forbidden": [
+            "复杂背景",
+            "手绘风格",
+            "阴影过重"
+          ],
+          "assertions": [
+            "Left panel shows a rhombohedral cell with vectors not aligned to XYZ axes.",
+            "Right panel shows a cubic cell with vectors aligned to XYZ axes.",
+            "Right panel is marked as recommended."
+          ],
+          "prompt": "Subject: A comparative scientific structural diagram illustrating the geometric difference between a Silicon Primitive Cell and a Conventional Cell, focusing on coordinate alignment.\n\nVisual Elements:\n- **Layout**: Two distinct panels side-by-side. Left panel title: \"原胞 (Primitive Cell)\". Right panel title: \"惯用胞 (Conventional Cell)\".\n- **Left Panel (The Problem)**: \n  - Show a Silicon FCC primitive cell (rhombohedral geometry, 2 atoms basis).\n  - Draw three lattice vectors (arrows labeled a1, a2, a3) originating from a corner.\n  - Superimpose a standard Cartesian coordinate system (X, Y, Z axes in grey dashed lines).\n  - **Crucial Detail**: The lattice vectors must clearly diverge from the X, Y, Z axes (e.g., 60-degree angles). \n  - Label: \"坐标不对齐\" with a small warning icon.\n- **Right Panel (The Solution)**: \n  - Show a Silicon FCC conventional cell (cubic geometry, 8 atoms).\n  - Draw three lattice vectors (arrows labeled a, b, c) originating from a corner.\n  - Show that these vectors are perfectly parallel/aligned with the Cartesian axes (X, Y, Z).\n  - Label: \"坐标对齐\" with a green checkmark or \"推荐 (Recommended)\" stamp.\n- **Atoms**: Render Silicon atoms as simple blue spheres and bonds as thin grey lines.\n\nStyle: \n- Academic publication standard.\n- White background.\n- Flat or isometric projection.\n- High contrast: Use Red for lattice vectors and Black/Grey for coordinate axes to distinguish them easily.",
+          "negative_prompt": ""
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch04",
+      "chapter_title": "第三章：标准工作流实战——以硅（Si）为例",
+      "figures": [
+        {
+          "figure_id": "ch04-fig01",
+          "title": "弹性计算中的晶胞选择：原胞 vs 惯用胞",
+          "caption": "对比硅的两种晶胞形式在弹性计算中的差异。左侧为2原子原胞，其基矢量非正交且不沿笛卡尔轴，导致应变张量施加困难；右侧为8原子惯用胞，晶格矢量天然与X/Y/Z轴对齐，便于利用立方对称性直接施加正应变和剪切应变。",
+          "insert_after_heading": "## 3.0 前置知识：为什么选择 8 原子的惯用胞？",
+          "diagram_type": "结构示意图",
+          "source_quotes": [
+            "原胞：基矢量是非正交的，与笛卡尔坐标轴不重合。",
+            "惯用胞：其晶格矢量天然沿着 x, y, z 轴方向",
+            "在这种坐标系下施加应变，我们可以直接利用立方晶系的对称性"
+          ],
+          "entities_whitelist": [
+            "Primitive Cell",
+            "Conventional Cell",
+            "Cartesian Axes",
+            "Lattice Vectors"
+          ],
+          "labels_required": [
+            "原胞 (Primitive Cell)",
+            "惯用胞 (Conventional Cell)",
+            "基矢非正交",
+            "基矢沿坐标轴",
+            "推荐用于弹性计算"
+          ],
+          "labels_forbidden": [
+            "Complex mathematical formulas",
+            "Background textures"
+          ],
+          "assertions": [
+            "Left panel shows a rhombohedral cell with 2 atoms.",
+            "Right panel shows a cubic cell with 8 atoms.",
+            "Cartesian axes are visible in both panels for reference."
+          ],
+          "prompt": "Subject: A side-by-side 3D scientific illustration comparing Silicon Primitive Cell and Conventional Cell relative to Cartesian axes.\nVisual Elements:\n- Left Panel: A rhombohedral unit cell (2 atoms, ball-and-stick model). The lattice vectors (edges of the cell) are oblique and clearly do NOT align with the background Cartesian axes (X, Y, Z). Label above: \"原胞 (Primitive Cell)\". Label below: \"基矢非正交 (Non-orthogonal)\".\n- Right Panel: A cubic unit cell (8 atoms, diamond structure). The cell edges align perfectly with the X, Y, Z axes. Large semi-transparent arrows indicate a strain being applied along the X-axis. Label above: \"惯用胞 (Conventional Cell)\". Label below: \"基矢沿坐标轴 (Aligned with Axes)\".\n- Highlight: A prominent green badge with text \"推荐用于弹性计算 (Recommended)\" pointing to the Right Panel.\nStyle: High-quality academic rendering, white background, atoms in dark grey, bonds in lighter grey, axis lines in Red(X)/Green(Y)/Blue(Z). Clean sans-serif typography.",
+          "negative_prompt": ""
+        },
+        {
+          "figure_id": "ch04-fig02",
+          "title": "应变下的原子响应机制：钳制离子 vs 松弛离子",
+          "caption": "示意图展示了在晶胞发生形变（如剪切）时，两种不同的物理模型。上图（Clamped-ion）仅改变晶胞形状，原子分数坐标被“钳制”，导致原子受力不平衡（红色箭头），对应高频光学响应；下图（Relaxed-ion）允许原子在变形晶胞内微调位置以消除内应力（Internal Relaxation），从而获得符合宏观物理测量的弹性模量。",
+          "insert_after_heading": "### 3.2.3 核心物理策略：Relax vs SCF (Clamped vs Relaxed Ions)",
+          "diagram_type": "原理示意图",
+          "source_quotes": [
+            "Clamped-ion... 晶胞变形，原子保持其分数坐标不变... 对应于极高频的响应",
+            "Relaxed-ion... 允许原子在晶胞内部移动以消除内部微观力",
+            "宏观物理测量中，原子总是有时间弛豫到新的平衡位置"
+          ],
+          "entities_whitelist": [
+            "Clamped-ion",
+            "Relaxed-ion",
+            "Internal Force",
+            "Equilibrium"
+          ],
+          "labels_required": [
+            "钳制离子 (Clamped)",
+            "松弛离子 (Relaxed)",
+            "残余内应力",
+            "原子位置优化",
+            "宏观弹性模量"
+          ],
+          "labels_forbidden": [
+            "Hand-drawn style",
+            "Low resolution"
+          ],
+          "assertions": [
+            "Top panel shows atoms with force arrows.",
+            "Bottom panel shows atoms in slightly different positions without force arrows.",
+            "Both panels show a distorted (sheared) cell shape."
+          ],
+          "prompt": "Subject: A schematic diagram comparing Clamped-ion and Relaxed-ion atomic configurations under shear strain.\nVisual Elements:\n- Layout: Two vertical panels illustrating the same sheared unit cell (parallelogram shape).\n- Top Panel (Clamped-ion): Atoms are positioned strictly at grid points corresponding to the shear. Red arrows emanate from each atom, indicating unbalanced forces. Label: \"钳制离子 (Clamped)\". Sub-text: \"计算模式: SCF (固定坐标)\". Annotation pointing to red arrows: \"残余内应力 (Internal Stress)\".\n- Bottom Panel (Relaxed-ion): Atoms have shifted slightly off the strict grid points to find equilibrium positions. No force arrows are present. Small dotted lines show the movement from the clamped position. Label: \"松弛离子 (Relaxed)\". Sub-text: \"计算模式: Relax (位置优化)\". Annotation: \"符合宏观弹性模量 (Macroscopic Moduli)\".\n- Connection: A large arrow pointing from Top to Bottom labeled \"内部弛豫 (Internal Relaxation)\".\nStyle: Flat 2D scientific schematic, clean lines, blue and orange color scheme, white background. Professional academic font.",
+          "negative_prompt": ""
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch05",
+      "chapter_title": "第四章：进阶案例与各向异性——金红石型 TiO2",
+      "figures": [
+        {
+          "figure_id": "ch05-fig01",
+          "title": "弹性计算中的晶胞选取：原胞与惯用胞的坐标系对比",
+          "caption": "对比金红石型 TiO2 的原胞（Primitive Cell）与惯用胞（Conventional Cell）。左图显示原胞的晶格矢量与笛卡尔坐标轴不重合，导致弹性张量形式复杂；右图显示惯用胞的晶格矢量严格平行于 x, y, z 轴，直接对应物理直观的 C11, C33 等常数。",
+          "insert_after_heading": "### 4.1.1 核心概念：为何要用“惯用胞”而非“原胞”？",
+          "diagram_type": "结构示意图",
+          "source_quotes": [
+            "在弹性常数计算中，我们强烈建议使用**惯用胞（Conventional Cell）**。",
+            "如果使用原胞，其晶格矢量可能并不沿 Cartesian 坐标系的 x, y, z 轴方向",
+            "始终构建晶格矢量 $\\vec{a}, \\vec{b}, \\vec{c}$ 分别平行于 $x, y, z$ 轴的惯用胞"
+          ],
+          "entities_whitelist": [
+            "Primitive Cell",
+            "Conventional Cell",
+            "Cartesian Coordinates",
+            "Lattice Vectors",
+            "TiO2"
+          ],
+          "labels_required": [
+            "原胞 (Primitive Cell)",
+            "惯用胞 (Conventional Cell)",
+            "非对角项非零",
+            "物理直观对应",
+            "笛卡尔坐标系 (x, y, z)"
+          ],
+          "labels_forbidden": [
+            "复杂的背景纹理",
+            "手写字体"
+          ],
+          "assertions": [
+            "左侧晶胞的边长轴线与背景坐标轴成角度（不平行）",
+            "右侧晶胞为长方体，边长轴线与背景坐标轴完全平行",
+            "右侧晶胞体积明显大于左侧（包含更多原子）"
+          ],
+          "prompt": "Subject: A comparative scientific diagram showing the geometric alignment of Primitive Cell vs. Conventional Cell for Rutile TiO2 relative to Cartesian axes.\n\nVisual Elements:\n- Background: Faint grey Cartesian coordinate system grid (x, y, z axes).\n- Left Panel (Primitive Cell): A smaller parallelepiped crystal structure of TiO2. The lattice vectors (edges of the box) differ from the background x/y/z axes (tilted). Label above: \"原胞 (Primitive Cell)\". Annotation below: \"非对角项非零 (Complex Tensor)\".\n- Right Panel (Conventional Cell): A larger, tetragonal rectangular box structure of TiO2. The lattice vectors (edges) are perfectly parallel to the x, y, and z axes. Label above: \"惯用胞 (Conventional Cell)\". Annotation below: \"物理直观对应 (Direct Mapping)\".\n- Atoms: Titanium (Silver/Grey spheres) and Oxygen (Red spheres) inside the boxes.\n- Highlights: Use bold colored arrows to represent lattice vectors. On the left, arrows are angled. On the right, arrows align with axes.\n\nStyle: Clean academic schematic, white background, high contrast, flat design for the coordinate system, 3D looking crystal structures.",
+          "negative_prompt": "photorealistic, messy, dark background, blurry, low resolution, artistic impression"
+        },
+        {
+          "figure_id": "ch05-fig02",
+          "title": "微观机制示意：钳制离子与松弛离子模型",
+          "caption": "施加剪切应变后的两种原子响应模式。左图（钳制离子）模拟高频极限，原子随晶格均匀变形，相对分数坐标不变；右图（松弛离子）模拟静态极限，原子在变形后的晶胞内进行局部微调（Force Relaxation）以达到能量最低态，对应实验测量的弹性模量。",
+          "insert_after_heading": "### 4.2.1 核心概念：钳制离子 vs. 松弛离子",
+          "diagram_type": "微观机理示意图",
+          "source_quotes": [
+            "钳制离子 (Clamped-ion): 施加应变后，晶格变形，但强制原子保持在分数坐标不变。",
+            "松弛离子 (Relaxed-ion): 施加应变后，固定晶格形状，但**允许原子在晶胞内部移动**以达到新的受力平衡。"
+          ],
+          "entities_whitelist": [
+            "Clamped-ion",
+            "Relaxed-ion",
+            "Shear Strain",
+            "Atomic Displacement",
+            "Forces"
+          ],
+          "labels_required": [
+            "钳制离子 (Clamped-ion)",
+            "松弛离子 (Relaxed-ion)",
+            "高频极限",
+            "静态/实验值",
+            "原子弛豫 (Relaxation)"
+          ],
+          "labels_forbidden": [
+            "卡通人物",
+            "多余的装饰性边框"
+          ],
+          "assertions": [
+            "两图的外部晶格轮廓（平行四边形）必须完全一致（表示相同的应变）",
+            "右图中必须有小箭头指示原子相对于左图位置的微小移动",
+            "左图原子排列非常规则，右图原子有细微的非均匀位移"
+          ],
+          "prompt": "Subject: A scientific illustration explaining the difference between Clamped-ion and Relaxed-ion approximations under shear strain.\n\nVisual Elements:\n- Layout: Two side-by-side panels showing a 2D cross-section of a crystal lattice subjected to shear strain (deformed from square to rhombus).\n- Left Panel: Label \"钳制离子 (Clamped-ion)\". Sub-label \"高频极限\". The atoms are arranged in a perfectly sheared grid, strictly following the lattice deformation lines. No internal movement.\n- Right Panel: Label \"松弛离子 (Relaxed-ion)\". Sub-label \"静态/实验值\". The lattice shape is identical to the left (rhombus). However, the atoms deviate slightly from the perfect grid lines. Use small curved arrows (e.g., green color) attached to atoms to indicate \"原子弛豫 (Relaxation)\" movement towards equilibrium positions.\n- Graphics: Atoms as simple spheres. Lattice lines as dashed grey lines.\n\nStyle: Technical vector illustration, white background, distinct colors for atoms (e.g., blue) and displacement vectors (e.g., red or green), publication quality.",
+          "negative_prompt": "3d render, perspective distortion, shadow, noise, gradient background"
+        }
+      ]
+    }
+  ]
+}

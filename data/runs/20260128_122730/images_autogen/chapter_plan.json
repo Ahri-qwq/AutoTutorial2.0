@@ -1,0 +1,11 @@
+{
+  "chapters": [
+    {
+      "chapter_id": "ch01",
+      "chapter_title": "第一章：弹性力学基础与计算原理",
+      "num_figures": 2
+    }
+  ],
+  "run_id": "20260128_151355",
+  "input_md": "Final_Tutorial_test.md"
+}

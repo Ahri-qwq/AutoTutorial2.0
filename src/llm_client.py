@@ -53,7 +53,7 @@ class LLMClient:
             base_url=self.base_url
         )
 
-    def chat(self, prompt, history=None, max_retries=3, model_id=None, temperature=0.7):
+    def chat(self, prompt, history=None, max_retries=10, model_id=None, temperature=0.7):
         target_model = model_id if model_id else self.model_name
         
         # 构造消息
@@ -79,10 +79,10 @@ class LLMClient:
                     return content
                 else:
                     print(f"⚠️ [LLM] Empty response.")
-                    time.sleep(1)
+                    time.sleep(2)
 
             except Exception as e:
-                print(f"⚠️ [LLM] Exception (Attempt {attempt+1}/{max_retries}): {e}")
+                print(f"⚠️ [LLM] Exception (Attempt {attempt+1}/{max_retries}): {e} \n   [LLM] Calling {target_model}...")
                 time.sleep(2)
         
         print("❌ [LLM] Failed after retries.")

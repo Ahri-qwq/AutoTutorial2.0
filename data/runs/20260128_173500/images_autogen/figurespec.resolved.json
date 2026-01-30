@@ -1,0 +1,116 @@
+{
+  "run_id": "20260128_174717",
+  "generated_at": "2026-01-28T18:21:41.180932",
+  "items": [
+    {
+      "figure_id": "ch01-fig01_roadmap",
+      "chapter_id": "ch01",
+      "timestamp": "2026-01-28T17:56:33.327552",
+      "status": "success",
+      "output_file": "data\\runs\\20260128_173500\\images_autogen\\images_output\\ch01-fig01_roadmap.png",
+      "final_prompt": "请生成一张科学示意图，统一为高质量、学术出版级的矢量扁平风：\n- **核心风格**：纯白背景，扁平化矢量插图，清晰的深色描边，线条均匀。\n- **配色方案**：配色专业且克制（2-4种颜色，如深蓝、学术红、灰色），整体干净，信息层次分明。\n- **文字与标注**：允许在图中使用文字标注、图例和坐标轴标签。支持简体中文标注。\n- **视觉逻辑**：构图严谨，包含必要的箭头（指示逻辑流或对应关系）、符号。去除所有无关的装饰性元素。\n\n强制避免：\n- 照片风格、写实渲染、3D渐变质感（除非是特定的学术结构模型）\n- 人物、复杂纹理、杂乱背景\n- 水印、LOGO\n- 模糊的文本、不相关的密集文字段落\n\n\nSpecific Request:\nSubject: A clean, academic process flowchart illustrating the four-stage learning roadmap for ABACUS elastic constant calculation.\n\nVisual Elements:\n- Layout: Four rectangular panels or nodes arranged horizontally from left to right, connected by directional arrows indicating a progression path.\n- Node 1 (Left): Label \"第一章：理论基础\". Sub-label: \"广义胡克定律\". Visual icon: A simple stress-strain curve or a spring schematic.\n- Node 2: Label \"第二章：计算准备\". Sub-label: \"零应力基准\". Visual icon: A perfect, undeformed cubic unit cell wireframe.\n- Node 3: Label \"第三章：标准实战 (Si)\". Sub-label: \"abacustest 自动化\". Visual icon: A schematic of a Diamond-structure Silicon crystal lattice combined with a gear symbol (representing automation).\n- Node 4 (Right): Label \"第四章：进阶拓展 (TiO2)\". Sub-label: \"各向异性 & 原子弛豫\". Visual icon: A schematic of a Rutile TiO2 crystal structure (tetragonal).\n- Connections: sleek, dark grey arrows pointing from one node to the next.\n\nStyle:\n- Background: Pure white.\n- Color Palette: Professional academic scheme. Use Navy Blue for Theory, Teal for Preparation, Forest Green for Si Practice, and Burnt Orange for TiO2 Advanced.\n- Typography: Sans-serif, clean, legible Chinese characters for labels.\n- Aesthetics: Flat design, vector art style, high contrast, suitable for a scientific textbook.\n\nAvoid: photorealistic, 3d render with shadows, chaotic layout, messy text, handwriting, blurry, low resolution, neon colors, decorative borders",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769594192
+    },
+    {
+      "figure_id": "ch02-fig01",
+      "chapter_id": "ch02",
+      "timestamp": "2026-01-28T17:57:01.277260",
+      "status": "success",
+      "output_file": "data\\runs\\20260128_173500\\images_autogen\\images_output\\ch02-fig01.png",
+      "final_prompt": "请生成一张科学示意图，统一为高质量、学术出版级的矢量扁平风：\n- **核心风格**：纯白背景，扁平化矢量插图，清晰的深色描边，线条均匀。\n- **配色方案**：配色专业且克制（2-4种颜色，如深蓝、学术红、灰色），整体干净，信息层次分明。\n- **文字与标注**：允许在图中使用文字标注、图例和坐标轴标签。支持简体中文标注。\n- **视觉逻辑**：构图严谨，包含必要的箭头（指示逻辑流或对应关系）、符号。去除所有无关的装饰性元素。\n\n强制避免：\n- 照片风格、写实渲染、3D渐变质感（除非是特定的学术结构模型）\n- 人物、复杂纹理、杂乱背景\n- 水印、LOGO\n- 模糊的文本、不相关的密集文字段落\n\n\nSpecific Request:\nSubject: A mathematical schematic diagram illustrating the Voigt Notation mapping rule and the resulting matrix equation.\n\nVisual Elements:\n- Top Section (The Mapping Logic):\n  - Left Group: A text block labeled \"张量下标 (Tensor)\" listing the index pairs vertically: \"xx, yy, zz, yz, xz, xy\".\n  - Center Arrow: A wide arrow pointing right, labeled \"降维映射\".\n  - Right Group: A text block labeled \"Voigt 下标\" listing single numbers vertically: \"1, 2, 3, 4, 5, 6\".\n  - Visual Connection: Draw thin connecting lines between \"xx\" and \"1\", \"yy\" and \"2\", etc., to emphasize the correspondence.\n\n- Bottom Section (The Resulting Equation):\n  - Display the matrix equation: [Stress Vector] = [6x6 Stiffness Matrix] * [Strain Vector].\n  - The 6x6 Matrix ($C_{ij}$) should be the central visual anchor, clearly showing rows and columns (e.g., $C_{11}$ to $C_{66}$).\n  - Label the large matrix as \"弹性刚度矩阵 Cij\".\n\nStyle:\n- Background: Pure white.\n- Color Scheme: Navy blue for matrix brackets and text, Red for mapping arrows/highlights.\n- Typography: Serif font for mathematical symbols (LaTeX style), Sans-serif for Chinese labels.\n- Layout: Clean, symmetrical, high-contrast academic textbook style.\n\nAvoid: handwritten, blackboard style, messy lines, low resolution, 3d effects, colorful background",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769594220
+    },
+    {
+      "figure_id": "ch02-fig02",
+      "chapter_id": "ch02",
+      "timestamp": "2026-01-28T17:57:22.273697",
+      "status": "success",
+      "output_file": "data\\runs\\20260128_173500\\images_autogen\\images_output\\ch02-fig02.png",
+      "final_prompt": "请生成一张科学示意图，统一为高质量、学术出版级的矢量扁平风：\n- **核心风格**：纯白背景，扁平化矢量插图，清晰的深色描边，线条均匀。\n- **配色方案**：配色专业且克制（2-4种颜色，如深蓝、学术红、灰色），整体干净，信息层次分明。\n- **文字与标注**：允许在图中使用文字标注、图例和坐标轴标签。支持简体中文标注。\n- **视觉逻辑**：构图严谨，包含必要的箭头（指示逻辑流或对应关系）、符号。去除所有无关的装饰性元素。\n\n强制避免：\n- 照片风格、写实渲染、3D渐变质感（除非是特定的学术结构模型）\n- 人物、复杂纹理、杂乱背景\n- 水印、LOGO\n- 模糊的文本、不相关的密集文字段落\n\n\nSpecific Request:\nSubject: A comparative schematic of crystal lattice deformation modes: Clamped-ion vs. Relaxed-ion.\n\nVisual Elements:\n- Layout: Three horizontal panels showing a 2D crystal lattice (balls and sticks).\n\n- Panel 1 (Left): Label \"初始结构 (Equilibrium)\". Shows a perfect square lattice. Atoms are evenly spaced.\n\n- Panel 2 (Center): Label \"钳制离子 (Clamped-ion)\".\n  - The lattice box is stretched horizontally (rectangular shape).\n  - The atoms are stretched proportionally with the box (fractional coordinates fixed).\n  - Add a red cross (X) or warning icon.\n  - Annotation: \"错误做法 (scf)\" and \"原子坐标不变\".\n  - Visual cue: Faint red arrows on atoms indicating unbalanced internal forces.\n\n- Panel 3 (Right): Label \"松弛离子 (Relaxed-ion)\".\n  - The lattice box is stretched horizontally (same shape as Center).\n  - The internal atoms have shifted slightly from the grid lines (finding new equilibrium).\n  - Add a green checkmark.\n  - Annotation: \"正确做法 (relax)\" and \"内部原子弛豫\".\n  - Visual cue: Small curved arrows showing atoms moving to comfortable positions.\n\nStyle:\n- Flat scientific vector art.\n- Atoms: Simple colored circles (e.g., Teal).\n- Bonds: Thin grey lines.\n- Highlights: Red for error/stress, Green for correct/relaxed.\n- Background: White.\n\nAvoid: 3d render, perspective distortion, gradient background, noisy, artistic sketch",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769594241
+    },
+    {
+      "figure_id": "ch03-fig01",
+      "chapter_id": "ch03",
+      "timestamp": "2026-01-28T18:18:25.314505",
+      "status": "success",
+      "output_file": "data\\runs\\20260128_173500\\images_autogen\\images_output\\ch03-fig01.png",
+      "final_prompt": "请生成一张科学示意图，统一为高质量、学术出版级的矢量扁平风：\n- **核心风格**：纯白背景，扁平化矢量插图，清晰的深色描边，线条均匀。\n- **配色方案**：配色专业且克制（2-4种颜色，如深蓝、学术红、灰色），整体干净，信息层次分明。\n- **文字与标注**：允许在图中使用文字标注、图例和坐标轴标签。支持简体中文标注。\n- **视觉逻辑**：构图严谨，包含必要的箭头（指示逻辑流或对应关系）、符号。去除所有无关的装饰性元素。\n\n强制避免：\n- 照片风格、写实渲染、3D渐变质感（除非是特定的学术结构模型）\n- 人物、复杂纹理、杂乱背景\n- 水印、LOGO\n- 模糊的文本、不相关的密集文字段落\n\n\nSpecific Request:\nSubject: A comparative scientific schematic illustrating the geometric alignment of Primitive Cell vs. Conventional Cell relative to Cartesian axes.\n\nVisual Elements:\n- Layout: Split into two side-by-side panels. Left panel title: \"原胞 (Primitive)\". Right panel title: \"惯用胞 (Conventional)\".\n- Coordinate System: Both panels feature a clear 3D Cartesian coordinate system with arrows labeled x, y, z.\n- Left Panel Content: A schematic Crystal structure (e.g., FCC primitive) represented as a rhombohedron. Its lattice vectors (arrows a1, a2, a3) are shown at angles (non-orthogonal) and clearly do NOT align with the x, y, z axes. A text annotation below says \"非正交基矢 (Non-orthogonal)\" and \"复杂变换 (Complex Transform)\".\n- Right Panel Content: A cubic Crystal structure. Its lattice vectors (arrows a, b, c) are perfectly parallel to the x, y, z axes. A red arrow indicates stretching along the x-axis. A text annotation below says \"基矢平行坐标轴 (Aligned)\" and \"直接对应 C11 (Direct C11)\".\n\nStyle:\n- Academic publication style, flat 3D vector graphics.\n- Clean white background.\n- Color coding: Blue for the crystal lattice, Black for coordinate axes, Red for strain/force arrows.\n- High contrast, legible typography.\n\nAvoid: photorealistic, blurry, messy, handwritten text, dark background, complex textures",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769595503
+    },
+    {
+      "figure_id": "ch03-fig02",
+      "chapter_id": "ch03",
+      "timestamp": "2026-01-28T18:18:48.042714",
+      "status": "success",
+      "output_file": "data\\runs\\20260128_173500\\images_autogen\\images_output\\ch03-fig02.png",
+      "final_prompt": "请生成一张科学示意图，统一为高质量、学术出版级的矢量扁平风：\n- **核心风格**：纯白背景，扁平化矢量插图，清晰的深色描边，线条均匀。\n- **配色方案**：配色专业且克制（2-4种颜色，如深蓝、学术红、灰色），整体干净，信息层次分明。\n- **文字与标注**：允许在图中使用文字标注、图例和坐标轴标签。支持简体中文标注。\n- **视觉逻辑**：构图严谨，包含必要的箭头（指示逻辑流或对应关系）、符号。去除所有无关的装饰性元素。\n\n强制避免：\n- 照片风格、写实渲染、3D渐变质感（除非是特定的学术结构模型）\n- 人物、复杂纹理、杂乱背景\n- 水印、LOGO\n- 模糊的文本、不相关的密集文字段落\n\n\nSpecific Request:\nSubject: A scientific process flow diagram showing the workflow for eliminating residual stress in crystal structures using ABACUS.\n\nVisual Elements:\n- Step 1 (Left): An icon representing a \"Initial Structure\". Visual cues (like small red tension arrows) imply internal stress. Label: \"初始结构 (CIF)\" and sub-label \"残余应力 > 0.1 GPa\".\n- Transition (Center): A large, sleek arrow pointing from left to right. Inside or above the arrow, a gear icon representing processing. Label: \"变胞弛豫 (cell-relax)\".\n- Parameter Box (Connected to Center): A callout box listing key settings: \"scf_thr = 1e-8\", \"force_thr = 1e-2\", \"stress_thr ≈ 0\". Label this box \"高精度参数 (High Precision)\".\n- Step 2 (Right): An icon representing the \"Reference Structure\". It looks perfectly cubic and orderly, surrounded by a calm blue aura or checkmark. Label: \"基准结构 (Reference)\" and sub-label \"零应力状态 (Zero Stress)\".\n- Bottom Chart (Optional inset): A small, stylized line graph showing \"Stress\" on Y-axis dropping to zero over \"Steps\" on X-axis.\n\nStyle:\n- Professional technical diagram.\n- White background.\n- Color palette: Transition from Red (Stress) to Blue/Green (Relaxed/Correct).\n- Clean lines, sans-serif fonts for labels.\n\nAvoid: chaotic, hand-drawn, abstract art, screen capture, interface elements",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769595526
+    },
+    {
+      "figure_id": "ch04-fig01",
+      "chapter_id": "ch04",
+      "timestamp": "2026-01-28T18:19:10.360936",
+      "status": "success",
+      "output_file": "data\\runs\\20260128_173500\\images_autogen\\images_output\\ch04-fig01.png",
+      "final_prompt": "请生成一张科学示意图，统一为高质量、学术出版级的矢量扁平风：\n- **核心风格**：纯白背景，扁平化矢量插图，清晰的深色描边，线条均匀。\n- **配色方案**：配色专业且克制（2-4种颜色，如深蓝、学术红、灰色），整体干净，信息层次分明。\n- **文字与标注**：允许在图中使用文字标注、图例和坐标轴标签。支持简体中文标注。\n- **视觉逻辑**：构图严谨，包含必要的箭头（指示逻辑流或对应关系）、符号。去除所有无关的装饰性元素。\n\n强制避免：\n- 照片风格、写实渲染、3D渐变质感（除非是特定的学术结构模型）\n- 人物、复杂纹理、杂乱背景\n- 水印、LOGO\n- 模糊的文本、不相关的密集文字段落\n\n\nSpecific Request:\nSubject: A conceptual schematic illustrating the structural relaxation process in computational materials science.\n\nVisual Elements:\n- Background: A clean 2D plot area representing Potential Energy Surface (a smooth curve dipping into a well).\n- Y-axis: Label \"系统能量 (Energy)\".\n- X-axis: Label \"晶格参数/几何构型 (Geometry)\".\n- Element 1 (Top Left): An icon of a Silicon crystal lattice with slight red distortion lines, labeled \"初始结构 (高应力)\".\n- Element 2 (Bottom Center): An icon of a perfect, symmetric Silicon crystal lattice sitting at the bottom of the energy well, labeled \"基态结构 (零应力)\".\n- Action: A curved dashed arrow connecting Element 1 to Element 2, following the slope of the energy curve. Label the arrow \"abacustest cell-relax\".\n- Annotation: Near the bottom well, add text \"Stress < 0.1 KBar\" and \"Force < 0.01 eV/Å\".\n\nStyle: Academic diagram style, flat design, white background. Use blue for the energy curve and structure icons, red for stress indicators. High contrast, clean sans-serif typography.",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769595549
+    },
+    {
+      "figure_id": "ch04-fig02",
+      "chapter_id": "ch04",
+      "timestamp": "2026-01-28T18:19:42.923362",
+      "status": "success",
+      "output_file": "data\\runs\\20260128_173500\\images_autogen\\images_output\\ch04-fig02.png",
+      "final_prompt": "请生成一张科学示意图，统一为高质量、学术出版级的矢量扁平风：\n- **核心风格**：纯白背景，扁平化矢量插图，清晰的深色描边，线条均匀。\n- **配色方案**：配色专业且克制（2-4种颜色，如深蓝、学术红、灰色），整体干净，信息层次分明。\n- **文字与标注**：允许在图中使用文字标注、图例和坐标轴标签。支持简体中文标注。\n- **视觉逻辑**：构图严谨，包含必要的箭头（指示逻辑流或对应关系）、符号。去除所有无关的装饰性元素。\n\n强制避免：\n- 照片风格、写实渲染、3D渐变质感（除非是特定的学术结构模型）\n- 人物、复杂纹理、杂乱背景\n- 水印、LOGO\n- 模糊的文本、不相关的密集文字段落\n\n\nSpecific Request:\nSubject: A hierarchical workflow diagram showing the file generation process for elastic constant calculation.\n\nVisual Elements:\n- Root Node (Top): A folder icon labeled \"Si-elastic/\" containing a file icon labeled \"STRU (基态)\".\n- Process Node (Middle): A gear or action arrow labeled \"自动生成 (abacustest prepare)\".\n- Output Nodes (Bottom): A branching tree structure leading to multiple folder icons.\n  - Branch 1: Folder labeled \"org/\" with a sub-label \"基准结构 (无应变)\".\n  - Branch 2: Folder labeled \"deform-01/\" with a small icon showing a cube stretched along one axis. Label: \"正应变 (Normal)\".\n  - Branch 3: Folder labeled \"deform-xx/\" with a small icon showing a cube tilted/sheared. Label: \"剪切应变 (Shear)\".\n  - Visual Hint: Use '...' between deform-01 and deform-xx to imply multiple folders (01 to 23).\n\nStyle: Clean technical diagram, flat vector graphics. Use distinct colors for folders (e.g., yellow/orange) and process arrows (grey/blue). White background, professional font.",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769595582
+    },
+    {
+      "figure_id": "ch04-fig03",
+      "chapter_id": "ch04",
+      "timestamp": "2026-01-28T18:20:14.196238",
+      "status": "success",
+      "output_file": "data\\runs\\20260128_173500\\images_autogen\\images_output\\ch04-fig03.png",
+      "final_prompt": "请生成一张科学示意图，统一为高质量、学术出版级的矢量扁平风：\n- **核心风格**：纯白背景，扁平化矢量插图，清晰的深色描边，线条均匀。\n- **配色方案**：配色专业且克制（2-4种颜色，如深蓝、学术红、灰色），整体干净，信息层次分明。\n- **文字与标注**：允许在图中使用文字标注、图例和坐标轴标签。支持简体中文标注。\n- **视觉逻辑**：构图严谨，包含必要的箭头（指示逻辑流或对应关系）、符号。去除所有无关的装饰性元素。\n\n强制避免：\n- 照片风格、写实渲染、3D渐变质感（除非是特定的学术结构模型）\n- 人物、复杂纹理、杂乱背景\n- 水印、LOGO\n- 模糊的文本、不相关的密集文字段落\n\n\nSpecific Request:\nSubject: A scientific matrix visualization (heatmap style) of the 6x6 Elastic Stiffness Tensor for Silicon.\n\nVisual Elements:\n- Structure: A 6x6 grid representing the matrix indices 1 to 6 (or 0 to 5).\n- Color Coding (Values):\n  - Diagonal Cells (1,1), (2,2), (3,3): Deep Blue squares. Label inside: \"C11\\n155.5\".\n  - Off-Diagonal Cells (1,2), (1,3), (2,1), (2,3), (3,1), (3,2): Medium Blue squares. Label inside: \"C12\\n58.3\".\n  - Shear Diagonal Cells (4,4), (5,5), (6,6): Light Blue squares. Label inside: \"C44\\n76.2\".\n  - All other cells: Very light grey or white. Label inside: \"0\".\n- Annotations:\n  - A bracket on the left grouping rows 1-3 labeled \"正应力分量 (Normal)\".\n  - A bracket on the left grouping rows 4-6 labeled \"剪切应力分量 (Shear)\".\n  - Legend: \"单位: GPa\".\n\nStyle: Academic publication quality. Sharp grid lines, clean sans-serif text centered in each cell. Monochromatic blue scale for values to represent magnitude (Darker = Higher Stiffness). White background.",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769595613
+    },
+    {
+      "figure_id": "ch05-fig01",
+      "chapter_id": "ch05",
+      "timestamp": "2026-01-28T18:20:40.171566",
+      "status": "success",
+      "output_file": "data\\runs\\20260128_173500\\images_autogen\\images_output\\ch05-fig01.png",
+      "final_prompt": "请生成一张科学示意图，统一为高质量、学术出版级的矢量扁平风：\n- **核心风格**：纯白背景，扁平化矢量插图，清晰的深色描边，线条均匀。\n- **配色方案**：配色专业且克制（2-4种颜色，如深蓝、学术红、灰色），整体干净，信息层次分明。\n- **文字与标注**：允许在图中使用文字标注、图例和坐标轴标签。支持简体中文标注。\n- **视觉逻辑**：构图严谨，包含必要的箭头（指示逻辑流或对应关系）、符号。去除所有无关的装饰性元素。\n\n强制避免：\n- 照片风格、写实渲染、3D渐变质感（除非是特定的学术结构模型）\n- 人物、复杂纹理、杂乱背景\n- 水印、LOGO\n- 模糊的文本、不相关的密集文字段落\n\n\nSpecific Request:\nSubject: A dual-panel scientific illustration. Left panel: 3D Ball-and-stick crystal structure model of Rutile TiO2. Titanium atoms are silver/grey spheres, Oxygen atoms are red spheres. The unit cell is a rectangular prism (tetragonal, c-axis longer than a-axis), outlined in black lines. Label 'Ti 原子' pointing to a grey sphere, 'O 原子' pointing to a red sphere. Vertical axis labeled 'c-axis'. Right panel: A 6x6 matrix grid representation of the Elastic Tensor. The matrix entries are text. Diagonal elements: C11, C11, C33, C44, C44, C66. Off-diagonal: C12, C13 (symmetric). Zeros in other positions. Highlight the independent constants (C11, C12, C13, C33, C44, C66) with a light blue background fill. Label above matrix: '四方晶系矩阵'. Style: Clean white background, academic publication standard, flat design for the matrix, high-quality 3D render look for the atoms.",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769595639
+    },
+    {
+      "figure_id": "ch05-fig02",
+      "chapter_id": "ch05",
+      "timestamp": "2026-01-28T18:21:18.834000",
+      "status": "success",
+      "output_file": "data\\runs\\20260128_173500\\images_autogen\\images_output\\ch05-fig02.png",
+      "final_prompt": "请生成一张科学示意图，统一为高质量、学术出版级的矢量扁平风：\n- **核心风格**：纯白背景，扁平化矢量插图，清晰的深色描边，线条均匀。\n- **配色方案**：配色专业且克制（2-4种颜色，如深蓝、学术红、灰色），整体干净，信息层次分明。\n- **文字与标注**：允许在图中使用文字标注、图例和坐标轴标签。支持简体中文标注。\n- **视觉逻辑**：构图严谨，包含必要的箭头（指示逻辑流或对应关系）、符号。去除所有无关的装饰性元素。\n\n强制避免：\n- 照片风格、写实渲染、3D渐变质感（除非是特定的学术结构模型）\n- 人物、复杂纹理、杂乱背景\n- 水印、LOGO\n- 模糊的文本、不相关的密集文字段落\n\n\nSpecific Request:\nSubject: A linear horizontal flowchart illustrating the computational workflow for elastic constants. Visual Elements: Five rectangular nodes with rounded corners, connected by directional arrows from left to right. \n- Node 1: '1. 结构准备 (CIF)'. Icon: A document file symbol.\n- Arrow ->\n- Node 2: '2. 结构优化 (Cell Relax)'. Icon: A crystal lattice structure being tightened.\n- Arrow ->\n- Node 3: '3. 生成变形 (Prepare)'. Icon: One cube splitting into multiple slightly distorted cubes.\n- Arrow ->\n- Node 4: '4. 批量计算 (SCF)'. Icon: A server rack or computer chip.\n- Arrow ->\n- Node 5: '5. 后处理 (Post)'. Icon: A line graph fitting curve.\n- Final Arrow -> Result Box: '输出: 弹性张量'.\nStyle: Professional vector graphics, white background. Color scheme: Deep blue for nodes, grey for arrows. Text should be legible and centered in nodes.",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769595677
+    },
+    {
+      "figure_id": "ch05-fig03",
+      "chapter_id": "ch05",
+      "timestamp": "2026-01-28T18:21:41.180932",
+      "status": "success",
+      "output_file": "data\\runs\\20260128_173500\\images_autogen\\images_output\\ch05-fig03.png",
+      "final_prompt": "请生成一张科学示意图，统一为高质量、学术出版级的矢量扁平风：\n- **核心风格**：纯白背景，扁平化矢量插图，清晰的深色描边，线条均匀。\n- **配色方案**：配色专业且克制（2-4种颜色，如深蓝、学术红、灰色），整体干净，信息层次分明。\n- **文字与标注**：允许在图中使用文字标注、图例和坐标轴标签。支持简体中文标注。\n- **视觉逻辑**：构图严谨，包含必要的箭头（指示逻辑流或对应关系）、符号。去除所有无关的装饰性元素。\n\n强制避免：\n- 照片风格、写实渲染、3D渐变质感（除非是特定的学术结构模型）\n- 人物、复杂纹理、杂乱背景\n- 水印、LOGO\n- 模糊的文本、不相关的密集文字段落\n\n\nSpecific Request:\nSubject: A grouped bar chart comparing calculated vs experimental elastic constants for Rutile TiO2. Visual Elements:\n- X-axis: Categories labeled 'C11', 'C12', 'C13', 'C33', 'C44', 'C66'.\n- Y-axis: Label '弹性常数 / Elastic Constant (GPa)'. Scale from 0 to 600.\n- Data Series 1 (Blue bars): Label '计算值 (This Work)'. Values: C11~281, C12~158, C13~156, C33~484, C44~117, C66~216.\n- Data Series 2 (Grey bars): Label '实验值 (Exp.)'. Values: C11~268, C12~175, C13~147, C33~484, C44~124, C66~190.\n- Visual Highlights: The C33 bars should be significantly taller than others, showing strong anisotropy. Legend placed clearly in the top right corner.\nStyle: Scientific publication style, 2D flat bars, white background, black axis lines, clear sans-serif font for labels.",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769595700
+    }
+  ]
+}

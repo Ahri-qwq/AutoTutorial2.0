@@ -1,0 +1,66 @@
+{
+  "run_id": "20260128_124022",
+  "generated_at": "2026-01-28T12:48:51.720468",
+  "items": [
+    {
+      "figure_id": "ch01-fig01",
+      "chapter_id": "ch01",
+      "timestamp": "2026-01-28T12:47:41.178190",
+      "status": "success",
+      "output_file": "data\\runs\\20260128_122700\\images_autogen\\images_output\\ch01-fig01.png",
+      "final_prompt": "请生成一张科学示意图，统一为极简矢量扁平风（适合论文/教材插图）：\n- 纯白背景\n- 扁平化矢量插图风格，清晰描边，线条均匀，高对比度\n- 配色克制（2-4种颜色即可，如深蓝、橙色、灰色），整体干净专业\n- 视觉重点突出，去除所有不必要的装饰细节\n- **关于文字**：尽量避免在图中生成文字。如果 prompt 中明确要求生成文字，仅使用简单的大写英文（如 A, B, INPUT）或数字。**绝对不要尝试生成汉字或复杂句子**，否则图片会包含乱码。\n\n强制避免：\n- 照片风格、写实渲染、3D质感、阴影、渐变\n- 人物脸、真人、手势\n- 复杂背景、纹理背景\n- 水印、LOGO\n- 密集文字段落、汉字、模糊的文本\n\n\nSpecific Request:\nFlat vector illustration, scientific diagram style. White background. Left side: A small table showing pairs of numbers mapping to single numbers (xx->1, yy->2, zz->3, yz->4, xz->5, xy->6). An arrow points from left to right. Right side: A large 6x6 grid representing a matrix. Inside the grid, colored squares highlight specific positions for a Cubic crystal system: The main diagonal elements (1,1), (2,2), (3,3) are Blue. The off-diagonal elements (1,2), (1,3), (2,3) are Red. The bottom-right diagonal elements (4,4), (5,5), (6,6) are Green. All other squares are empty or light grey. Minimalist, clean lines, 3 colors.\n\nAvoid: handwriting, realistic texture, 3d render, complex equations, chinese text, blurry, messy",
+      "model": "dall-e-3",
+      "revision": 1769575644
+    },
+    {
+      "figure_id": "ch01-fig02",
+      "chapter_id": "ch01",
+      "timestamp": "2026-01-28T12:48:04.175965",
+      "status": "success",
+      "output_file": "data\\runs\\20260128_122700\\images_autogen\\images_output\\ch01-fig02.png",
+      "final_prompt": "请生成一张科学示意图，统一为极简矢量扁平风（适合论文/教材插图）：\n- 纯白背景\n- 扁平化矢量插图风格，清晰描边，线条均匀，高对比度\n- 配色克制（2-4种颜色即可，如深蓝、橙色、灰色），整体干净专业\n- 视觉重点突出，去除所有不必要的装饰细节\n- **关于文字**：尽量避免在图中生成文字。如果 prompt 中明确要求生成文字，仅使用简单的大写英文（如 A, B, INPUT）或数字。**绝对不要尝试生成汉字或复杂句子**，否则图片会包含乱码。\n\n强制避免：\n- 照片风格、写实渲染、3D质感、阴影、渐变\n- 人物脸、真人、手势\n- 复杂背景、纹理背景\n- 水印、LOGO\n- 密集文字段落、汉字、模糊的文本\n\n\nSpecific Request:\nMinimalist vector flowchart, split into two horizontal panels. Top panel labeled 'STEP 1': A distorted blue square outline transforming into a perfect square outline. Arrows indicate the borders moving. Label 'Cell-Relax'. Bottom panel labeled 'STEP 2': The perfect square is now stretched into a rhombus shape. The outline is thick and black, indicating it is locked/fixed. Inside the rhombus, small red dots (atoms) move slightly to new positions. Label 'Fixed Cell'. White background, clean geometric shapes, blue and red colors.\n\nAvoid: photorealistic, 3d, shadow, gradient, chinese characters, messy lines, complex molecular structure",
+      "model": "dall-e-3",
+      "revision": 1769575670
+    },
+    {
+      "figure_id": "ch02-fig01",
+      "chapter_id": "ch02",
+      "timestamp": "2026-01-28T12:48:15.632123",
+      "status": "success",
+      "output_file": "data\\runs\\20260128_122700\\images_autogen\\images_output\\ch02-fig01.png",
+      "final_prompt": "请生成一张科学示意图，统一为极简矢量扁平风（适合论文/教材插图）：\n- 纯白背景\n- 扁平化矢量插图风格，清晰描边，线条均匀，高对比度\n- 配色克制（2-4种颜色即可，如深蓝、橙色、灰色），整体干净专业\n- 视觉重点突出，去除所有不必要的装饰细节\n- **关于文字**：尽量避免在图中生成文字。如果 prompt 中明确要求生成文字，仅使用简单的大写英文（如 A, B, INPUT）或数字。**绝对不要尝试生成汉字或复杂句子**，否则图片会包含乱码。\n\n强制避免：\n- 照片风格、写实渲染、3D质感、阴影、渐变\n- 人物脸、真人、手势\n- 复杂背景、纹理背景\n- 水印、LOGO\n- 密集文字段落、汉字、模糊的文本\n\n\nSpecific Request:\nVector flat illustration on white background. A distorted blue grid representing a deformed lattice structure on the left. Two arrows branch out from it to the right. The top arrow points to a green square labeled 'A' with a simple checkmark inside. The bottom arrow points to a red square labeled 'B' with a bold 'X' mark inside. Minimalist scientific diagram style.\n\nAvoid: text, chinese characters, realistic, 3d, shadow, gradient",
+      "model": "dall-e-3",
+      "revision": 1769575684
+    },
+    {
+      "figure_id": "ch02-fig02",
+      "chapter_id": "ch02",
+      "timestamp": "2026-01-28T12:48:26.681844",
+      "status": "success",
+      "output_file": "data\\runs\\20260128_122700\\images_autogen\\images_output\\ch02-fig02.png",
+      "final_prompt": "请生成一张科学示意图，统一为极简矢量扁平风（适合论文/教材插图）：\n- 纯白背景\n- 扁平化矢量插图风格，清晰描边，线条均匀，高对比度\n- 配色克制（2-4种颜色即可，如深蓝、橙色、灰色），整体干净专业\n- 视觉重点突出，去除所有不必要的装饰细节\n- **关于文字**：尽量避免在图中生成文字。如果 prompt 中明确要求生成文字，仅使用简单的大写英文（如 A, B, INPUT）或数字。**绝对不要尝试生成汉字或复杂句子**，否则图片会包含乱码。\n\n强制避免：\n- 照片风格、写实渲染、3D质感、阴影、渐变\n- 人物脸、真人、手势\n- 复杂背景、纹理背景\n- 水印、LOGO\n- 密集文字段落、汉字、模糊的文本\n\n\nSpecific Request:\nVector flat illustration on white background. A simple control flow diagram. On the left, two toggle switches arranged vertically. The top switch is labeled '1' and is green (ON). The bottom switch is labeled '2' and is green (ON). A large arrow points from the switches to the right, leading to a document icon labeled 'DATA'. Clean lines, 2-3 colors only.\n\nAvoid: complex text, chinese characters, photo, sketch, messy",
+      "model": "dall-e-3",
+      "revision": 1769575695
+    },
+    {
+      "figure_id": "ch03-fig01",
+      "chapter_id": "ch03",
+      "timestamp": "2026-01-28T12:48:40.971909",
+      "status": "success",
+      "output_file": "data\\runs\\20260128_122700\\images_autogen\\images_output\\ch03-fig01.png",
+      "final_prompt": "请生成一张科学示意图，统一为极简矢量扁平风（适合论文/教材插图）：\n- 纯白背景\n- 扁平化矢量插图风格，清晰描边，线条均匀，高对比度\n- 配色克制（2-4种颜色即可，如深蓝、橙色、灰色），整体干净专业\n- 视觉重点突出，去除所有不必要的装饰细节\n- **关于文字**：尽量避免在图中生成文字。如果 prompt 中明确要求生成文字，仅使用简单的大写英文（如 A, B, INPUT）或数字。**绝对不要尝试生成汉字或复杂句子**，否则图片会包含乱码。\n\n强制避免：\n- 照片风格、写实渲染、3D质感、阴影、渐变\n- 人物脸、真人、手势\n- 复杂背景、纹理背景\n- 水印、LOGO\n- 密集文字段落、汉字、模糊的文本\n\n\nSpecific Request:\nVector flat illustration, scientific chart. A simple 2D coordinate system. X-axis labeled 'STEPS', Y-axis labeled 'ERROR'. A horizontal dashed red line labeled 'THR'. A smooth blue curve starts high on the Y-axis and decays exponentially, crossing below the 'THR' line. Minimalist design, white background, clean lines, no background texture.\n\nAvoid: complex grid, 3d, realistic, shadow, gradient, handwriting, chinese characters",
+      "model": "dall-e-3",
+      "revision": 1769575706
+    },
+    {
+      "figure_id": "ch03-fig02",
+      "chapter_id": "ch03",
+      "timestamp": "2026-01-28T12:48:51.720468",
+      "status": "success",
+      "output_file": "data\\runs\\20260128_122700\\images_autogen\\images_output\\ch03-fig02.png",
+      "final_prompt": "请生成一张科学示意图，统一为极简矢量扁平风（适合论文/教材插图）：\n- 纯白背景\n- 扁平化矢量插图风格，清晰描边，线条均匀，高对比度\n- 配色克制（2-4种颜色即可，如深蓝、橙色、灰色），整体干净专业\n- 视觉重点突出，去除所有不必要的装饰细节\n- **关于文字**：尽量避免在图中生成文字。如果 prompt 中明确要求生成文字，仅使用简单的大写英文（如 A, B, INPUT）或数字。**绝对不要尝试生成汉字或复杂句子**，否则图片会包含乱码。\n\n强制避免：\n- 照片风格、写实渲染、3D质感、阴影、渐变\n- 人物脸、真人、手势\n- 复杂背景、纹理背景\n- 水印、LOGO\n- 密集文字段落、汉字、模糊的文本\n\n\nSpecific Request:\nVector flat illustration, workflow warning diagram. Three stages arranged horizontally. Left: A blue folder icon full of papers labeled 'DATA'. Middle: A red arrow pointing right, labeled 'RESET', with a yellow warning triangle icon above it. Right: An empty grey folder icon labeled 'EMPTY'. Minimalist style, white background, flat colors.\n\nAvoid: photographic, detailed text, messy, chinese characters, black background",
+      "model": "dall-e-3",
+      "revision": 1769575721
+    }
+  ]
+}

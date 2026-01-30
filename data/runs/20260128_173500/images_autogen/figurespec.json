@@ -1,0 +1,478 @@
+{
+  "run_id": "20260128_174717",
+  "style": {
+    "theme": "vector_flat",
+    "label_lang": "zh-CN"
+  },
+  "chapters": [
+    {
+      "chapter_id": "ch01",
+      "chapter_title": "ABACUS 弹性常数计算",
+      "figures": [
+        {
+          "figure_id": "ch01-fig01_roadmap",
+          "title": "ABACUS 弹性常数计算学习路线图",
+          "caption": "本教程的四个核心学习阶段示意图：从弹性力学理论基础出发，经历计算准备与基准构建，通过单质硅（Si）掌握标准工作流，最后深入二氧化钛（TiO₂）处理复杂的各向异性与原子弛豫问题。",
+          "insert_after_heading": "### **学习路线图 (Roadmap)**",
+          "diagram_type": "流程图",
+          "source_quotes": [
+            "第一章：回顾弹性力学基础，重点阐述广义胡克定律",
+            "第二章：聚焦计算准备，强调“零应力”基准",
+            "第三章：以单质硅（Si）为例，演示结合 `abacustest` 自动化工具",
+            "第四章：深入探讨金红石型二氧化钛（TiO₂），解析非立方晶系的各向异性"
+          ],
+          "entities_whitelist": [
+            "Hooke's Law",
+            "Zero Stress",
+            "Si",
+            "TiO2",
+            "abacustest"
+          ],
+          "labels_required": [
+            "第一章：理论基础",
+            "广义胡克定律",
+            "第二章：计算准备",
+            "零应力基准",
+            "第三章：标准实战 (Si)",
+            "abacustest 自动化",
+            "第四章：进阶拓展 (TiO2)",
+            "各向异性 & 原子弛豫"
+          ],
+          "labels_forbidden": [
+            "Handwriting",
+            "Photorealistic textures",
+            "Complex background",
+            "People"
+          ],
+          "assertions": [
+            "Figure must contain 4 distinct blocks arranged horizontally or vertically.",
+            "Arrows must connect Chapter 1 to 2, 2 to 3, and 3 to 4.",
+            "Chapter 3 block must visually reference Silicon.",
+            "Chapter 4 block must visually reference TiO2."
+          ],
+          "prompt": "Subject: A clean, academic process flowchart illustrating the four-stage learning roadmap for ABACUS elastic constant calculation.\n\nVisual Elements:\n- Layout: Four rectangular panels or nodes arranged horizontally from left to right, connected by directional arrows indicating a progression path.\n- Node 1 (Left): Label \"第一章：理论基础\". Sub-label: \"广义胡克定律\". Visual icon: A simple stress-strain curve or a spring schematic.\n- Node 2: Label \"第二章：计算准备\". Sub-label: \"零应力基准\". Visual icon: A perfect, undeformed cubic unit cell wireframe.\n- Node 3: Label \"第三章：标准实战 (Si)\". Sub-label: \"abacustest 自动化\". Visual icon: A schematic of a Diamond-structure Silicon crystal lattice combined with a gear symbol (representing automation).\n- Node 4 (Right): Label \"第四章：进阶拓展 (TiO2)\". Sub-label: \"各向异性 & 原子弛豫\". Visual icon: A schematic of a Rutile TiO2 crystal structure (tetragonal).\n- Connections: sleek, dark grey arrows pointing from one node to the next.\n\nStyle:\n- Background: Pure white.\n- Color Palette: Professional academic scheme. Use Navy Blue for Theory, Teal for Preparation, Forest Green for Si Practice, and Burnt Orange for TiO2 Advanced.\n- Typography: Sans-serif, clean, legible Chinese characters for labels.\n- Aesthetics: Flat design, vector art style, high contrast, suitable for a scientific textbook.",
+          "negative_prompt": "photorealistic, 3d render with shadows, chaotic layout, messy text, handwriting, blurry, low resolution, neon colors, decorative borders"
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch02",
+      "chapter_title": "**第一章：弹性力学**​**基础与计算原理**",
+      "figures": [
+        {
+          "figure_id": "ch02-fig01",
+          "title": "Voigt 记号下标映射与矩阵降维示意图",
+          "caption": "本图展示了如何利用 Voigt 记号将二阶应力/应变张量的双下标（ij）映射为单下标（1-6），从而将四阶弹性刚度张量简化为 6×6 矩阵。左侧展示了张量下标到 Voigt 下标的对应规则，下方展示了简化后的广义胡克定律矩阵形式。",
+          "insert_after_heading": "### ​**1.1.2 Voigt 记号：将 81 个分量简化为 ​**​\\$\\$6 \\\\times \\$\\$**​ 矩阵**",
+          "diagram_type": "示意图",
+          "source_quotes": [
+            "利用应力和应变的对称性（\\$\\sigma_{ij}=\\sigma_{ji}\\$，\\$\\varepsilon_{ij}=\\varepsilon_{ji}\\$），我们可以使用 **Voigt 记号** 将下标简化",
+            "xx \\rightarrow 1",
+            "通过这种映射，四阶张量被“降维”为一个 6 \\times 6 的对称矩阵 \\$C_{ij}\\$"
+          ],
+          "entities_whitelist": [
+            "Voigt Notation",
+            "Tensor Indices",
+            "Matrix Indices",
+            "Stress",
+            "Strain",
+            "Stiffness Matrix"
+          ],
+          "labels_required": [
+            "张量下标 (Tensor)",
+            "Voigt 下标",
+            "降维映射",
+            "弹性刚度矩阵 Cij"
+          ],
+          "labels_forbidden": [
+            "复杂背景",
+            "手写字体",
+            "3D渲染"
+          ],
+          "assertions": [
+            "图中必须清晰展示 xx对应1, yy对应2, zz对应3, yz对应4, xz对应5, xy对应6 的映射关系",
+            "必须展示 6x6 的矩阵结构"
+          ],
+          "prompt": "Subject: A mathematical schematic diagram illustrating the Voigt Notation mapping rule and the resulting matrix equation.\n\nVisual Elements:\n- Top Section (The Mapping Logic):\n  - Left Group: A text block labeled \"张量下标 (Tensor)\" listing the index pairs vertically: \"xx, yy, zz, yz, xz, xy\".\n  - Center Arrow: A wide arrow pointing right, labeled \"降维映射\".\n  - Right Group: A text block labeled \"Voigt 下标\" listing single numbers vertically: \"1, 2, 3, 4, 5, 6\".\n  - Visual Connection: Draw thin connecting lines between \"xx\" and \"1\", \"yy\" and \"2\", etc., to emphasize the correspondence.\n\n- Bottom Section (The Resulting Equation):\n  - Display the matrix equation: [Stress Vector] = [6x6 Stiffness Matrix] * [Strain Vector].\n  - The 6x6 Matrix ($C_{ij}$) should be the central visual anchor, clearly showing rows and columns (e.g., $C_{11}$ to $C_{66}$).\n  - Label the large matrix as \"弹性刚度矩阵 Cij\".\n\nStyle:\n- Background: Pure white.\n- Color Scheme: Navy blue for matrix brackets and text, Red for mapping arrows/highlights.\n- Typography: Serif font for mathematical symbols (LaTeX style), Sans-serif for Chinese labels.\n- Layout: Clean, symmetrical, high-contrast academic textbook style.",
+          "negative_prompt": "handwritten, blackboard style, messy lines, low resolution, 3d effects, colorful background"
+        },
+        {
+          "figure_id": "ch02-fig02",
+          "title": "第一性原理计算中的原子弛豫机制对比：Clamped-ion vs. Relaxed-ion",
+          "caption": "该图对比了在施加晶格形变后，两种不同的原子处理方式。左图（Clamped-ion）显示晶胞拉伸但原子相对坐标被冻结，导致非物理的高能态；右图（Relaxed-ion）显示在保持晶胞形变的同时允许原子弛豫到新的平衡位置，这才是计算弹性常数所需的正确状态。",
+          "insert_after_heading": "### **1.2.2 原子弛豫的重要性 (Relaxed-ion vs. Clamped-ion)**",
+          "diagram_type": "结构示意图",
+          "source_quotes": [
+            "Clamped-ion（钳制离子）... 相当于把原子“冻”住了",
+            "Relaxed-ion（松弛离子）... 允许原子在新的晶胞形状下移动，寻找新的受力平衡位置",
+            "需要计算的是​**松弛离子弹性常数**"
+          ],
+          "entities_whitelist": [
+            "Unit Cell",
+            "Atoms",
+            "Deformation",
+            "Relaxation",
+            "Internal Force"
+          ],
+          "labels_required": [
+            "初始结构 (Equilibrium)",
+            "钳制离子 (Clamped-ion)",
+            "松弛离子 (Relaxed-ion)",
+            "原子坐标不变",
+            "内部原子弛豫",
+            "错误做法 (scf)",
+            "正确做法 (relax)"
+          ],
+          "labels_forbidden": [
+            "photorealistic",
+            "shadows",
+            "complex textures"
+          ],
+          "assertions": [
+            "必须包含三个状态：初始、钳制、松弛",
+            "钳制状态下原子位置仅仅是随晶胞拉伸",
+            "松弛状态下原子必须显示出相对于晶胞的局部微调移动"
+          ],
+          "prompt": "Subject: A comparative schematic of crystal lattice deformation modes: Clamped-ion vs. Relaxed-ion.\n\nVisual Elements:\n- Layout: Three horizontal panels showing a 2D crystal lattice (balls and sticks).\n\n- Panel 1 (Left): Label \"初始结构 (Equilibrium)\". Shows a perfect square lattice. Atoms are evenly spaced.\n\n- Panel 2 (Center): Label \"钳制离子 (Clamped-ion)\".\n  - The lattice box is stretched horizontally (rectangular shape).\n  - The atoms are stretched proportionally with the box (fractional coordinates fixed).\n  - Add a red cross (X) or warning icon.\n  - Annotation: \"错误做法 (scf)\" and \"原子坐标不变\".\n  - Visual cue: Faint red arrows on atoms indicating unbalanced internal forces.\n\n- Panel 3 (Right): Label \"松弛离子 (Relaxed-ion)\".\n  - The lattice box is stretched horizontally (same shape as Center).\n  - The internal atoms have shifted slightly from the grid lines (finding new equilibrium).\n  - Add a green checkmark.\n  - Annotation: \"正确做法 (relax)\" and \"内部原子弛豫\".\n  - Visual cue: Small curved arrows showing atoms moving to comfortable positions.\n\nStyle:\n- Flat scientific vector art.\n- Atoms: Simple colored circles (e.g., Teal).\n- Bonds: Thin grey lines.\n- Highlights: Red for error/stress, Green for correct/relaxed.\n- Background: White.",
+          "negative_prompt": "3d render, perspective distortion, gradient background, noisy, artistic sketch"
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch03",
+      "chapter_title": "**第二章：计算准备——构建“零应力”基准**",
+      "figures": [
+        {
+          "figure_id": "ch03-fig01",
+          "title": "原胞与惯用胞的坐标系对齐对比",
+          "caption": "展示了在计算弹性常数时，原胞（Primitive Cell）与惯用胞（Conventional Cell）相对于笛卡尔坐标系的几何关系。左侧原胞基矢非正交，导致施加单轴应变时产生复杂的混合分量；右侧惯用胞基矢天然对齐坐标轴，沿轴向的拉伸直接对应物理直观的弹性常数分量。",
+          "insert_after_heading": "### 惯用胞的优势",
+          "diagram_type": "Schematic Diagram (Structure & Coordinate System)",
+          "source_quotes": [
+            "原胞：基矢量是非正交的，与笛卡尔坐标轴不重合。",
+            "惯用胞：其晶格矢量（Lattice Vectors）天然沿着 x, y, z 轴方向",
+            "沿 x 轴拉伸直接对应 \\epsilon_{11}，得到的应力响应直接对应 C_{11}。"
+          ],
+          "entities_whitelist": [
+            "Primitive Cell",
+            "Conventional Cell",
+            "Cartesian Coordinates",
+            "Lattice Vectors",
+            "Strain"
+          ],
+          "labels_required": [
+            "原胞 (Primitive)",
+            "惯用胞 (Conventional)",
+            "非正交基矢",
+            "基矢平行坐标轴",
+            "复杂变换",
+            "直接对应 C11"
+          ],
+          "labels_forbidden": [
+            "Photo",
+            "Background texture",
+            "Handwriting"
+          ],
+          "assertions": [
+            "Left panel shows a rhombohedral-like cell with vectors misaligned to axes.",
+            "Right panel shows a cubic cell with vectors aligned to axes.",
+            "X, Y, Z axes are clearly visible in both panels."
+          ],
+          "prompt": "Subject: A comparative scientific schematic illustrating the geometric alignment of Primitive Cell vs. Conventional Cell relative to Cartesian axes.\n\nVisual Elements:\n- Layout: Split into two side-by-side panels. Left panel title: \"原胞 (Primitive)\". Right panel title: \"惯用胞 (Conventional)\".\n- Coordinate System: Both panels feature a clear 3D Cartesian coordinate system with arrows labeled x, y, z.\n- Left Panel Content: A schematic Crystal structure (e.g., FCC primitive) represented as a rhombohedron. Its lattice vectors (arrows a1, a2, a3) are shown at angles (non-orthogonal) and clearly do NOT align with the x, y, z axes. A text annotation below says \"非正交基矢 (Non-orthogonal)\" and \"复杂变换 (Complex Transform)\".\n- Right Panel Content: A cubic Crystal structure. Its lattice vectors (arrows a, b, c) are perfectly parallel to the x, y, z axes. A red arrow indicates stretching along the x-axis. A text annotation below says \"基矢平行坐标轴 (Aligned)\" and \"直接对应 C11 (Direct C11)\".\n\nStyle:\n- Academic publication style, flat 3D vector graphics.\n- Clean white background.\n- Color coding: Blue for the crystal lattice, Black for coordinate axes, Red for strain/force arrows.\n- High contrast, legible typography.",
+          "negative_prompt": "photorealistic, blurry, messy, handwritten text, dark background, complex textures"
+        },
+        {
+          "figure_id": "ch03-fig02",
+          "title": "消除残余应力的高精度优化流程",
+          "caption": "构建“零应力”基准的计算工作流。流程从含有高残余应力的初始结构开始，通过设置严格收敛标准（如 scf_thr < 1e-8）的变胞弛豫（cell-relax），最终获得应力张量几乎为零的完美晶格，防止虚假物理响应。",
+          "insert_after_heading": "### 2.3.3 检查“零应力”状态",
+          "diagram_type": "Process Flow Diagram",
+          "source_quotes": [
+            "直接使用文件中的结构会导致巨大的内应力。",
+            "我们需要使用 ABACUS 进行变胞弛豫（Variable Cell Relaxation）。",
+            "scf_thr 1.0e-8",
+            "stress_thr 0.1",
+            "确认最后一步的应力张量（Stress Tensor）是否接近于 0。"
+          ],
+          "entities_whitelist": [
+            "Initial Structure",
+            "Relaxation",
+            "Parameters",
+            "Zero Stress",
+            "ABACUS"
+          ],
+          "labels_required": [
+            "初始结构 (CIF)",
+            "残余应力 > 0.1 GPa",
+            "变胞弛豫 (cell-relax)",
+            "高精度参数",
+            "基准结构",
+            "零应力状态"
+          ],
+          "labels_forbidden": [
+            "Code screenshot",
+            "Terminal window",
+            "Low resolution"
+          ],
+          "assertions": [
+            "Flow moves from left (high stress) to right (zero stress).",
+            "Central part highlights specific calculation parameters.",
+            "Visual distinction between 'distorted/stressed' and 'perfect' states."
+          ],
+          "prompt": "Subject: A scientific process flow diagram showing the workflow for eliminating residual stress in crystal structures using ABACUS.\n\nVisual Elements:\n- Step 1 (Left): An icon representing a \"Initial Structure\". Visual cues (like small red tension arrows) imply internal stress. Label: \"初始结构 (CIF)\" and sub-label \"残余应力 > 0.1 GPa\".\n- Transition (Center): A large, sleek arrow pointing from left to right. Inside or above the arrow, a gear icon representing processing. Label: \"变胞弛豫 (cell-relax)\".\n- Parameter Box (Connected to Center): A callout box listing key settings: \"scf_thr = 1e-8\", \"force_thr = 1e-2\", \"stress_thr ≈ 0\". Label this box \"高精度参数 (High Precision)\".\n- Step 2 (Right): An icon representing the \"Reference Structure\". It looks perfectly cubic and orderly, surrounded by a calm blue aura or checkmark. Label: \"基准结构 (Reference)\" and sub-label \"零应力状态 (Zero Stress)\".\n- Bottom Chart (Optional inset): A small, stylized line graph showing \"Stress\" on Y-axis dropping to zero over \"Steps\" on X-axis.\n\nStyle:\n- Professional technical diagram.\n- White background.\n- Color palette: Transition from Red (Stress) to Blue/Green (Relaxed/Correct).\n- Clean lines, sans-serif fonts for labels.",
+          "negative_prompt": "chaotic, hand-drawn, abstract art, screen capture, interface elements"
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch04",
+      "chapter_title": "**第三章：标准工作流**​​**实战——以硅（Si**​**）为例**",
+      "figures": [
+        {
+          "figure_id": "ch04-fig01",
+          "title": "结构预优化：从初始态到零应力基态",
+          "caption": "ABACUS 结构优化原理示意图。通过 cell-relax 模式，同时调整原子位置（Ions）和晶胞形状（Cell），使系统沿着势能面下降，直到达到受力极小且内应力（Stress）接近于 0 的基态结构。这是计算弹性常数的必要前提。",
+          "insert_after_heading": "### 3.1.2 关键参数解析",
+          "diagram_type": "示意图/原理图",
+          "source_quotes": [
+            "在施加应变之前，必须确保初始结构处于“零应力”的基态。",
+            "我们需要同时优化晶胞形状（Cell）和原子位置（Ions），以消除所有内应力。",
+            "force_thr_ev: 0.01",
+            "stress_thr: 0.1"
+          ],
+          "entities_whitelist": [
+            "Energy Surface",
+            "Initial Structure",
+            "Relaxed Structure",
+            "Stress",
+            "Cell-relax"
+          ],
+          "labels_required": [
+            "初始结构 (高应力)",
+            "优化路径",
+            "基态结构 (零应力)",
+            "能量极小值",
+            "应力张量 ≈ 0"
+          ],
+          "labels_forbidden": [
+            "复杂背景",
+            "真实照片",
+            "手写字体"
+          ],
+          "assertions": [
+            "图中应包含一个势能曲线或势能面示意。",
+            "左侧应表示不稳定的初始结构，右侧表示稳定的基态结构。",
+            "箭头应指示从高能态向低能态的演化。"
+          ],
+          "prompt": "Subject: A conceptual schematic illustrating the structural relaxation process in computational materials science.\n\nVisual Elements:\n- Background: A clean 2D plot area representing Potential Energy Surface (a smooth curve dipping into a well).\n- Y-axis: Label \"系统能量 (Energy)\".\n- X-axis: Label \"晶格参数/几何构型 (Geometry)\".\n- Element 1 (Top Left): An icon of a Silicon crystal lattice with slight red distortion lines, labeled \"初始结构 (高应力)\".\n- Element 2 (Bottom Center): An icon of a perfect, symmetric Silicon crystal lattice sitting at the bottom of the energy well, labeled \"基态结构 (零应力)\".\n- Action: A curved dashed arrow connecting Element 1 to Element 2, following the slope of the energy curve. Label the arrow \"abacustest cell-relax\".\n- Annotation: Near the bottom well, add text \"Stress < 0.1 KBar\" and \"Force < 0.01 eV/Å\".\n\nStyle: Academic diagram style, flat design, white background. Use blue for the energy curve and structure icons, red for stress indicators. High contrast, clean sans-serif typography.",
+          "negative_prompt": ""
+        },
+        {
+          "figure_id": "ch04-fig02",
+          "title": "abacustest 弹性任务生成工作流",
+          "caption": "由基准结构自动生成批量变形任务的目录树结构示意图。abacustest 工具读取优化后的 STRU 文件，根据设定的正应变（norm）和剪切应变（shear）参数，自动生成包含原始结构（org）和多个变形结构（deform-xx）的独立计算文件夹。",
+          "insert_after_heading": "### 3.2.2 生成的目录结构",
+          "diagram_type": "流程图/结构图",
+          "source_quotes": [
+            "abacustest model elastic prepare -j Si-elastic --norm 0.01 --shear 0.01",
+            "org/: 原始结构的计算任务（作为基准）。",
+            "deform-01/到deform-23：施加了不同大小和不同形变的结构"
+          ],
+          "entities_whitelist": [
+            "Si-elastic",
+            "STRU_ION_D",
+            "deform-xx",
+            "org",
+            "Normal Strain",
+            "Shear Strain"
+          ],
+          "labels_required": [
+            "输入: 优化后的 STRU",
+            "生成命令: abacustest ... prepare",
+            "基准任务: org",
+            "变形任务: deform-xx",
+            "拉伸 (Normal)",
+            "剪切 (Shear)"
+          ],
+          "labels_forbidden": [
+            "混乱的连线",
+            "非结构化布局"
+          ],
+          "assertions": [
+            "中心或顶部应为输入的 STRU 文件。",
+            "应发散出多个文件夹图标。",
+            "需区分 org 文件夹和 deform 文件夹。"
+          ],
+          "prompt": "Subject: A hierarchical workflow diagram showing the file generation process for elastic constant calculation.\n\nVisual Elements:\n- Root Node (Top): A folder icon labeled \"Si-elastic/\" containing a file icon labeled \"STRU (基态)\".\n- Process Node (Middle): A gear or action arrow labeled \"自动生成 (abacustest prepare)\".\n- Output Nodes (Bottom): A branching tree structure leading to multiple folder icons.\n  - Branch 1: Folder labeled \"org/\" with a sub-label \"基准结构 (无应变)\".\n  - Branch 2: Folder labeled \"deform-01/\" with a small icon showing a cube stretched along one axis. Label: \"正应变 (Normal)\".\n  - Branch 3: Folder labeled \"deform-xx/\" with a small icon showing a cube tilted/sheared. Label: \"剪切应变 (Shear)\".\n  - Visual Hint: Use '...' between deform-01 and deform-xx to imply multiple folders (01 to 23).\n\nStyle: Clean technical diagram, flat vector graphics. Use distinct colors for folders (e.g., yellow/orange) and process arrows (grey/blue). White background, professional font.",
+          "negative_prompt": ""
+        },
+        {
+          "figure_id": "ch04-fig03",
+          "title": "硅的弹性刚度张量矩阵可视化",
+          "caption": "基于计算结果拟合得到的硅（立方晶系）弹性刚度张量 $C_{ij}$ 矩阵热力图。图中清晰展示了三个独立分量：对角线上的 $C_{11}$（轴向刚度），非对角线的 $C_{12}$（横向耦合），以及右下角的 $C_{44}$（剪切刚度）。其余分量均为 0，符合立方晶系的对称性。",
+          "insert_after_heading": "### 3.3.2 结果解读",
+          "diagram_type": "矩阵图/热力图",
+          "source_quotes": [
+            "elastic_tensor:",
+            "C_{11}: 代表沿轴向拉伸的刚度。这里 =155.5 GPa",
+            "C_{12}: 代表泊松效应导致的横向耦合。这里 =58.2 GPa",
+            "C_{44}: 代表剪切变形的刚度。这里 =76.2 GPa"
+          ],
+          "entities_whitelist": [
+            "C11",
+            "C12",
+            "C44",
+            "Matrix",
+            "GPa"
+          ],
+          "labels_required": [
+            "C11 ≈ 155 GPa",
+            "C12 ≈ 58 GPa",
+            "C44 ≈ 76 GPa",
+            "0"
+          ],
+          "labels_forbidden": [
+            "难以辨认的小字",
+            "七彩霓虹配色"
+          ],
+          "assertions": [
+            "必须展示 6x6 的矩阵网格。",
+            "非零元素的位置必须符合立方晶系特征（对角线前3，交叉前3x3，对角线后3）。",
+            "数值应与文本中的结果一致。"
+          ],
+          "prompt": "Subject: A scientific matrix visualization (heatmap style) of the 6x6 Elastic Stiffness Tensor for Silicon.\n\nVisual Elements:\n- Structure: A 6x6 grid representing the matrix indices 1 to 6 (or 0 to 5).\n- Color Coding (Values):\n  - Diagonal Cells (1,1), (2,2), (3,3): Deep Blue squares. Label inside: \"C11\\n155.5\".\n  - Off-Diagonal Cells (1,2), (1,3), (2,1), (2,3), (3,1), (3,2): Medium Blue squares. Label inside: \"C12\\n58.3\".\n  - Shear Diagonal Cells (4,4), (5,5), (6,6): Light Blue squares. Label inside: \"C44\\n76.2\".\n  - All other cells: Very light grey or white. Label inside: \"0\".\n- Annotations:\n  - A bracket on the left grouping rows 1-3 labeled \"正应力分量 (Normal)\".\n  - A bracket on the left grouping rows 4-6 labeled \"剪切应力分量 (Shear)\".\n  - Legend: \"单位: GPa\".\n\nStyle: Academic publication quality. Sharp grid lines, clean sans-serif text centered in each cell. Monochromatic blue scale for values to represent magnitude (Darker = Higher Stiffness). White background.",
+          "negative_prompt": ""
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch05",
+      "chapter_title": "​**第四章：进阶案例与各向异性**​**——金红石型 TiO2**",
+      "figures": [
+        {
+          "figure_id": "ch05-fig01",
+          "title": "金红石型 TiO2 晶体结构与四方晶系弹性矩阵",
+          "caption": "左图展示了金红石型二氧化钛（Rutile TiO2）的四方晶胞结构，钛原子位于中心及顶点，氧原子呈八面体配位。右图为四方晶系（Laue class I）的弹性常数矩阵形式，高亮显示了 6 个独立的弹性常数（C11, C12, C13, C33, C44, C66），体现了其各向异性特征。",
+          "insert_after_heading": "## **4.2 独立弹性常数分析与实验对比**",
+          "diagram_type": "结构示意图",
+          "source_quotes": [
+            "金红石型 TiO₂ 属于四方晶系（Laue class I）",
+            "它具有 ​**6 个独立弹性常数**​",
+            "$$ C_{11}, C_{12}, C_{13}, C_{33}, C_{44}, C_{66} $$"
+          ],
+          "entities_whitelist": [
+            "Titanium",
+            "Oxygen",
+            "Unit Cell",
+            "Elastic Matrix",
+            "C11",
+            "C33"
+          ],
+          "labels_required": [
+            "Ti 原子",
+            "O 原子",
+            "c-axis",
+            "四方晶系矩阵"
+          ],
+          "labels_forbidden": [
+            "复杂的背景图案",
+            "阴影过重",
+            "手写字体"
+          ],
+          "assertions": [
+            "左侧显示晶体球棍模型，右侧显示6x6矩阵",
+            "矩阵中应当只有上三角或对称显示非零项",
+            "C11与C22应当标记为相同颜色或符号"
+          ],
+          "prompt": "Subject: A dual-panel scientific illustration. Left panel: 3D Ball-and-stick crystal structure model of Rutile TiO2. Titanium atoms are silver/grey spheres, Oxygen atoms are red spheres. The unit cell is a rectangular prism (tetragonal, c-axis longer than a-axis), outlined in black lines. Label 'Ti 原子' pointing to a grey sphere, 'O 原子' pointing to a red sphere. Vertical axis labeled 'c-axis'. Right panel: A 6x6 matrix grid representation of the Elastic Tensor. The matrix entries are text. Diagonal elements: C11, C11, C33, C44, C44, C66. Off-diagonal: C12, C13 (symmetric). Zeros in other positions. Highlight the independent constants (C11, C12, C13, C33, C44, C66) with a light blue background fill. Label above matrix: '四方晶系矩阵'. Style: Clean white background, academic publication standard, flat design for the matrix, high-quality 3D render look for the atoms.",
+          "negative_prompt": ""
+        },
+        {
+          "figure_id": "ch05-fig02",
+          "title": "abacustest 弹性常数计算自动化工作流",
+          "caption": "基于 abacustest 的弹性常数计算全流程示意图。流程从初始 CIF 结构出发，经过高精度结构优化（Cell Relax），自动生成多组变形结构（Prepare），批量提交 SCF 计算，最后进行后处理拟合（Post-process）得到弹性模量张量。",
+          "insert_after_heading": "### **4.2.2 实战操作：工作流执行**",
+          "diagram_type": "流程图",
+          "source_quotes": [
+            "使用 `abacustest` 自动化完成“施加应变 -> 生成文件 -> 提交计算”的全流程",
+            "第一步：准备结构",
+            "第二步：执行高精度结构优化",
+            "abacustest model elastic prepare",
+            "abacustest model elastic post"
+          ],
+          "entities_whitelist": [
+            "CIF",
+            "Relax",
+            "Deform",
+            "SCF",
+            "Post-process",
+            "Tensor"
+          ],
+          "labels_required": [
+            "1. 结构准备 (CIF)",
+            "2. 结构优化 (Cell Relax)",
+            "3. 生成变形 (Prepare)",
+            "4. 批量计算 (SCF)",
+            "5. 后处理 (Post)",
+            "输出: 弹性张量"
+          ],
+          "labels_forbidden": [
+            "混乱的连线",
+            "低分辨率图标"
+          ],
+          "assertions": [
+            "流程必须是线性的或循序渐进的",
+            "包含5个主要步骤节点",
+            "最后一步指向结果输出"
+          ],
+          "prompt": "Subject: A linear horizontal flowchart illustrating the computational workflow for elastic constants. Visual Elements: Five rectangular nodes with rounded corners, connected by directional arrows from left to right. \n- Node 1: '1. 结构准备 (CIF)'. Icon: A document file symbol.\n- Arrow ->\n- Node 2: '2. 结构优化 (Cell Relax)'. Icon: A crystal lattice structure being tightened.\n- Arrow ->\n- Node 3: '3. 生成变形 (Prepare)'. Icon: One cube splitting into multiple slightly distorted cubes.\n- Arrow ->\n- Node 4: '4. 批量计算 (SCF)'. Icon: A server rack or computer chip.\n- Arrow ->\n- Node 5: '5. 后处理 (Post)'. Icon: A line graph fitting curve.\n- Final Arrow -> Result Box: '输出: 弹性张量'.\nStyle: Professional vector graphics, white background. Color scheme: Deep blue for nodes, grey for arrows. Text should be legible and centered in nodes.",
+          "negative_prompt": ""
+        },
+        {
+          "figure_id": "ch05-fig03",
+          "title": "金红石 TiO2 弹性常数：计算值与实验值对比",
+          "caption": "本教程计算得到的弹性常数（蓝色柱状图）与实验测量值（灰色柱状图）的对比。结果显示 C33 具有显著的最大值，体现了沿 c 轴方向的高刚度。计算结果与实验吻合良好，验证了方法的准确性。",
+          "insert_after_heading": "### **4.2.3 结果分析与验证**",
+          "diagram_type": "条形统计图",
+          "source_quotes": [
+            "将结果与 Physics and Chemistry of Minerals 26, 31 (1998) 中的实验结果对比",
+            "C11: 281.2 vs 268.0",
+            "C33: 484.0 vs 484.2",
+            "C44: 117.4 vs 123.8"
+          ],
+          "entities_whitelist": [
+            "C11",
+            "C12",
+            "C13",
+            "C33",
+            "C44",
+            "C66",
+            "GPa"
+          ],
+          "labels_required": [
+            "弹性常数 (GPa)",
+            "计算值 (This Work)",
+            "实验值 (Exp.)",
+            "C11",
+            "C12",
+            "C13",
+            "C33",
+            "C44",
+            "C66"
+          ],
+          "labels_forbidden": [
+            "3D柱状图",
+            "难以区分的颜色"
+          ],
+          "assertions": [
+            "包含6组数据",
+            "C33应当是最高的柱子，接近500",
+            "每组包含两个柱子（计算vs实验）"
+          ],
+          "prompt": "Subject: A grouped bar chart comparing calculated vs experimental elastic constants for Rutile TiO2. Visual Elements:\n- X-axis: Categories labeled 'C11', 'C12', 'C13', 'C33', 'C44', 'C66'.\n- Y-axis: Label '弹性常数 / Elastic Constant (GPa)'. Scale from 0 to 600.\n- Data Series 1 (Blue bars): Label '计算值 (This Work)'. Values: C11~281, C12~158, C13~156, C33~484, C44~117, C66~216.\n- Data Series 2 (Grey bars): Label '实验值 (Exp.)'. Values: C11~268, C12~175, C13~147, C33~484, C44~124, C66~190.\n- Visual Highlights: The C33 bars should be significantly taller than others, showing strong anisotropy. Legend placed clearly in the top right corner.\nStyle: Scientific publication style, 2D flat bars, white background, black axis lines, clear sans-serif font for labels.",
+          "negative_prompt": ""
+        }
+      ]
+    }
+  ]
+}

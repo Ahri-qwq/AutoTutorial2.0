@@ -1,0 +1,384 @@
+{
+  "run_id": "20260128_160525",
+  "style": {
+    "theme": "vector_flat",
+    "label_lang": "zh-CN"
+  },
+  "chapters": [
+    {
+      "chapter_id": "ch01",
+      "chapter_title": "ABACUS 第一性原理计算实战：从弹性力学基础到自动化工作流",
+      "figures": [
+        {
+          "figure_id": "ch01-fig01",
+          "title": "ABACUS 弹性计算教程学习路线图",
+          "caption": "本教程分为四个循序渐进的阶段：STEP 1 为理论基础 (Ch.01)，STEP 2 为结构优化准备 (Ch.02)，STEP 3 为自动化实战演练 (Ch.03)，STEP 4 为复杂体系进阶 (Ch.04)。",
+          "insert_after_heading": "## 前言",
+          "diagram_type": "流程图",
+          "source_quotes": [
+            "本教程采用“理论引领-规范操作-自动化实战-复杂进阶”的四步走策略",
+            "1. **理论篇 (Ch.01)**... 2. **准备篇 (Ch.02)**... 3. **实战篇 (Ch.03)**... 4. **进阶篇 (Ch.04)**"
+          ],
+          "entities_whitelist": [
+            "Ch.01",
+            "Ch.02",
+            "Ch.03",
+            "Ch.04"
+          ],
+          "labels_required": [
+            "理论篇",
+            "准备篇",
+            "实战篇",
+            "进阶篇"
+          ],
+          "labels_forbidden": [
+            "具体章节名",
+            "详细描述",
+            "中文汉字"
+          ],
+          "assertions": [
+            "图中应包含四个明显的节点或步骤，按顺序排列",
+            "节点上的数字对应章节编号",
+            "箭头表示学习进度的方向"
+          ],
+          "prompt": "A flat vector illustration of a linear progress roadmap with four distinct steps. Four circular nodes arranged horizontally from left to right, connected by simple directional arrows. Inside the first node is the text '01', second node '02', third node '03', fourth node '04'. The design is minimalist, using shades of blue and teal on a pure white background. No other text.",
+          "negative_prompt": "complex text, chinese characters, realistic photo, 3d render, clutter, messy background"
+        },
+        {
+          "figure_id": "ch01-fig02",
+          "title": "弹性常数计算的知识体系定位",
+          "caption": "弹性常数计算在 DFT 工作流中的承上启下作用：模块 A 代表前置的结构优化 (Relaxation)，模块 B 代表核心的弹性常数计算 (Elastic Constants)，模块 C 代表后续的声子谱与热力学分析 (Phonons)。",
+          "insert_after_heading": "## 前言",
+          "diagram_type": "概念结构图",
+          "source_quotes": [
+            "在整个 ABACUS/DFT 知识体系中，弹性常数计算处于“力学性质表征”的核心位置。",
+            "它上接结构优化（Relaxation），下接声子谱分析（Phonons）与热力学性质研究。"
+          ],
+          "entities_whitelist": [
+            "Relaxation",
+            "Elastic Constants",
+            "Phonons"
+          ],
+          "labels_required": [
+            "结构优化",
+            "弹性常数",
+            "声子谱/热力学"
+          ],
+          "labels_forbidden": [
+            "复杂的物理公式",
+            "中文汉字"
+          ],
+          "assertions": [
+            "图表应展示垂直的层级或流程关系",
+            "中间的模块是核心关注点",
+            "箭头表示数据或逻辑的流向"
+          ],
+          "prompt": "A flat vector diagram showing a vertical workflow with three rectangular blocks connected by downward arrows. The top block is labeled with a large letter 'A'. The middle block is labeled with a large letter 'B' and is highlighted with a distinct color to show it is the core focus. The bottom block is labeled with a large letter 'C'. Clean lines, soft colors, white background, minimalist academic style.",
+          "negative_prompt": "handwriting, sketch, 3d, shadow, gradient, chinese characters, complex details"
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch02",
+      "chapter_title": "第一章：弹性力学基础与计算原理",
+      "figures": [
+        {
+          "figure_id": "ch02-fig01",
+          "title": "Voigt 记号降维映射示意图",
+          "caption": "Voigt 记号将二阶张量（3×3 矩阵）映射为单列向量。利用对称性，双下标 (xx, yy, zz, yz, xz, xy) 依次对应单下标 (1, 2, 3, 4, 5, 6)，将 81 个弹性刚度分量简化为 6×6 矩阵。",
+          "insert_after_heading": "### 1.2.1 降维映射规则",
+          "diagram_type": "概念结构图",
+          "source_quotes": [
+            "利用应力和应变的对称性（$\\sigma_{ij}=\\sigma_{ji}$，$\\epsilon_{ij}=\\epsilon_{ji}$），我们可以将双下标 $(ij)$ 映射为单下标 $\\alpha$（范围 1-6）",
+            "胡克定律简化为矩阵形式：$$ \\sigma_{\\alpha} = \\sum_{\\beta=1}^{6} C_{\\alpha\\beta} \\epsilon_{\\beta} $$"
+          ],
+          "entities_whitelist": [
+            "Tensor",
+            "Voigt",
+            "Matrix"
+          ],
+          "labels_required": [
+            "二阶张量 (3x3)",
+            "Voigt 向量 (6x1)",
+            "映射过程"
+          ],
+          "labels_forbidden": [
+            "Complex formulas",
+            "Handwritten text",
+            "Chinese characters"
+          ],
+          "assertions": [
+            "左侧展示 3x3 的网格结构代表原始张量",
+            "右侧展示 1x6 的垂直条块结构代表 Voigt 向量",
+            "箭头表示从左到右的简化过程"
+          ],
+          "prompt": "A flat vector illustration on a white background. On the left, a blue 3x3 grid of squares representing a matrix. On the right, a vertical stack of 6 orange rectangles representing a vector. A sleek grey arrow points from the 3x3 grid to the vertical stack. Minimalist design, clean lines, no text details inside the squares.",
+          "negative_prompt": "text, numbers, complex shading, 3d, realistic, handwriting"
+        },
+        {
+          "figure_id": "ch02-fig02",
+          "title": "ABACUS 弹性常数计算两步工作流",
+          "caption": "计算弹性常数的标准流程：STEP 1 (Cell-Relax) 旨在优化晶胞至零应力平衡态；STEP 2 (Relax) 是在施加形变后，固定晶胞形状仅弛豫原子，从而测量应力响应。混淆两步的任务类型会导致计算失败。",
+          "insert_after_heading": "### 1.3.1 核心工作流",
+          "diagram_type": "流程图",
+          "source_quotes": [
+            "第一步：零应力结构获取 (Equilibrium State)... ABACUS 任务类型: `calculation cell-relax`",
+            "第二步：施加应变后的应力计算 (Deformation & Response)... ABACUS 任务类型: `calculation relax` (注意：绝不是 `cell-relax`！)"
+          ],
+          "entities_whitelist": [
+            "Equilibrium",
+            "Deformation",
+            "Stress"
+          ],
+          "labels_required": [
+            "Step 1: 零应力优化",
+            "Step 2: 施加应变",
+            "Fixed Cell",
+            "Cell Relax"
+          ],
+          "labels_forbidden": [
+            "Detailed code",
+            "Complex background",
+            "Chinese characters"
+          ],
+          "assertions": [
+            "STEP 1 对应晶胞形状的调整（Cell-Relax）",
+            "STEP 2 对应晶胞形状固定但发生形变，内部原子调整（Fixed Cell Relax）",
+            "视觉上区分完美正方体（平衡态）和倾斜/拉伸的形状（形变态）"
+          ],
+          "prompt": "A flat vector flowchart with two main stages on a white background. Left side labeled 'STEP 1': A blue cube icon with small arrows indicating resizing, transforming into a perfect solid blue cube. Right side labeled 'STEP 2': The perfect blue cube is now distorted into a rhombus shape (sheared), with small dots inside representing atoms. A simple arrow connects Step 1 to Step 2. Minimalist style, vector graphics.",
+          "negative_prompt": "photorealistic, messy, handwritten text, complex textures, 3d rendering"
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch03",
+      "chapter_title": "第二章：计算准备：零应力基态结构的获取",
+      "figures": [
+        {
+          "figure_id": "ch03-fig01",
+          "title": "零应力基态获取工作流",
+          "caption": "基态结构优化流程示意图：(1) INPUT: 准备初始结构（如CIF文件）；(2) ABACUS: 运行 `cell-relax` 任务同时优化晶胞和原子；(3) OUTPUT: 获得优化后的 `STRU_ION_D` 文件；(4) UPDATE: 将结果覆盖为新的基准结构，用于后续弹性常数计算。",
+          "insert_after_heading": "### 2.1.2 流程示意",
+          "diagram_type": "流程图",
+          "source_quotes": [
+            "1. **准备初猜结构**：从数据库（如 Materials Project）下载 CIF 文件，转化为 ABACUS 的 `STRU` 文件。",
+            "2. **执行 `cell-relax`**：运行 ABACUS。",
+            "3. **更新结构**：计算结束后，在输出目录（如 `OUT.suffix/`）中找到 `STRU_ION_D`（最终结构），将其复制并覆盖原有的 `STRU` 文件，作为后续计算的起点。"
+          ],
+          "entities_whitelist": [
+            "CIF",
+            "STRU",
+            "STRU_ION_D",
+            "ABACUS",
+            "cell-relax"
+          ],
+          "labels_required": [
+            "初始结构 (CIF/STRU)",
+            "ABACUS 计算 (cell-relax)",
+            "优化结构 (STRU_ION_D)",
+            "更新为基准"
+          ],
+          "labels_forbidden": [
+            "复杂的代码块",
+            "手写体",
+            "真实屏幕截图"
+          ],
+          "assertions": [
+            "左侧图标代表初始输入文件",
+            "中间图标代表计算过程",
+            "右侧图标代表输出文件",
+            "回环箭头代表将输出文件作为新的输入"
+          ],
+          "prompt": "A linear workflow diagram with a feedback loop, vector flat style, white background. Three main steps arranged horizontally: Left, a document icon labeled 'INPUT'; Middle, a gear processing icon labeled 'ABACUS'; Right, a document icon labeled 'OUTPUT'. A straight arrow points from INPUT to ABACUS, and from ABACUS to OUTPUT. A curved arrow loops from the OUTPUT icon back to the INPUT position, labeled 'UPDATE'. Use blue and teal colors. Clean, minimalist design.",
+          "negative_prompt": "photorealistic, 3d, complex text, chinese characters, messy, handwriting, dark background"
+        },
+        {
+          "figure_id": "ch03-fig02",
+          "title": "变胞优化与定胞弛豫的区别",
+          "caption": "Step 1 与 Step 2 的关键物理区别：(A) Step 1 (`cell-relax`)：晶胞边界（虚线变实线）发生变化，体积和形状调整以消除应力；(B) Step 2 (`relax`)：晶胞边界被“夹持”固定（粗实线），仅内部原子（圆点）微调位置以释放内力。",
+          "insert_after_heading": "## 2.2 关键概念区分：Step 1 与 Step 2 的天壤之别",
+          "diagram_type": "对比示意",
+          "source_quotes": [
+            "Step 1 (本章) | 消除残余应力 | **`cell-relax`** | **可变 (Variable)** | 可变",
+            "Step 2 (下一章) | 计算应力-应变响应 | **`relax`** (或 `scf`) | **固定 (Fixed)** | 可变 (或固定)",
+            "口诀：先变胞 (`cell-relax`) 找基态，后定胞 (`relax`) 算应变。"
+          ],
+          "entities_whitelist": [
+            "Step 1",
+            "Step 2",
+            "Variable Cell",
+            "Fixed Cell",
+            "Atoms"
+          ],
+          "labels_required": [
+            "Step 1: 变胞优化 (Cell-relax)",
+            "Step 2: 定胞原子弛豫 (Relax)",
+            "晶胞边界变化",
+            "晶胞固定"
+          ],
+          "labels_forbidden": [
+            "复杂的公式",
+            "三维真实渲染",
+            "混乱的线条"
+          ],
+          "assertions": [
+            "左图展示晶胞形状改变",
+            "右图展示晶胞形状保持不变",
+            "两图中的原子都在移动"
+          ],
+          "prompt": "A split-panel scientific comparison illustration, vector flat style. Left panel labeled 'STEP 1': A square crystal lattice transforming into a slightly rectangular shape, indicated by a dotted outline of the original square and a solid outline of the new rectangle, with arrows pointing outward from the edges. Right panel labeled 'STEP 2': A distorted rectangular lattice with a thick, locked solid border (indicating fixed shape), with small spheres (atoms) inside showing small motion trails or arrows indicating internal movement. Use blue for the lattice and orange for the atoms. White background.",
+          "negative_prompt": "photorealistic, 3d, chinese characters, text paragraphs, blurry, low resolution"
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch04",
+      "chapter_title": "第三章：核心实战：基于 abacustest 的自动化计算流程 (以 Si 为例)",
+      "figures": [
+        {
+          "figure_id": "ch04-fig01",
+          "title": "基于 abacustest 的弹性常数自动化计算全流程",
+          "caption": "计算流程概览：首先准备优化好的零应力基态结构（STRU）；接着使用 `abacustest lib` 自动生成包含不同应变模式的变形结构文件夹（Deform）；批量提交 ABACUS 计算得到应力数据；最后通过 `abacustest analyze` 汇总分析输出弹性常数矩阵。",
+          "insert_after_heading": "## 3.1 自动化工作流环境配置与输入生成",
+          "diagram_type": "流程图",
+          "source_quotes": [
+            "我们将使用 ABACUS 官方配套的 Python 辅助工具库 `abacustest`... 演示如何通过一条命令完成从输入文件生成到结果分析的完整闭环。",
+            "执行成功后，当前目录下会自动生成一个名为 `elastic_result`... 文件夹，内部结构如下... deform-xxx"
+          ],
+          "entities_whitelist": [
+            "abacustest",
+            "STRU",
+            "elastic_result",
+            "deform"
+          ],
+          "labels_required": [
+            "初始结构 (STRU)",
+            "自动生成库 (LIB)",
+            "变形任务 (Deform 1..N)",
+            "结果分析 (Analyze)"
+          ],
+          "labels_forbidden": [
+            "复杂的Python代码",
+            "终端截图",
+            "中文注释"
+          ],
+          "assertions": [
+            "最左侧的立方体代表初始结构 STRU",
+            "中间的分支箭头代表 abacustest lib 生成了多个文件夹",
+            "最右侧的图表代表最终拟合出的 Cij 结果"
+          ],
+          "prompt": "A linear workflow diagram in vector flat style. Step 1: A blue cube icon labeled 'STRU'. Step 2: An arrow pointing to a folder icon labeled 'LIB', which branches out into three smaller folders labeled '1', '2', '3'. Step 3: Arrows from these folders converging into a document icon with a bar chart labeled 'RESULT'. White background, clean lines, shades of blue and gray.",
+          "negative_prompt": "text blocks, realistic photos, handwriting, complex background, python code"
+        },
+        {
+          "figure_id": "ch04-fig02",
+          "title": "应力-应变法线性拟合原理示意",
+          "caption": "弹性常数提取原理：ABACUS 计算每个变形结构（不同 Strain）下的应力张量（Stress），`abacustest` 提取这些数据点并在坐标系中进行线性拟合，直线的斜率对应广义胡克定律中的弹性刚度矩阵 $C_{ij}$。",
+          "insert_after_heading": "## 3.3 结果后处理与模量拟合",
+          "diagram_type": "坐标示意",
+          "source_quotes": [
+            "计算弹性常数的核心思想是**应力-应变法（Stress-Strain Method）**：对晶胞施加一系列微小的应变（Strain, $\\epsilon$），计算对应的应力（Stress, $\\sigma$），利用广义胡克定律 $\\sigma = C \\epsilon$ 拟合得到弹性刚度矩阵 $C_{ij}$。",
+            "程序会自动读取每个文件夹下的 `OUT.*/running_*.log` 文件，提取应力张量，并根据应变模式进行线性拟合。"
+          ],
+          "entities_whitelist": [
+            "Stress-Strain Method",
+            "Linear Fit",
+            "Cij"
+          ],
+          "labels_required": [
+            "应变 (Strain)",
+            "应力 (Stress)",
+            "拟合直线",
+            "数据点"
+          ],
+          "labels_forbidden": [
+            "具体的数值",
+            "复杂的公式",
+            "中文坐标轴"
+          ],
+          "assertions": [
+            "X轴代表应变 Strain",
+            "Y轴代表应力 Stress",
+            "图中的点代表不同 deform 文件夹的计算结果",
+            "穿过点的直线代表线性拟合"
+          ],
+          "prompt": "A scientific data analysis chart in vector flat style. A 2D coordinate system. X-axis labeled 'STRAIN', Y-axis labeled 'STRESS'. Five distinct data points (dots) are plotted linearly on the graph. A straight blue line passes through these dots to show a linear fit. On the left side of the graph, three small distorted cube icons are connected to the data points with dashed lines. Minimalist design, white background.",
+          "negative_prompt": "3d rendering, complex numbers, grid lines, cluttered text, handwriting"
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch05",
+      "chapter_title": "第四章：进阶案例：各向异性与低对称性体系 (以 TiO2 为例)",
+      "figures": [
+        {
+          "figure_id": "ch05-fig01",
+          "title": "立方晶系与四方晶系的各向异性对比",
+          "caption": "晶体对称性决定了独立弹性常数的数量。(A) 立方晶系具有高度对称性（a=b=c），刚度矩阵的主对角线分量相同，表现为各向同性。(B) 四方晶系（如金红石 TiO2）在 c 轴方向伸长（a=b≠c），导致 C33 与 C11 不同，增加了独立分量的数量。",
+          "insert_after_heading": "## 4.1 四方晶系的特殊性与独立分量",
+          "diagram_type": "概念结构图",
+          "source_quotes": [
+            "与立方晶系仅有 3 个独立弹性常数（$C_{11}, C_{12}, C_{44}$）不同，金红石型 TiO$_2$ 属于四方晶系",
+            "**$C_{11}$ vs $C_{33}$**：由于 $a$ 轴与 $c$ 轴不等价，沿这两个方向的抗压缩能力是不同的。",
+            "其弹性刚度矩阵 $C_{ij}$ 具有 **6 个独立分量**"
+          ],
+          "entities_whitelist": [
+            "Cubic",
+            "Tetragonal",
+            "C11",
+            "C33",
+            "a",
+            "c"
+          ],
+          "labels_required": [
+            "A: Cubic",
+            "B: Tetragonal"
+          ],
+          "labels_forbidden": [
+            "Complex matrix numbers",
+            "Chinese characters"
+          ],
+          "assertions": [
+            "左侧展示立方体，右侧展示长方体（四方晶系）",
+            "通过矩阵格子的颜色差异暗示独立分量的不同"
+          ],
+          "prompt": "Flat vector scientific illustration, split into two panels. Left panel labeled 'A': A perfect blue 3D cube. Below it, a stylized 6x6 grid where the top-left to bottom-right diagonal squares are all the same color (indicating symmetry). Right panel labeled 'B': A tall red 3D rectangular prism. Below it, a stylized 6x6 grid where the first two diagonal squares are one color, and the third diagonal square is a different distinct color (indicating anisotropy). Minimalist design, white background.",
+          "negative_prompt": "text, numbers, realistic texture, complex shading, messy lines"
+        },
+        {
+          "figure_id": "ch05-fig02",
+          "title": "弹性常数计算的两步工作流",
+          "caption": "计算流程分为两个关键阶段：STEP 1 进行变胞弛豫（Cell-Relax）以消除残余应力，获得基态结构；STEP 2 对基态结构施加多组微小应变，在固定晶胞形状下弛豫原子（Relax），通过应力响应计算弹性常数。",
+          "insert_after_heading": "## 4.2 完整计算流程复现与注意事项",
+          "diagram_type": "流程图",
+          "source_quotes": [
+            "计算流程依然遵循“两步走”战略",
+            "第一步：零应力结构获取 (Structure Optimization)... calculation cell-relax... cal_stress 1",
+            "第二步：施加应变与应力计算 (Strain-Stress Calculation)... calculation relax"
+          ],
+          "entities_whitelist": [
+            "STEP 1",
+            "STEP 2",
+            "Stress=0",
+            "Strain"
+          ],
+          "labels_required": [
+            "STEP 1: Optimization",
+            "STEP 2: Deformation"
+          ],
+          "labels_forbidden": [
+            "Code snippets",
+            "Specific parameter names"
+          ],
+          "assertions": [
+            "STEP 1 强调零应力状态",
+            "STEP 2 强调形变后的应力产生"
+          ],
+          "prompt": "Flat vector flowchart diagram. Left side labeled 'STEP 1': An icon of a crystal structure connected to a pressure gauge showing a needle at zero. A large arrow points to the right side. Right side labeled 'STEP 2': The crystal structure splits into three smaller icons, each slightly distorted (squashed, stretched, sheared), and each connected to a pressure gauge showing a high reading. Use clean lines, blue and grey colors, white background.",
+          "negative_prompt": "handwriting, realistic photos, complicated machinery, messy text"
+        }
+      ]
+    }
+  ]
+}

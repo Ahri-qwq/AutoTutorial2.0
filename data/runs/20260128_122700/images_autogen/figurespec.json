@@ -1,0 +1,230 @@
+{
+  "run_id": "20260128_124022",
+  "style": {
+    "theme": "vector_flat",
+    "label_lang": "zh-CN"
+  },
+  "chapters": [
+    {
+      "chapter_id": "ch01",
+      "chapter_title": "第一章：弹性力学基础与计算原理",
+      "figures": [
+        {
+          "figure_id": "ch01-fig01",
+          "title": "Voigt 记号映射与立方晶系矩阵稀疏性示意",
+          "caption": "图示展示了从二阶张量下标 (ij) 到 Voigt 单下标 (α) 的映射规则，以及由此构建的 6×6 弹性刚度矩阵。对于立方晶系（Cubic），对称性极大地简化了矩阵，仅保留了对角线上的 $C_{11}$、非对角项 $C_{12}$ 和剪切项 $C_{44}$ 三个独立分量（图中以不同颜色区分）。",
+          "insert_after_heading": "### 1.2.2 晶体对称性的进一步约束",
+          "diagram_type": "概念结构图",
+          "source_quotes": [
+            "利用应力和应变的对称性... 我们可以将双下标 (ij) 映射为单下标 α（范围 1-6）",
+            "C_{αβ} 变成了一个 6 × 6 的对称矩阵，独立分量从 81 个减少到了 21 个。",
+            "立方晶系 (Cubic, 如 Si, Cu): 仅有 3 个独立分量 (C11, C12, C44)。"
+          ],
+          "entities_whitelist": [
+            "Voigt Notation",
+            "Cubic System",
+            "Matrix",
+            "Indices"
+          ],
+          "labels_required": [
+            "张量下标 (ij)",
+            "Voigt 下标 (α)",
+            "C11",
+            "C12",
+            "C44"
+          ],
+          "labels_forbidden": [
+            "复杂的数学公式",
+            "中文汉字",
+            "手写体"
+          ],
+          "assertions": [
+            "左侧展示双下标到单下标的转换逻辑",
+            "右侧展示 6x6 矩阵网格",
+            "矩阵中通过颜色区分出立方晶系的三个独立变量区域"
+          ],
+          "prompt": "Flat vector illustration, scientific diagram style. White background. Left side: A small table showing pairs of numbers mapping to single numbers (xx->1, yy->2, zz->3, yz->4, xz->5, xy->6). An arrow points from left to right. Right side: A large 6x6 grid representing a matrix. Inside the grid, colored squares highlight specific positions for a Cubic crystal system: The main diagonal elements (1,1), (2,2), (3,3) are Blue. The off-diagonal elements (1,2), (1,3), (2,3) are Red. The bottom-right diagonal elements (4,4), (5,5), (6,6) are Green. All other squares are empty or light grey. Minimalist, clean lines, 3 colors.",
+          "negative_prompt": "handwriting, realistic texture, 3d render, complex equations, chinese text, blurry, messy"
+        },
+        {
+          "figure_id": "ch01-fig02",
+          "title": "应力-应变法计算核心工作流：变胞与定胞的区别",
+          "caption": "ABACUS 计算弹性常数的关键两步流程对比。Step 1（左）为零应力获取阶段，允许晶胞形状改变（Cell-Relax）以消除内应力；Step 2（右）为施加应变阶段，必须锁定变形后的晶胞形状（Fixed Cell），仅允许原子内部移动（Relax），从而计算出对应的应力响应。",
+          "insert_after_heading": "#### **第二步：施加应变后的应力计算 (Deformation & Response)**",
+          "diagram_type": "流程图",
+          "source_quotes": [
+            "第一步：零应力结构获取... 目标: 优化晶胞矢量（Cell）和原子位置（Ions），直到应力张量对角元接近 0 kbar。",
+            "第二步：施加应变后的应力计算... 关键逻辑: 我们固定变形后的晶胞形状（Fixed Cell），只允许原子在晶胞内部移动以寻找受力平衡位置。"
+          ],
+          "entities_whitelist": [
+            "Cell-Relax",
+            "Relax",
+            "Fixed Cell",
+            "Variable Cell"
+          ],
+          "labels_required": [
+            "第一步：零应力",
+            "第二步：施加应变",
+            "晶胞优化",
+            "原子弛豫"
+          ],
+          "labels_forbidden": [
+            "具体的原子结构细节",
+            "复杂的背景",
+            "中文解释"
+          ],
+          "assertions": [
+            "步骤一展示晶胞边框形状发生改变",
+            "步骤二展示晶胞边框被锁定（加粗或锁图标），仅内部点移动",
+            "清晰区分 Equilibrium 和 Deformation 两个状态"
+          ],
+          "prompt": "Minimalist vector flowchart, split into two horizontal panels. Top panel labeled 'STEP 1': A distorted blue square outline transforming into a perfect square outline. Arrows indicate the borders moving. Label 'Cell-Relax'. Bottom panel labeled 'STEP 2': The perfect square is now stretched into a rhombus shape. The outline is thick and black, indicating it is locked/fixed. Inside the rhombus, small red dots (atoms) move slightly to new positions. Label 'Fixed Cell'. White background, clean geometric shapes, blue and red colors.",
+          "negative_prompt": "photorealistic, 3d, shadow, gradient, chinese characters, messy lines, complex molecular structure"
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch02",
+      "chapter_title": "INPUT 参数示例",
+      "figures": [
+        {
+          "figure_id": "ch02-fig01",
+          "title": "变形后计算模式的选择逻辑",
+          "caption": "针对变形后的结构优化，图中 A 代表允许使用的 calculation = relax (或 scf)，B 代表严禁使用的 cell-relax。使用 cell-relax 会导致晶胞变形被弛豫掉，无法维持预设应变。",
+          "insert_after_heading": "# INPUT 参数示例",
+          "diagram_type": "对比示意",
+          "source_quotes": [
+            "calculation     relax   # 变形后计算必须用 relax (或 scf)，严禁 cell-relax"
+          ],
+          "entities_whitelist": [
+            "relax",
+            "cell-relax",
+            "Deformed Structure"
+          ],
+          "labels_required": [
+            "变形晶胞",
+            "relax (允许)",
+            "cell-relax (禁止)"
+          ],
+          "labels_forbidden": [
+            "Complex formulas",
+            "Handwritten text"
+          ],
+          "assertions": [
+            "左侧是一个发生剪切变形的平行四边形网格",
+            "上方路径通向绿色对勾（代表正确模式）",
+            "下方路径通向红色叉号（代表错误模式）"
+          ],
+          "prompt": "Vector flat illustration on white background. A distorted blue grid representing a deformed lattice structure on the left. Two arrows branch out from it to the right. The top arrow points to a green square labeled 'A' with a simple checkmark inside. The bottom arrow points to a red square labeled 'B' with a bold 'X' mark inside. Minimalist scientific diagram style.",
+          "negative_prompt": "text, chinese characters, realistic, 3d, shadow, gradient"
+        },
+        {
+          "figure_id": "ch02-fig02",
+          "title": "应力与力计算的开关控制",
+          "caption": "输入参数作为关键开关控制输出结果。开关 1 对应 cal_stress=1，开启后才能输出应力数据；开关 2 对应 cal_force=1，辅助原子弛豫判断。",
+          "insert_after_heading": "# INPUT 参数示例",
+          "diagram_type": "流程图",
+          "source_quotes": [
+            "cal_stress      1       # 【核心】必须开启！否则无法输出应力数据",
+            "cal_force       1       # 推荐开启，用于辅助原子弛豫判断"
+          ],
+          "entities_whitelist": [
+            "cal_stress",
+            "cal_force",
+            "Output Data"
+          ],
+          "labels_required": [
+            "输入开关",
+            "应力数据",
+            "原子受力"
+          ],
+          "labels_forbidden": [
+            "Code blocks",
+            "Terminal screenshots"
+          ],
+          "assertions": [
+            "左侧有两个类似电路开关的图标，处于开启状态",
+            "右侧是一个代表数据报告的图标",
+            "箭头表示从参数开启到数据生成的因果关系"
+          ],
+          "prompt": "Vector flat illustration on white background. A simple control flow diagram. On the left, two toggle switches arranged vertically. The top switch is labeled '1' and is green (ON). The bottom switch is labeled '2' and is green (ON). A large arrow points from the switches to the right, leading to a document icon labeled 'DATA'. Clean lines, 2-3 colors only.",
+          "negative_prompt": "complex text, chinese characters, photo, sketch, messy"
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch03",
+      "chapter_title": "精度控制",
+      "figures": [
+        {
+          "figure_id": "ch03-fig01",
+          "title": "收敛精度控制示意图",
+          "caption": "精度控制参数的几何含义：曲线代表计算过程中的能量或力的变化，虚线 THR 代表收敛阈值（etot_conv_thr/force_thr），横轴 STEPS 限制了最大迭代步数（relax_nmax）。只有曲线下降到阈值以下，计算才算收敛。",
+          "insert_after_heading": "# 精度控制",
+          "diagram_type": "坐标示意",
+          "source_quotes": [
+            "relax_nmax      100     # 确保有足够的步数让原子弛豫收敛",
+            "etot_conv_thr   1.0e-5  # 能量收敛标准需足够严格",
+            "force_thr       1.0e-3  # 力收敛标准，直接影响应力计算的精度"
+          ],
+          "entities_whitelist": [
+            "relax_nmax",
+            "etot_conv_thr",
+            "force_thr"
+          ],
+          "labels_required": [
+            "迭代步数",
+            "收敛阈值",
+            "当前误差"
+          ],
+          "labels_forbidden": [
+            "复杂的物理公式",
+            "中文汉字"
+          ],
+          "assertions": [
+            "X轴代表迭代步数，对应 relax_nmax",
+            "Y轴代表误差值，对应 etot_conv_thr 或 force_thr",
+            "水平虚线代表设定的阈值标准",
+            "下降的曲线表示系统逐渐趋于收敛的过程"
+          ],
+          "prompt": "Vector flat illustration, scientific chart. A simple 2D coordinate system. X-axis labeled 'STEPS', Y-axis labeled 'ERROR'. A horizontal dashed red line labeled 'THR'. A smooth blue curve starts high on the Y-axis and decays exponentially, crossing below the 'THR' line. Minimalist design, white background, clean lines, no background texture.",
+          "negative_prompt": "complex grid, 3d, realistic, shadow, gradient, handwriting, chinese characters"
+        },
+        {
+          "figure_id": "ch03-fig02",
+          "title": "abacustest 覆盖风险流程警示",
+          "caption": "自动化工作流中的数据覆盖风险：左侧 DATA 代表已完成计算的 OUT 文件夹，中间的 RESET 动作代表重复执行 prepare 命令，右侧 EMPTY 表示结果被清空。重复操作会导致数据丢失。",
+          "insert_after_heading": "### 1.3.4 自动化工作流的风险 (`abacustest` 用户必读)",
+          "diagram_type": "流程图",
+          "source_quotes": [
+            "警告：abacustest 的准备命令（prepare）具有覆盖性。",
+            "不要在计算完成后重复执行输入文件准备命令！",
+            "如果你手滑再次运行了准备脚本，它会清空目录下已算好的 OUT 文件夹"
+          ],
+          "entities_whitelist": [
+            "abacustest",
+            "prepare",
+            "OUT folder"
+          ],
+          "labels_required": [
+            "已有数据",
+            "误操作",
+            "数据丢失"
+          ],
+          "labels_forbidden": [
+            "代码截图",
+            "中文警告语"
+          ],
+          "assertions": [
+            "左侧图标代表包含数据的文件夹",
+            "中间的箭头代表重复执行 prepare 命令",
+            "右侧图标代表被清空的文件夹",
+            "红色警告符号强调操作的危险性"
+          ],
+          "prompt": "Vector flat illustration, workflow warning diagram. Three stages arranged horizontally. Left: A blue folder icon full of papers labeled 'DATA'. Middle: A red arrow pointing right, labeled 'RESET', with a yellow warning triangle icon above it. Right: An empty grey folder icon labeled 'EMPTY'. Minimalist style, white background, flat colors.",
+          "negative_prompt": "photographic, detailed text, messy, chinese characters, black background"
+        }
+      ]
+    }
+  ]
+}

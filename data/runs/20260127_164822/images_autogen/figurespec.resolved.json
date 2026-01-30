@@ -1,0 +1,76 @@
+{
+  "run_id": "20260128_171431",
+  "generated_at": "2026-01-28T17:29:31.144291",
+  "items": [
+    {
+      "figure_id": "ch01-fig01",
+      "chapter_id": "ch01",
+      "timestamp": "2026-01-28T17:26:07.677648",
+      "status": "success",
+      "output_file": "data\\runs\\20260127_164822\\images_autogen\\images_output\\ch01-fig01.png",
+      "final_prompt": "请生成一张科学示意图，统一为高质量、学术出版级的矢量扁平风：\n- **核心风格**：纯白背景，扁平化矢量插图，清晰的深色描边，线条均匀。\n- **配色方案**：配色专业且克制（2-4种颜色，如深蓝、学术红、灰色），整体干净，信息层次分明。\n- **文字与标注**：允许在图中使用文字标注、图例和坐标轴标签。支持简体中文标注。\n- **视觉逻辑**：构图严谨，包含必要的箭头（指示逻辑流或对应关系）、符号。去除所有无关的装饰性元素。\n\n强制避免：\n- 照片风格、写实渲染、3D渐变质感（除非是特定的学术结构模型）\n- 人物、复杂纹理、杂乱背景\n- 水印、LOGO\n- 模糊的文本、不相关的密集文字段落\n\n\nSpecific Request:\nSubject: A professional hierarchical block diagram illustrating the 'Knowledge Graph' of Elastic Constants calculation within the ABACUS DFT framework.\n\nVisual Elements:\n- **Layout Structure**: A vertical three-tier stack (pyramid-like logic) on a white background.\n- **Bottom Tier (Foundation)**: A wide light-grey rectangle labeled '基础层 (Foundation)'. Inside, display two connected blocks: '自洽场 (SCF)' and '结构优化 (Relax)'.\n- **Middle Tier (The Focus)**: A central, visually emphasized (bold outline or deeper blue fill) rectangle labeled '核心层 (Core)'. Inside text: '弹性常数 (Elastic Constants)'. Include a small, simplified icon of a 6x6 matrix or a spring next to the text to symbolize mechanics.\n- **Top Tier (Applications)**: A wide light-teal rectangle labeled '应用层 (Applications)'. Inside, three parallel blocks: '声子谱 (Phonons)', '热力学 (Thermodynamics)', '材料设计 (Design)'.\n- **Connections**: Clear, thick arrows pointing UPWARD from Foundation to Core, and from Core to Applications, representing the data flow and dependency.\n- **Toolchain Annotation**: On the right side, draw a vertical bracket enclosing the Bottom and Middle tiers. Label this bracket '计算引擎: ABACUS'. Add a specific callout box pointing to the Middle Tier labeled '辅助工具: abacustest & pymatgen'.\n\nStyle:\n- Academic publication quality.\n- Flat design with subtle drop shadows.\n- Color Palette: Professional scientific colors (Navy Blue, Slate Grey, Teal, White).\n- Font: Clean, sans-serif, high legibility.\n- No background clutter.\n\nAvoid: photograph, 3d render, messy text, hand drawn, colorful background, chaotic lines, low resolution",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769592365
+    },
+    {
+      "figure_id": "ch02-fig01",
+      "chapter_id": "ch02",
+      "timestamp": "2026-01-28T17:27:10.564411",
+      "status": "success",
+      "output_file": "data\\runs\\20260127_164822\\images_autogen\\images_output\\ch02-fig01.png",
+      "final_prompt": "请生成一张科学示意图，统一为高质量、学术出版级的矢量扁平风：\n- **核心风格**：纯白背景，扁平化矢量插图，清晰的深色描边，线条均匀。\n- **配色方案**：配色专业且克制（2-4种颜色，如深蓝、学术红、灰色），整体干净，信息层次分明。\n- **文字与标注**：允许在图中使用文字标注、图例和坐标轴标签。支持简体中文标注。\n- **视觉逻辑**：构图严谨，包含必要的箭头（指示逻辑流或对应关系）、符号。去除所有无关的装饰性元素。\n\n强制避免：\n- 照片风格、写实渲染、3D渐变质感（除非是特定的学术结构模型）\n- 人物、复杂纹理、杂乱背景\n- 水印、LOGO\n- 模糊的文本、不相关的密集文字段落\n\n\nSpecific Request:\nSubject: A three-stage scientific schematic diagram illustrating the 'Stress-Strain Method' in DFT and the concept of 'Ion Relaxation'.\n\nVisual Elements:\n1. **Left Panel (Stage 1):** A perfect cubic crystal unit cell (ball-and-stick model, e.g., Silicon conventional cell). Atoms are Blue spheres. \n   - Label above: \"初始结构 (Equilibrium)\".\n\n2. **Transition Arrow 1:** A distinct arrow pointing from Left to Middle Panel.\n   - Label on arrow: \"施加应变 (Strain)\".\n\n3. **Middle Panel (Stage 2):** The unit cell is now elongated horizontally (rectangular prism shape) to represent deformation.\n   - **Crucial Detail:** Focus on a specific atom inside.\n     - Show a semi-transparent 'ghost' atom at the strictly scaled geometric position. Label pointing to it: \"钳制位置 (Clamped)\".\n     - Show a solid Red atom shifted slightly away from the ghost position. Label pointing to it: \"松弛位置 (Relaxed)\".\n     - A small curved arrow indicates the movement from the ghost position to the solid position.\n   - Label above panel: \"离子弛豫 (Relaxation)\".\n\n4. **Transition Arrow 2:** Arrow pointing from Middle to Right Panel.\n   - Label on arrow: \"DFT 计算\".\n\n5. **Right Panel (Stage 3):** Abstract results representation.\n   - Top: A 3x3 matrix symbol representing Stress. Label: \"柯西应力 (Stress)\".\n   - Bottom: A small 2D line plot. X-axis: \"Strain\", Y-axis: \"Stress\". A straight line passes through the origin. The slope is highlighted and labeled \"C_{ij}\".\n   - Label above panel: \"线性拟合 (Fit)\".\n\nStyle:\n- Professional scientific publication style.\n- White background.\n- Color Palette: Blue (Structure), Red (Active Relaxation/Key Elements), Grey (Ghost/Reference), Black (Text/Arrows).\n- Clean, vector-like lines.\n\nAvoid: blurry, low resolution, 3d render, photorealistic, chaotic, messy labels, rainbow colors, dark background",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769592427
+    },
+    {
+      "figure_id": "ch03-fig201",
+      "chapter_id": "ch03",
+      "timestamp": "2026-01-28T17:27:35.261166",
+      "status": "success",
+      "output_file": "data\\runs\\20260127_164822\\images_autogen\\images_output\\ch03-fig201.png",
+      "final_prompt": "请生成一张科学示意图，统一为高质量、学术出版级的矢量扁平风：\n- **核心风格**：纯白背景，扁平化矢量插图，清晰的深色描边，线条均匀。\n- **配色方案**：配色专业且克制（2-4种颜色，如深蓝、学术红、灰色），整体干净，信息层次分明。\n- **文字与标注**：允许在图中使用文字标注、图例和坐标轴标签。支持简体中文标注。\n- **视觉逻辑**：构图严谨，包含必要的箭头（指示逻辑流或对应关系）、符号。去除所有无关的装饰性元素。\n\n强制避免：\n- 照片风格、写实渲染、3D渐变质感（除非是特定的学术结构模型）\n- 人物、复杂纹理、杂乱背景\n- 水印、LOGO\n- 模糊的文本、不相关的密集文字段落\n\n\nSpecific Request:\nSubject: A comparative scientific structural diagram illustrating the geometric difference between a Silicon Primitive Cell and a Conventional Cell, focusing on coordinate alignment.\n\nVisual Elements:\n- **Layout**: Two distinct panels side-by-side. Left panel title: \"原胞 (Primitive Cell)\". Right panel title: \"惯用胞 (Conventional Cell)\".\n- **Left Panel (The Problem)**: \n  - Show a Silicon FCC primitive cell (rhombohedral geometry, 2 atoms basis).\n  - Draw three lattice vectors (arrows labeled a1, a2, a3) originating from a corner.\n  - Superimpose a standard Cartesian coordinate system (X, Y, Z axes in grey dashed lines).\n  - **Crucial Detail**: The lattice vectors must clearly diverge from the X, Y, Z axes (e.g., 60-degree angles). \n  - Label: \"坐标不对齐\" with a small warning icon.\n- **Right Panel (The Solution)**: \n  - Show a Silicon FCC conventional cell (cubic geometry, 8 atoms).\n  - Draw three lattice vectors (arrows labeled a, b, c) originating from a corner.\n  - Show that these vectors are perfectly parallel/aligned with the Cartesian axes (X, Y, Z).\n  - Label: \"坐标对齐\" with a green checkmark or \"推荐 (Recommended)\" stamp.\n- **Atoms**: Render Silicon atoms as simple blue spheres and bonds as thin grey lines.\n\nStyle: \n- Academic publication standard.\n- White background.\n- Flat or isometric projection.\n- High contrast: Use Red for lattice vectors and Black/Grey for coordinate axes to distinguish them easily.",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769592453
+    },
+    {
+      "figure_id": "ch04-fig01",
+      "chapter_id": "ch04",
+      "timestamp": "2026-01-28T17:28:04.032911",
+      "status": "success",
+      "output_file": "data\\runs\\20260127_164822\\images_autogen\\images_output\\ch04-fig01.png",
+      "final_prompt": "请生成一张科学示意图，统一为高质量、学术出版级的矢量扁平风：\n- **核心风格**：纯白背景，扁平化矢量插图，清晰的深色描边，线条均匀。\n- **配色方案**：配色专业且克制（2-4种颜色，如深蓝、学术红、灰色），整体干净，信息层次分明。\n- **文字与标注**：允许在图中使用文字标注、图例和坐标轴标签。支持简体中文标注。\n- **视觉逻辑**：构图严谨，包含必要的箭头（指示逻辑流或对应关系）、符号。去除所有无关的装饰性元素。\n\n强制避免：\n- 照片风格、写实渲染、3D渐变质感（除非是特定的学术结构模型）\n- 人物、复杂纹理、杂乱背景\n- 水印、LOGO\n- 模糊的文本、不相关的密集文字段落\n\n\nSpecific Request:\nSubject: A side-by-side 3D scientific illustration comparing Silicon Primitive Cell and Conventional Cell relative to Cartesian axes.\nVisual Elements:\n- Left Panel: A rhombohedral unit cell (2 atoms, ball-and-stick model). The lattice vectors (edges of the cell) are oblique and clearly do NOT align with the background Cartesian axes (X, Y, Z). Label above: \"原胞 (Primitive Cell)\". Label below: \"基矢非正交 (Non-orthogonal)\".\n- Right Panel: A cubic unit cell (8 atoms, diamond structure). The cell edges align perfectly with the X, Y, Z axes. Large semi-transparent arrows indicate a strain being applied along the X-axis. Label above: \"惯用胞 (Conventional Cell)\". Label below: \"基矢沿坐标轴 (Aligned with Axes)\".\n- Highlight: A prominent green badge with text \"推荐用于弹性计算 (Recommended)\" pointing to the Right Panel.\nStyle: High-quality academic rendering, white background, atoms in dark grey, bonds in lighter grey, axis lines in Red(X)/Green(Y)/Blue(Z). Clean sans-serif typography.",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769592482
+    },
+    {
+      "figure_id": "ch04-fig02",
+      "chapter_id": "ch04",
+      "timestamp": "2026-01-28T17:28:34.367976",
+      "status": "success",
+      "output_file": "data\\runs\\20260127_164822\\images_autogen\\images_output\\ch04-fig02.png",
+      "final_prompt": "请生成一张科学示意图，统一为高质量、学术出版级的矢量扁平风：\n- **核心风格**：纯白背景，扁平化矢量插图，清晰的深色描边，线条均匀。\n- **配色方案**：配色专业且克制（2-4种颜色，如深蓝、学术红、灰色），整体干净，信息层次分明。\n- **文字与标注**：允许在图中使用文字标注、图例和坐标轴标签。支持简体中文标注。\n- **视觉逻辑**：构图严谨，包含必要的箭头（指示逻辑流或对应关系）、符号。去除所有无关的装饰性元素。\n\n强制避免：\n- 照片风格、写实渲染、3D渐变质感（除非是特定的学术结构模型）\n- 人物、复杂纹理、杂乱背景\n- 水印、LOGO\n- 模糊的文本、不相关的密集文字段落\n\n\nSpecific Request:\nSubject: A schematic diagram comparing Clamped-ion and Relaxed-ion atomic configurations under shear strain.\nVisual Elements:\n- Layout: Two vertical panels illustrating the same sheared unit cell (parallelogram shape).\n- Top Panel (Clamped-ion): Atoms are positioned strictly at grid points corresponding to the shear. Red arrows emanate from each atom, indicating unbalanced forces. Label: \"钳制离子 (Clamped)\". Sub-text: \"计算模式: SCF (固定坐标)\". Annotation pointing to red arrows: \"残余内应力 (Internal Stress)\".\n- Bottom Panel (Relaxed-ion): Atoms have shifted slightly off the strict grid points to find equilibrium positions. No force arrows are present. Small dotted lines show the movement from the clamped position. Label: \"松弛离子 (Relaxed)\". Sub-text: \"计算模式: Relax (位置优化)\". Annotation: \"符合宏观弹性模量 (Macroscopic Moduli)\".\n- Connection: A large arrow pointing from Top to Bottom labeled \"内部弛豫 (Internal Relaxation)\".\nStyle: Flat 2D scientific schematic, clean lines, blue and orange color scheme, white background. Professional academic font.",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769592513
+    },
+    {
+      "figure_id": "ch05-fig01",
+      "chapter_id": "ch05",
+      "timestamp": "2026-01-28T17:29:02.766906",
+      "status": "success",
+      "output_file": "data\\runs\\20260127_164822\\images_autogen\\images_output\\ch05-fig01.png",
+      "final_prompt": "请生成一张科学示意图，统一为高质量、学术出版级的矢量扁平风：\n- **核心风格**：纯白背景，扁平化矢量插图，清晰的深色描边，线条均匀。\n- **配色方案**：配色专业且克制（2-4种颜色，如深蓝、学术红、灰色），整体干净，信息层次分明。\n- **文字与标注**：允许在图中使用文字标注、图例和坐标轴标签。支持简体中文标注。\n- **视觉逻辑**：构图严谨，包含必要的箭头（指示逻辑流或对应关系）、符号。去除所有无关的装饰性元素。\n\n强制避免：\n- 照片风格、写实渲染、3D渐变质感（除非是特定的学术结构模型）\n- 人物、复杂纹理、杂乱背景\n- 水印、LOGO\n- 模糊的文本、不相关的密集文字段落\n\n\nSpecific Request:\nSubject: A comparative scientific diagram showing the geometric alignment of Primitive Cell vs. Conventional Cell for Rutile TiO2 relative to Cartesian axes.\n\nVisual Elements:\n- Background: Faint grey Cartesian coordinate system grid (x, y, z axes).\n- Left Panel (Primitive Cell): A smaller parallelepiped crystal structure of TiO2. The lattice vectors (edges of the box) differ from the background x/y/z axes (tilted). Label above: \"原胞 (Primitive Cell)\". Annotation below: \"非对角项非零 (Complex Tensor)\".\n- Right Panel (Conventional Cell): A larger, tetragonal rectangular box structure of TiO2. The lattice vectors (edges) are perfectly parallel to the x, y, and z axes. Label above: \"惯用胞 (Conventional Cell)\". Annotation below: \"物理直观对应 (Direct Mapping)\".\n- Atoms: Titanium (Silver/Grey spheres) and Oxygen (Red spheres) inside the boxes.\n- Highlights: Use bold colored arrows to represent lattice vectors. On the left, arrows are angled. On the right, arrows align with axes.\n\nStyle: Clean academic schematic, white background, high contrast, flat design for the coordinate system, 3D looking crystal structures.\n\nAvoid: photorealistic, messy, dark background, blurry, low resolution, artistic impression",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769592541
+    },
+    {
+      "figure_id": "ch05-fig02",
+      "chapter_id": "ch05",
+      "timestamp": "2026-01-28T17:29:31.144291",
+      "status": "success",
+      "output_file": "data\\runs\\20260127_164822\\images_autogen\\images_output\\ch05-fig02.png",
+      "final_prompt": "请生成一张科学示意图，统一为高质量、学术出版级的矢量扁平风：\n- **核心风格**：纯白背景，扁平化矢量插图，清晰的深色描边，线条均匀。\n- **配色方案**：配色专业且克制（2-4种颜色，如深蓝、学术红、灰色），整体干净，信息层次分明。\n- **文字与标注**：允许在图中使用文字标注、图例和坐标轴标签。支持简体中文标注。\n- **视觉逻辑**：构图严谨，包含必要的箭头（指示逻辑流或对应关系）、符号。去除所有无关的装饰性元素。\n\n强制避免：\n- 照片风格、写实渲染、3D渐变质感（除非是特定的学术结构模型）\n- 人物、复杂纹理、杂乱背景\n- 水印、LOGO\n- 模糊的文本、不相关的密集文字段落\n\n\nSpecific Request:\nSubject: A scientific illustration explaining the difference between Clamped-ion and Relaxed-ion approximations under shear strain.\n\nVisual Elements:\n- Layout: Two side-by-side panels showing a 2D cross-section of a crystal lattice subjected to shear strain (deformed from square to rhombus).\n- Left Panel: Label \"钳制离子 (Clamped-ion)\". Sub-label \"高频极限\". The atoms are arranged in a perfectly sheared grid, strictly following the lattice deformation lines. No internal movement.\n- Right Panel: Label \"松弛离子 (Relaxed-ion)\". Sub-label \"静态/实验值\". The lattice shape is identical to the left (rhombus). However, the atoms deviate slightly from the perfect grid lines. Use small curved arrows (e.g., green color) attached to atoms to indicate \"原子弛豫 (Relaxation)\" movement towards equilibrium positions.\n- Graphics: Atoms as simple spheres. Lattice lines as dashed grey lines.\n\nStyle: Technical vector illustration, white background, distinct colors for atoms (e.g., blue) and displacement vectors (e.g., red or green), publication quality.\n\nAvoid: 3d render, perspective distortion, shadow, noise, gradient background",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769592570
+    }
+  ]
+}

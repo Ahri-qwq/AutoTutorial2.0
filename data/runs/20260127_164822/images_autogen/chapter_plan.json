@@ -1,0 +1,31 @@
+{
+  "chapters": [
+    {
+      "chapter_id": "ch01",
+      "chapter_title": "第一性原理力学性质计算：ABACUS 弹性常数实战教程",
+      "num_figures": 1
+    },
+    {
+      "chapter_id": "ch02",
+      "chapter_title": "第一章：弹性力学基础与计算原理",
+      "num_figures": 1
+    },
+    {
+      "chapter_id": "ch03",
+      "chapter_title": "第二章：计算准备——构建“零应力”基准",
+      "num_figures": 1
+    },
+    {
+      "chapter_id": "ch04",
+      "chapter_title": "第三章：标准工作流实战——以硅（Si）为例",
+      "num_figures": 2
+    },
+    {
+      "chapter_id": "ch05",
+      "chapter_title": "第四章：进阶案例与各向异性——金红石型 TiO2",
+      "num_figures": 2
+    }
+  ],
+  "run_id": "20260128_171431",
+  "input_md": "Final_Tutorial_ABACUS_弹性常数计算.md"
+}

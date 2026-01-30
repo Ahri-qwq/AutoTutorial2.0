@@ -1,0 +1,31 @@
+{
+  "chapters": [
+    {
+      "chapter_id": "ch01",
+      "chapter_title": "ABACUS 第一性原理计算实战：从弹性力学基础到自动化工作流",
+      "num_figures": 2
+    },
+    {
+      "chapter_id": "ch02",
+      "chapter_title": "第一章：弹性力学基础与计算原理",
+      "num_figures": 2
+    },
+    {
+      "chapter_id": "ch03",
+      "chapter_title": "第二章：计算准备：零应力基态结构的获取",
+      "num_figures": 2
+    },
+    {
+      "chapter_id": "ch04",
+      "chapter_title": "第三章：核心实战：基于 abacustest 的自动化计算流程 (以 Si 为例)",
+      "num_figures": 2
+    },
+    {
+      "chapter_id": "ch05",
+      "chapter_title": "第四章：进阶案例：各向异性与低对称性体系 (以 TiO2 为例)",
+      "num_figures": 2
+    }
+  ],
+  "run_id": "20260128_160525",
+  "input_md": "Final_Tutorial_ABACUS_弹性常数计算2.md"
+}

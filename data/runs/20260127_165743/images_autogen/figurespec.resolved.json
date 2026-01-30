@@ -1,0 +1,106 @@
+{
+  "run_id": "20260128_160525",
+  "generated_at": "2026-01-28T16:18:32.703062",
+  "items": [
+    {
+      "figure_id": "ch01-fig01",
+      "chapter_id": "ch01",
+      "timestamp": "2026-01-28T16:15:13.666581",
+      "status": "success",
+      "output_file": "data\\runs\\20260127_165743\\images_autogen\\images_output\\ch01-fig01.png",
+      "final_prompt": "请生成一张科学示意图，统一为极简矢量扁平风（适合论文/教材插图）：\n- 纯白背景\n- 扁平化矢量插图风格，清晰描边，线条均匀，高对比度\n- 配色克制（2-4种颜色即可，如深蓝、橙色、灰色），整体干净专业\n- 视觉重点突出，去除所有不必要的装饰细节\n- **关于文字**：尽量避免在图中生成文字。如果 prompt 中明确要求生成文字，仅使用简单的大写英文（如 A, B, INPUT）或数字。**绝对不要尝试生成汉字或复杂句子**，否则图片会包含乱码。\n\n强制避免：\n- 照片风格、写实渲染、3D质感、阴影、渐变\n- 人物脸、真人、手势\n- 复杂背景、纹理背景\n- 水印、LOGO\n- 密集文字段落、汉字、模糊的文本\n\n\nSpecific Request:\nA flat vector illustration of a linear progress roadmap with four distinct steps. Four circular nodes arranged horizontally from left to right, connected by simple directional arrows. Inside the first node is the text '01', second node '02', third node '03', fourth node '04'. The design is minimalist, using shades of blue and teal on a pure white background. No other text.\n\nAvoid: complex text, chinese characters, realistic photo, 3d render, clutter, messy background",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769588111
+    },
+    {
+      "figure_id": "ch01-fig02",
+      "chapter_id": "ch01",
+      "timestamp": "2026-01-28T16:15:39.094955",
+      "status": "success",
+      "output_file": "data\\runs\\20260127_165743\\images_autogen\\images_output\\ch01-fig02.png",
+      "final_prompt": "请生成一张科学示意图，统一为极简矢量扁平风（适合论文/教材插图）：\n- 纯白背景\n- 扁平化矢量插图风格，清晰描边，线条均匀，高对比度\n- 配色克制（2-4种颜色即可，如深蓝、橙色、灰色），整体干净专业\n- 视觉重点突出，去除所有不必要的装饰细节\n- **关于文字**：尽量避免在图中生成文字。如果 prompt 中明确要求生成文字，仅使用简单的大写英文（如 A, B, INPUT）或数字。**绝对不要尝试生成汉字或复杂句子**，否则图片会包含乱码。\n\n强制避免：\n- 照片风格、写实渲染、3D质感、阴影、渐变\n- 人物脸、真人、手势\n- 复杂背景、纹理背景\n- 水印、LOGO\n- 密集文字段落、汉字、模糊的文本\n\n\nSpecific Request:\nA flat vector diagram showing a vertical workflow with three rectangular blocks connected by downward arrows. The top block is labeled with a large letter 'A'. The middle block is labeled with a large letter 'B' and is highlighted with a distinct color to show it is the core focus. The bottom block is labeled with a large letter 'C'. Clean lines, soft colors, white background, minimalist academic style.\n\nAvoid: handwriting, sketch, 3d, shadow, gradient, chinese characters, complex details",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769588138
+    },
+    {
+      "figure_id": "ch02-fig01",
+      "chapter_id": "ch02",
+      "timestamp": "2026-01-28T16:15:57.431048",
+      "status": "success",
+      "output_file": "data\\runs\\20260127_165743\\images_autogen\\images_output\\ch02-fig01.png",
+      "final_prompt": "请生成一张科学示意图，统一为极简矢量扁平风（适合论文/教材插图）：\n- 纯白背景\n- 扁平化矢量插图风格，清晰描边，线条均匀，高对比度\n- 配色克制（2-4种颜色即可，如深蓝、橙色、灰色），整体干净专业\n- 视觉重点突出，去除所有不必要的装饰细节\n- **关于文字**：尽量避免在图中生成文字。如果 prompt 中明确要求生成文字，仅使用简单的大写英文（如 A, B, INPUT）或数字。**绝对不要尝试生成汉字或复杂句子**，否则图片会包含乱码。\n\n强制避免：\n- 照片风格、写实渲染、3D质感、阴影、渐变\n- 人物脸、真人、手势\n- 复杂背景、纹理背景\n- 水印、LOGO\n- 密集文字段落、汉字、模糊的文本\n\n\nSpecific Request:\nA flat vector illustration on a white background. On the left, a blue 3x3 grid of squares representing a matrix. On the right, a vertical stack of 6 orange rectangles representing a vector. A sleek grey arrow points from the 3x3 grid to the vertical stack. Minimalist design, clean lines, no text details inside the squares.\n\nAvoid: text, numbers, complex shading, 3d, realistic, handwriting",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769588156
+    },
+    {
+      "figure_id": "ch02-fig02",
+      "chapter_id": "ch02",
+      "timestamp": "2026-01-28T16:16:21.019382",
+      "status": "success",
+      "output_file": "data\\runs\\20260127_165743\\images_autogen\\images_output\\ch02-fig02.png",
+      "final_prompt": "请生成一张科学示意图，统一为极简矢量扁平风（适合论文/教材插图）：\n- 纯白背景\n- 扁平化矢量插图风格，清晰描边，线条均匀，高对比度\n- 配色克制（2-4种颜色即可，如深蓝、橙色、灰色），整体干净专业\n- 视觉重点突出，去除所有不必要的装饰细节\n- **关于文字**：尽量避免在图中生成文字。如果 prompt 中明确要求生成文字，仅使用简单的大写英文（如 A, B, INPUT）或数字。**绝对不要尝试生成汉字或复杂句子**，否则图片会包含乱码。\n\n强制避免：\n- 照片风格、写实渲染、3D质感、阴影、渐变\n- 人物脸、真人、手势\n- 复杂背景、纹理背景\n- 水印、LOGO\n- 密集文字段落、汉字、模糊的文本\n\n\nSpecific Request:\nA flat vector flowchart with two main stages on a white background. Left side labeled 'STEP 1': A blue cube icon with small arrows indicating resizing, transforming into a perfect solid blue cube. Right side labeled 'STEP 2': The perfect blue cube is now distorted into a rhombus shape (sheared), with small dots inside representing atoms. A simple arrow connects Step 1 to Step 2. Minimalist style, vector graphics.\n\nAvoid: photorealistic, messy, handwritten text, complex textures, 3d rendering",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769588179
+    },
+    {
+      "figure_id": "ch03-fig01",
+      "chapter_id": "ch03",
+      "timestamp": "2026-01-28T16:16:45.749443",
+      "status": "success",
+      "output_file": "data\\runs\\20260127_165743\\images_autogen\\images_output\\ch03-fig01.png",
+      "final_prompt": "请生成一张科学示意图，统一为极简矢量扁平风（适合论文/教材插图）：\n- 纯白背景\n- 扁平化矢量插图风格，清晰描边，线条均匀，高对比度\n- 配色克制（2-4种颜色即可，如深蓝、橙色、灰色），整体干净专业\n- 视觉重点突出，去除所有不必要的装饰细节\n- **关于文字**：尽量避免在图中生成文字。如果 prompt 中明确要求生成文字，仅使用简单的大写英文（如 A, B, INPUT）或数字。**绝对不要尝试生成汉字或复杂句子**，否则图片会包含乱码。\n\n强制避免：\n- 照片风格、写实渲染、3D质感、阴影、渐变\n- 人物脸、真人、手势\n- 复杂背景、纹理背景\n- 水印、LOGO\n- 密集文字段落、汉字、模糊的文本\n\n\nSpecific Request:\nA linear workflow diagram with a feedback loop, vector flat style, white background. Three main steps arranged horizontally: Left, a document icon labeled 'INPUT'; Middle, a gear processing icon labeled 'ABACUS'; Right, a document icon labeled 'OUTPUT'. A straight arrow points from INPUT to ABACUS, and from ABACUS to OUTPUT. A curved arrow loops from the OUTPUT icon back to the INPUT position, labeled 'UPDATE'. Use blue and teal colors. Clean, minimalist design.\n\nAvoid: photorealistic, 3d, complex text, chinese characters, messy, handwriting, dark background",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769588203
+    },
+    {
+      "figure_id": "ch03-fig02",
+      "chapter_id": "ch03",
+      "timestamp": "2026-01-28T16:17:07.455225",
+      "status": "success",
+      "output_file": "data\\runs\\20260127_165743\\images_autogen\\images_output\\ch03-fig02.png",
+      "final_prompt": "请生成一张科学示意图，统一为极简矢量扁平风（适合论文/教材插图）：\n- 纯白背景\n- 扁平化矢量插图风格，清晰描边，线条均匀，高对比度\n- 配色克制（2-4种颜色即可，如深蓝、橙色、灰色），整体干净专业\n- 视觉重点突出，去除所有不必要的装饰细节\n- **关于文字**：尽量避免在图中生成文字。如果 prompt 中明确要求生成文字，仅使用简单的大写英文（如 A, B, INPUT）或数字。**绝对不要尝试生成汉字或复杂句子**，否则图片会包含乱码。\n\n强制避免：\n- 照片风格、写实渲染、3D质感、阴影、渐变\n- 人物脸、真人、手势\n- 复杂背景、纹理背景\n- 水印、LOGO\n- 密集文字段落、汉字、模糊的文本\n\n\nSpecific Request:\nA split-panel scientific comparison illustration, vector flat style. Left panel labeled 'STEP 1': A square crystal lattice transforming into a slightly rectangular shape, indicated by a dotted outline of the original square and a solid outline of the new rectangle, with arrows pointing outward from the edges. Right panel labeled 'STEP 2': A distorted rectangular lattice with a thick, locked solid border (indicating fixed shape), with small spheres (atoms) inside showing small motion trails or arrows indicating internal movement. Use blue for the lattice and orange for the atoms. White background.\n\nAvoid: photorealistic, 3d, chinese characters, text paragraphs, blurry, low resolution",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769588226
+    },
+    {
+      "figure_id": "ch04-fig01",
+      "chapter_id": "ch04",
+      "timestamp": "2026-01-28T16:17:33.680361",
+      "status": "success",
+      "output_file": "data\\runs\\20260127_165743\\images_autogen\\images_output\\ch04-fig01.png",
+      "final_prompt": "请生成一张科学示意图，统一为极简矢量扁平风（适合论文/教材插图）：\n- 纯白背景\n- 扁平化矢量插图风格，清晰描边，线条均匀，高对比度\n- 配色克制（2-4种颜色即可，如深蓝、橙色、灰色），整体干净专业\n- 视觉重点突出，去除所有不必要的装饰细节\n- **关于文字**：尽量避免在图中生成文字。如果 prompt 中明确要求生成文字，仅使用简单的大写英文（如 A, B, INPUT）或数字。**绝对不要尝试生成汉字或复杂句子**，否则图片会包含乱码。\n\n强制避免：\n- 照片风格、写实渲染、3D质感、阴影、渐变\n- 人物脸、真人、手势\n- 复杂背景、纹理背景\n- 水印、LOGO\n- 密集文字段落、汉字、模糊的文本\n\n\nSpecific Request:\nA linear workflow diagram in vector flat style. Step 1: A blue cube icon labeled 'STRU'. Step 2: An arrow pointing to a folder icon labeled 'LIB', which branches out into three smaller folders labeled '1', '2', '3'. Step 3: Arrows from these folders converging into a document icon with a bar chart labeled 'RESULT'. White background, clean lines, shades of blue and gray.\n\nAvoid: text blocks, realistic photos, handwriting, complex background, python code",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769588251
+    },
+    {
+      "figure_id": "ch04-fig02",
+      "chapter_id": "ch04",
+      "timestamp": "2026-01-28T16:17:52.933888",
+      "status": "success",
+      "output_file": "data\\runs\\20260127_165743\\images_autogen\\images_output\\ch04-fig02.png",
+      "final_prompt": "请生成一张科学示意图，统一为极简矢量扁平风（适合论文/教材插图）：\n- 纯白背景\n- 扁平化矢量插图风格，清晰描边，线条均匀，高对比度\n- 配色克制（2-4种颜色即可，如深蓝、橙色、灰色），整体干净专业\n- 视觉重点突出，去除所有不必要的装饰细节\n- **关于文字**：尽量避免在图中生成文字。如果 prompt 中明确要求生成文字，仅使用简单的大写英文（如 A, B, INPUT）或数字。**绝对不要尝试生成汉字或复杂句子**，否则图片会包含乱码。\n\n强制避免：\n- 照片风格、写实渲染、3D质感、阴影、渐变\n- 人物脸、真人、手势\n- 复杂背景、纹理背景\n- 水印、LOGO\n- 密集文字段落、汉字、模糊的文本\n\n\nSpecific Request:\nA scientific data analysis chart in vector flat style. A 2D coordinate system. X-axis labeled 'STRAIN', Y-axis labeled 'STRESS'. Five distinct data points (dots) are plotted linearly on the graph. A straight blue line passes through these dots to show a linear fit. On the left side of the graph, three small distorted cube icons are connected to the data points with dashed lines. Minimalist design, white background.\n\nAvoid: 3d rendering, complex numbers, grid lines, cluttered text, handwriting",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769588272
+    },
+    {
+      "figure_id": "ch05-fig01",
+      "chapter_id": "ch05",
+      "timestamp": "2026-01-28T16:18:12.739665",
+      "status": "success",
+      "output_file": "data\\runs\\20260127_165743\\images_autogen\\images_output\\ch05-fig01.png",
+      "final_prompt": "请生成一张科学示意图，统一为极简矢量扁平风（适合论文/教材插图）：\n- 纯白背景\n- 扁平化矢量插图风格，清晰描边，线条均匀，高对比度\n- 配色克制（2-4种颜色即可，如深蓝、橙色、灰色），整体干净专业\n- 视觉重点突出，去除所有不必要的装饰细节\n- **关于文字**：尽量避免在图中生成文字。如果 prompt 中明确要求生成文字，仅使用简单的大写英文（如 A, B, INPUT）或数字。**绝对不要尝试生成汉字或复杂句子**，否则图片会包含乱码。\n\n强制避免：\n- 照片风格、写实渲染、3D质感、阴影、渐变\n- 人物脸、真人、手势\n- 复杂背景、纹理背景\n- 水印、LOGO\n- 密集文字段落、汉字、模糊的文本\n\n\nSpecific Request:\nFlat vector scientific illustration, split into two panels. Left panel labeled 'A': A perfect blue 3D cube. Below it, a stylized 6x6 grid where the top-left to bottom-right diagonal squares are all the same color (indicating symmetry). Right panel labeled 'B': A tall red 3D rectangular prism. Below it, a stylized 6x6 grid where the first two diagonal squares are one color, and the third diagonal square is a different distinct color (indicating anisotropy). Minimalist design, white background.\n\nAvoid: text, numbers, realistic texture, complex shading, messy lines",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769588292
+    },
+    {
+      "figure_id": "ch05-fig02",
+      "chapter_id": "ch05",
+      "timestamp": "2026-01-28T16:18:32.703062",
+      "status": "success",
+      "output_file": "data\\runs\\20260127_165743\\images_autogen\\images_output\\ch05-fig02.png",
+      "final_prompt": "请生成一张科学示意图，统一为极简矢量扁平风（适合论文/教材插图）：\n- 纯白背景\n- 扁平化矢量插图风格，清晰描边，线条均匀，高对比度\n- 配色克制（2-4种颜色即可，如深蓝、橙色、灰色），整体干净专业\n- 视觉重点突出，去除所有不必要的装饰细节\n- **关于文字**：尽量避免在图中生成文字。如果 prompt 中明确要求生成文字，仅使用简单的大写英文（如 A, B, INPUT）或数字。**绝对不要尝试生成汉字或复杂句子**，否则图片会包含乱码。\n\n强制避免：\n- 照片风格、写实渲染、3D质感、阴影、渐变\n- 人物脸、真人、手势\n- 复杂背景、纹理背景\n- 水印、LOGO\n- 密集文字段落、汉字、模糊的文本\n\n\nSpecific Request:\nFlat vector flowchart diagram. Left side labeled 'STEP 1': An icon of a crystal structure connected to a pressure gauge showing a needle at zero. A large arrow points to the right side. Right side labeled 'STEP 2': The crystal structure splits into three smaller icons, each slightly distorted (squashed, stretched, sheared), and each connected to a pressure gauge showing a high reading. Use clean lines, blue and grey colors, white background.\n\nAvoid: handwriting, realistic photos, complicated machinery, messy text",
+      "model": "gemini-3-pro-image-preview",
+      "revision": 1769588312
+    }
+  ]
+}
