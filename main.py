@@ -1,3 +1,5 @@
+#旧版本的生成程序，可以结合claude使用，使用旧版本的文章生成->使用claude根据claude.md校验文章。
+
 import os
 import sys
 import argparse  # 新增
